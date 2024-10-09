@@ -1,35 +1,35 @@
  <div class="folder" x-data="{isOpen: true}">
-+    <div class="sidebar-nav">
-+        <ul>
-+            <li class="current">
-+                Overview
-+            </li>
-+            <li>
-+                Contents
-+            </li>
-+        </ul>
-+    </div>
-+    <div class="sidebar-panel-container">
-+        <div class="item" style="display: block;">
-+			<div class="site-overview">
+    <div class="sidebar-nav">
+        <ul>
+            <li class="current">
+                Overview
+            </li>
+            <li>
+                Contents
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar-panel-container">
+        <div class="item" style="display: block;">
+			<div class="site-overview">
 	            {% for fileOrFolderName, fileOrFolder in filetree -%}
 					{{menuItem(fileOrFolderName, fileOrFolder, 0, fileOrFolderName)}}
 	            {% endfor -%}
-+	        </div>
-+	    </div>
-+        {% if settings.dgShowToc === true %}
-+        <div class="item">
-+	        {%set tocHtml= (content and (content|toc)) %}
-+	        {%if tocHtml %}
-+            <div class="toc">
-+	            <div class="toc-container">
-+	                {{ tocHtml | safe }}
-+                </div>
-+            </div>
-+	        {%endif%}
-+        </div>
-+        {% endif %}
-+    </div>
+	        </div>
+	    </div>
+        {% if settings.dgShowToc === true %}
+        <div class="item">
+	        {%set tocHtml= (content and (content|toc)) %}
+	        {%if tocHtml %}
+            <div class="toc">
+	            <div class="toc-container">
+	                {{ tocHtml | safe }}
+                </div>
+            </div>
+	        {%endif%}
+        </div>
+        {% endif %}
+    </div>
  </div>
 {% macro menuItem(fileOrFolderName, fileOrFolder, step, currentPath) %}
     {%if fileOrFolder.isNote or fileOrFolder.isFolder%}
