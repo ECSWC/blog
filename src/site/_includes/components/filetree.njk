@@ -1,4 +1,3 @@
-
 {% macro menuItem(fileOrFolderName, fileOrFolder, step, currentPath) %}
     {%if fileOrFolder.isNote or fileOrFolder.isFolder%}
         <div x-show="isOpen" style="display:none" class="{{'filelist' if step>0}}">
@@ -14,21 +13,6 @@
                     <i x-show="!isOpen"  icon-name="chevron-right"></i>
                     <span class="foldername">{{fileOrFolderName}}</span>
                     </div>
-
- <div class="sidebar-nav">
-        <ul>
-            <li class="current">
-                Overview
-            </li>
-            <li>
-                Contents
-            </li>
-        </ul>
-    </div>
-    <div class="sidebar-panel-container">
-        <div class="item" style="display: block;">
-			<div class="site-overview">
-
                     {% for fileOrFolderName, child in fileOrFolder %}
                         {{menuItem(fileOrFolderName, child, step+1, (currentPath+"/"+fileOrFolderName))}}
                     {% endfor %}
@@ -69,20 +53,4 @@
                {%- endfor -%}
          </div>
       </nav>
-
-	    </div>
-        {% if settings.dgShowToc === true %}
-        <div class="item">
-	        {%set tocHtml= (content and (content|toc)) %}
-	        {%if tocHtml %}
-            <div class="toc">
-	            <div class="toc-container">
-	                {{ tocHtml | safe }}
-                </div>
-            </div>
-	        {%endif%}
-        </div>
-        {% endif %}
-    </div>
-
     </div>
