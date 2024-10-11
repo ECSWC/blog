@@ -11,7 +11,7 @@
 
 <b><span>打开调试控制台看数据</span></b>
 <p id="测试">
-<p><span>[1,2,3,4,5,6,7]</span></p>
+<p><span>1,2,3,4,5,6,7</span></p>
 </p>
 
 👉🏼HTML通用
@@ -27,13 +27,15 @@ const ctx = document.getElementById('myChart');
 
 	const test = document.getElementsByTagName("p");
 	//test.getElementsByTagName("p")[0].innerHTML="123";
-        let labels = [];
+        let labels_0 = [];
+	let labels = [];
 	for(var i = 0; i < test.length; i++){
-        labels.push(i+""+(test[i].innerHTML));
+        labels_0.push(i+""+(test[i].innerHTML));
 };
 	
-	labels=labels[3];
-	labels=labels.replace("3<span>","").replace("</span>","");
+	labels_0=labels_0[3];
+	labels_0=labels_0.replace("3<span>","").replace("</span>","");
+	labels=labels_0.split(",");
 	
 	
 		//test.getElementsByTagName("p")[0];
