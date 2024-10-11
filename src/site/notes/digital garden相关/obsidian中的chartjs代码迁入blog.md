@@ -31,9 +31,9 @@ const ctx = document.getElementById('myChart');
 	for(var i = 0; i < test.length; i++){
         labels.push(i+""+(test[i].innerHTML));
 };
-	labels=labels.join("");
-	labels=labels.split("<span>")[3].join("");
-	labels=labels.replace("</span>","");
+	
+	labels=labels[3];
+	
 	
 		//test.getElementsByTagName("p")[0];
 //text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
