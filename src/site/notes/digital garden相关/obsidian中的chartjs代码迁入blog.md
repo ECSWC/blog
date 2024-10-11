@@ -18,12 +18,13 @@
 </div>
       
 <script>
-const ctx = document.getElementById('myChart');
 
+	const ctx = document.getElementById('myChart');
+	let labels_0 = [];
+	let labels = [];
+	
 	const test = document.getElementsByTagName("p");
 	//test.getElementsByTagName("p")[0].innerHTML="123";
-        let labels_0 = [];
-	let labels = [];
 	for(var i = 0; i < test.length; i++){
         labels_0.push(""+(test[i].innerHTML));
 };
@@ -96,6 +97,7 @@ window.alert(labels);
         ctx,
         config
     );
+	
       </script>
 
 </body>
