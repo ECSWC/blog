@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T19:34:46.535+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T19:43:28.900+08:00"}
 ---
 
 
@@ -8,7 +8,30 @@
 <!DOCTYPE html>  
 <html>  
 <body>  
- 
+
+<p id="demo">一个测试</p>  
+
+<pre class="dataview dataview-error">Evaluation Error: eval code@
+eval@[native code]
+@
+@
+asyncEvalInContext@
+@
+render@
+onload@
+@capacitor://localhost/app.js:1:1171666
+@
+executeJs@
+@
+@
+Promise@[native code]
+__async@
+@
+@
+Promise@[native code]
+__async@
+fulfilled@</pre>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <div class="chart" style="height:184px">
   <canvas id="myChart"></canvas>
@@ -17,9 +40,7 @@
 <script>
 const ctx = document.getElementById('myChart');
       
-    const labels=[
-
-];
+    const labels=document.getElementById("demo");
 
 //const labels=labels_0.split(";")[1];
 
@@ -78,7 +99,7 @@ const ctx = document.getElementById('myChart');
 👉🏼dataviewjs版
 ---
 
-<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89928
+<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89820
 @</pre>
 
 <div class="chart" style="height:184px">
