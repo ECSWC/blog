@@ -28,8 +28,8 @@ const ctx = document.getElementById('myChart');
         labels_0.push(i+""+(test[i].innerHTML));
 };
 	
-	labels_0=labels_0[0];//需要确保第一个打印
-	labels_0=labels_0.replace("0<span>","").replace("</span>","");
+	labels_0=labels_0[1];//需要确保第一个打印
+	labels_0=labels_0.replace("1<span>","").replace("</span>","");
 	labels=labels_0.split(",");
 	
 	
