@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/测试chartjs/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"created":"2024-08-22T16:25:02.891+08:00","updated":"2024-10-11T09:23:35.794+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/测试chartjs/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"created":"2024-08-22T16:25:02.891+08:00","updated":"2024-10-11T09:41:43.596+08:00"}
 ---
 
 
@@ -18,7 +18,29 @@ HTML通用
 const ctx = document.getElementById('myChart');
       
     const labels =[
-<div><ul class="dataview list-view-ul"><li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li></ul></div>
+<pre class="dataview dataview-error">Evaluation Error: createElement@[native code]
+@capacitor://localhost/enhance.js:1:9114
+el@
+eval code@
+eval@[native code]
+@
+@
+asyncEvalInContext@
+@
+render@
+onload@
+@capacitor://localhost/app.js:1:1171666
+@
+executeJs@
+@
+@
+Promise@[native code]
+__async@
+@
+@
+Promise@[native code]
+__async@
+fulfilled@</pre>
 ];
 	labels =labels.join(",");
     // create random Data
@@ -83,3 +105,9 @@ dataviewjs版
 
 </body>
 </html>
+
+---
+
+- 对于解决dataviewjs在网页运行chartjs很有帮助👇🏼
+	1. [dataviewjs导入外部js的示例](https://forum.obsidian.md/t/use-chartjs-with-dataview/58752)
+	2. [html通用的chartjs示例](https://stackoverflow.com/questions/74651498/how-do-i-run-o)
