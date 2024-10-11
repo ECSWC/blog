@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T18:35:06.249+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T19:34:46.535+08:00"}
 ---
 
 
@@ -17,13 +17,13 @@
 <script>
 const ctx = document.getElementById('myChart');
       
-    const labels_0 =["_"+
-<p><span>;1,2,3,4,5,6,7;</span></p>
-+"_"];
+    const labels=[
 
-const labels=labels_0.split(";")[1];
+];
 
-Window.alert(labels);
+//const labels=labels_0.split(";")[1];
+
+//Window.alert(labels);
 	//labels =labels.split(";")[1];
     // create random Data
     const helpData1 = labels.map( _ => Math.random() * 100);
