@@ -33,6 +33,7 @@ const ctx = document.getElementById('myChart');
 };
 	
 	labels=labels[3];
+	labels=labels.replace("3<span>","").replace("</span>","");
 	
 	
 		//test.getElementsByTagName("p")[0];
