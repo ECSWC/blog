@@ -29,10 +29,10 @@ const ctx = document.getElementById('myChart');
 	
 
 	document.getElementById("测试").innerHTML="kkkkk";
-	const labels_0= document.getElementById("测试").innerHTML;
+	const labels= document.getElementById("测试").innerHTML;
 	
 	//.textContent;
-
+//.getElementsByClassName("测试")
 //const labels=labels_0.split("[")[1].join("");
 //const labels=labels.split("]")[0].join("");
 //const labels=labels.split(",");
