@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T01:39:07.764+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T01:43:42.830+08:00"}
 ---
 
 
@@ -29,7 +29,7 @@ const ctx = document.getElementById('myChart');
 };
 	
 	labels_0=labels_0[1];//需要确保第一个打印
-	labels_0=labels_0.replace("3<span>","").replace("</span>","");
+	labels_0=labels_0.replace("1<span>","").replace("</span>","");
 	labels=labels_0.split(",");
 	
 	
@@ -50,21 +50,21 @@ const ctx = document.getElementById('myChart');
 window.alert(labels);
 	//labels =labels.split(";")[1];
     // create random Data
-    const helpData1 = labels.map( _ => Math.random() * 100);
-    const helpData2 = labels.map( _ => Math.random() * 100);
+    //const helpData1 = labels.map( _ => Math.random() * 100);
+    //const helpData2 = labels.map( _ => Math.random() * 100);
     const data = {
       labels: labels,
       datasets: [
           {
             label: 'Dataset 1',
-            data: helpData1,
+            data: labels,
             borderColor: '#ff0000',
             backgroundColor: '#ff000088',
             order: 1
           },
           {
             label: 'Dataset 2',
-            data:  helpData2,
+            data: labels ,
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
@@ -102,7 +102,8 @@ window.alert(labels);
 👉🏼dataviewjs版
 ---
 
-
+<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89928
+@</pre>
 
 <div class="chart" style="height:184px">
   <canvas id="myChart2"></canvas>
