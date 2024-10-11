@@ -1,18 +1,13 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T21:30:33.517+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T01:56:26.676+08:00"}
 ---
 
 
-<p><span>1,2,3,4,5,6,7</span></p>
+<canvas><span>-</span></canvas><p><span>63.89,63.78,64.78,62.50,62.67,62.78,63.63,63.25,63.89,63.00,64.00,64.29,64.11,63.50,63.56,64.00,63.89,64.86,64.86,63.86,64.29,64.09,NaN,64.13,63.57,65.00,66.63,65.63,65.78</span></p>
 
 <!DOCTYPE html>  
 <html>  
 <body> 
-
-<b><span>打开调试控制台看数据</span></b>
-<p id="测试">
-<p><span>1,2,3,4,5,6,7</span></p>
-</p>
 
 👉🏼HTML通用
 --- 
@@ -23,7 +18,7 @@
 </div>
       
 <script>
-	// 分段颜色折线图用到↓
+// 分段颜色折线图用到↓
 const skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
 const down = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;					  
 //渐变↓
@@ -55,7 +50,7 @@ let gradient_green=(ctx) => {
         gradient.addColorStop(1, 'rgba(0,176,80,0.99)');
         return gradient;
       };
-	//从HTML获取数据↓
+  //从HTML获取数据👇🏼
 const ctx = document.getElementById('myChart');
 
 	const test = document.getElementsByTagName("p");
@@ -66,8 +61,8 @@ const ctx = document.getElementById('myChart');
         labels_0.push(i+""+(test[i].innerHTML));
 };
 	
-	labels_0=labels_0[3];
-	labels_0=labels_0.replace("3<span>","").replace("</span>","");
+	labels_0=labels_0[1];//需要确保第一个打印
+	labels_0=labels_0.replace("1<span>","").replace("</span>","");
 	labels=labels_0.split(",");
 	
 	
@@ -88,7 +83,9 @@ const ctx = document.getElementById('myChart');
 window.alert(labels);
 	//labels =labels.split(";")[1];
     // create random Data
-   const chartData = {
+    //const helpData1 = labels.map( _ => Math.random() * 100);
+    //const helpData2 = labels.map( _ => Math.random() * 100);
+    const chartData = {
     type: "line",
     data: {
         datasets: [
@@ -243,16 +240,16 @@ borderDash: ctx =>skipped(ctx,[0,0]),
 
 
 
+
 👉🏼dataviewjs版
 ---
 
-<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89820
+<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89928
 @</pre>
 
 <div class="chart" style="height:184px">
   <canvas id="myChart2"></canvas>
 </div>
-
 
 </body>
 </html>
