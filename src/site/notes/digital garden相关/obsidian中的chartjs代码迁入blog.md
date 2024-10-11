@@ -29,7 +29,7 @@ const ctx = document.getElementById('myChart');
 	//test.getElementsByTagName("p")[0].innerHTML="123";
         let labels = [];
 	for(var i = 0; i < test.length; i++){
-        labels.push(i+""+(test[i].innerHTML));
+        labels=labels.push(i+""+(test[i]));
 };
 	labels=labels.join("");
 	
