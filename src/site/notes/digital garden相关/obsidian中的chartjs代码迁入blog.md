@@ -25,7 +25,7 @@
 <script>
 const ctx = document.getElementById('myChart');
 
-	const test = document.getElementById("测试").getElementsByTagName("p");
+	const test = document.getElementsByTagName("p");
 	//test.getElementsByTagName("p")[0].innerHTML="123";
         let labels = [];
 	for(var i = 0; i < test.length; i++){
