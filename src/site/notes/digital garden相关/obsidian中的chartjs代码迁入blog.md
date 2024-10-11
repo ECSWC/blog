@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T21:27:51.961+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T21:30:33.517+08:00"}
 ---
 
 
@@ -11,7 +11,7 @@
 
 <b><span>打开调试控制台看数据</span></b>
 <p id="测试">
-<p><span>1,2,3,4,5,6,7</span></p>
+<p><span>[1,2,3,4,5,6,7]</span></p>
 </p>
 
 👉🏼HTML通用
@@ -26,7 +26,7 @@
 const ctx = document.getElementById('myChart');
 
 const textElement = document.getElementById('测试');
-const labels= textElement.innerHTML.replace(/<\/?[^>]+>/g, m => m.replaceAll("<p><span>[", "").replaceAll("]</span></p>", ""));
+const labels= textElement.innerHTML.replace(/<\/?[^>]+>/g, m => m.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]"));
 
 //const labels=labels_0.split(";")[1];
 window.alert(labels);
