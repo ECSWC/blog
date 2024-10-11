@@ -1,9 +1,9 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"created":"2024-08-22T16:25:02.891+08:00","updated":"2024-10-11T10:18:28.610+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"created":"2024-08-22T16:25:02.891+08:00","updated":"2024-10-11T10:26:16.405+08:00"}
 ---
 
 
-HTML通用
+👉🏼HTML通用
 ---
 
 <html>
@@ -71,7 +71,7 @@ const ctx = document.getElementById('myChart');
 
 
 
-dataviewjs版
+👉🏼dataviewjs版
 ---
 
 <pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89928
@@ -86,6 +86,6 @@ dataviewjs版
 
 ---
 
-- 对于解决dataviewjs在网页运行chartjs很有帮助👇🏼
+- 对于解决dataviewjs在[blog]([https://blog-chenliguo-2.vercel.app](https://blog-chenliguo-2.vercel.app/))运行chartjs很有帮助👇🏼
 	1. [dataviewjs导入外部js的示例](https://forum.obsidian.md/t/use-chartjs-with-dataview/58752)
 	2. [html通用的chartjs示例](https://stackoverflow.com/questions/74651498/how-do-i-run-o)
