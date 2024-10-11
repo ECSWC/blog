@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/测试chartjs/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"created":"2024-08-22T16:25:02.891+08:00","updated":"2024-10-11T09:41:43.596+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/测试chartjs/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"created":"2024-08-22T16:25:02.891+08:00","updated":"2024-10-11T09:46:02.017+08:00"}
 ---
 
 
@@ -17,12 +17,8 @@ HTML通用
 <script>
 const ctx = document.getElementById('myChart');
       
-    const labels =[
-<pre class="dataview dataview-error">Evaluation Error: createElement@[native code]
-@capacitor://localhost/enhance.js:1:9114
-el@
-eval code@
-eval@[native code]
+    const labels =[""+"
+<pre class="dataview dataview-error">Evaluation Error: eval@[native code]
 @
 @
 asyncEvalInContext@
@@ -41,8 +37,8 @@ __async@
 Promise@[native code]
 __async@
 fulfilled@</pre>
-];
-	labels =labels.join(",");
+"+""];
+	labels =labels.split(";")[1];
     // create random Data
     const helpData1 = labels.map( _ => Math.random() * 100);
     const helpData2 = labels.map( _ => Math.random() * 100);
