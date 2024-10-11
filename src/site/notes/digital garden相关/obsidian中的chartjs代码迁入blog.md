@@ -36,7 +36,6 @@ const ctx = document.getElementById('myChart');
 		//test.getElementsByTagName("p")[0];
 //text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
 	
-
 	//document.getElementById("测试").innerHTML="kkkkk";
 	//const labels= document.getElementById("测试").HTMLParagraphElement.text;
 	
