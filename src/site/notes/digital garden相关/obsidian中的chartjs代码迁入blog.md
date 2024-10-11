@@ -24,12 +24,14 @@
       
 <script>
 const ctx = document.getElementById('myChart');
-	
+
+	var test = document.getElementById("test");
+        const labels = test.getElementsByTagName("p");
 //text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
 	
 
-	document.getElementById("测试").innerHTML="kkkkk";
-	const labels= document.getElementById("测试").HTMLParagraphElement.text;
+	//document.getElementById("测试").innerHTML="kkkkk";
+	//const labels= document.getElementById("测试").HTMLParagraphElement.text;
 	
 	//.textContent;
 //.getElementsByClassName("测试")
