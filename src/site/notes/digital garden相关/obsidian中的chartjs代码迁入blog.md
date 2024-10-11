@@ -1,21 +1,20 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T21:14:37.668+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T21:25:14.917+08:00"}
 ---
 
 
-<b><span>打开调试控制台看数据</span></b>
 
-<p><ul class="dataview dataview-ul dataview-result-list-root-ul"><li class="dataview-result-list-li"><span>1</span></li><li class="dataview-result-list-li"><span>2</span></li><li class="dataview-result-list-li"><span>3</span></li><li class="dataview-result-list-li"><span>4</span></li><li class="dataview-result-list-li"><span>5</span></li><li class="dataview-result-list-li"><span>6</span></li><li class="dataview-result-list-li"><span>7</span></li></ul></p>
-
-👉🏼HTML通用
----
 <!DOCTYPE html>  
 <html>  
-<body>  
+<body> 
 
-<p id="demo">一个测试</p>  
+<b><span>打开调试控制台看数据</span></b>
+<p id="测试">
+<p><ul class="dataview dataview-ul dataview-result-list-root-ul"><li class="dataview-result-list-li"><span>1</span></li><li class="dataview-result-list-li"><span>2</span></li><li class="dataview-result-list-li"><span>3</span></li><li class="dataview-result-list-li"><span>4</span></li><li class="dataview-result-list-li"><span>5</span></li><li class="dataview-result-list-li"><span>6</span></li><li class="dataview-result-list-li"><span>7</span></li></ul></p>
+</p>
 
-
+👉🏼HTML通用
+--- 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <div class="chart" style="height:184px">
@@ -24,12 +23,12 @@
       
 <script>
 const ctx = document.getElementById('myChart');
-      
-const labels= text.innerHTML.replace(/<\/?[^>]+>/g, m => m.replaceAll("<p><span>[", "").replaceAll("]</span></p>", ""));
+
+const textElement = document.getElementById('测试');
+const labels= textElement.innerHTML.replace(/<\/?[^>]+>/g, m => m.replaceAll("<p><span>[", "").replaceAll("]</span></p>", ""));
 
 //const labels=labels_0.split(";")[1];
-
-//Window.alert(labels);
+window.alert(labels);
 	//labels =labels.split(";")[1];
     // create random Data
     const helpData1 = labels.map( _ => Math.random() * 100);
@@ -84,8 +83,7 @@ const labels= text.innerHTML.replace(/<\/?[^>]+>/g, m => m.replaceAll("<p><span>
 👉🏼dataviewjs版
 ---
 
-<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89928
-@</pre>
+
 
 <div class="chart" style="height:184px">
   <canvas id="myChart2"></canvas>
