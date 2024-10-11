@@ -24,8 +24,10 @@
       
 <script>
 const ctx = document.getElementById('myChart');
-
-const labels_0= document.getElementById("测试").innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
+	
+text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
+	
+const labels_0= document.getElementById("测试").innerHTML
 	//.textContent;
 
 //const labels=labels_0.split("[")[1].join("");
