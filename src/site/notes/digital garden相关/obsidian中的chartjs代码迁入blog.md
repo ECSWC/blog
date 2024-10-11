@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T13:46:56.840+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T15:39:16.755+08:00"}
 ---
 
 
@@ -17,9 +17,10 @@
 <script>
 const ctx = document.getElementById('myChart');
       
-    const labels =[
-<pre class="dataview dataview-error">Dataview: custom view not found for '1,2,3,4,5,6,7.js' or '1,2,3,4,5,6,7/view.js'.</pre>
-];
+    const labels_0 =["_"+
+<p><span>;1,2,3,4,5,6,7;</span></p>
++"_"];
+const labels=labels_0.split(";")[1];
 	//labels =labels.split(";")[1];
     // create random Data
     const helpData1 = labels.map( _ => Math.random() * 100);
@@ -74,8 +75,7 @@ const ctx = document.getElementById('myChart');
 👉🏼dataviewjs版
 ---
 
-<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89928
-@</pre>
+
 
 <div class="chart" style="height:184px">
   <canvas id="myChart2"></canvas>
