@@ -33,22 +33,7 @@
 	//labels_0=labels_0.replace("<span>","").replace("</span>","");
 	//labels=labels_0.split(",");
 	labels=labels_0.join(",");
-	
-	
-		//test.getElementsByTagName("p")[0];
-//text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
-	
 
-	//document.getElementById("测试").innerHTML="kkkkk";
-	//const labels= document.getElementById("测试").HTMLParagraphElement.text;
-	
-	//.textContent;
-//.getElementsByClassName("测试")
-//const labels=labels_0.split("[")[1].join("");
-//const labels=labels.split("]")[0].join("");
-//const labels=labels.split(",");
-	
-//const labels=labels_0.split(";")[1];
 window.alert(labels);
 	//labels =labels.split(";")[1];
     // create random Data
