@@ -29,7 +29,7 @@ const ctx = document.getElementById('myChart');
 	
 
 	document.getElementById("测试").innerHTML="kkkkk";
-	const labels= document.getElementById("测试");
+	const labels= document.getElementById("测试").HTMLParagraphElement.innerHTML;
 	
 	//.textContent;
 //.getElementsByClassName("测试")
