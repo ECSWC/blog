@@ -17,10 +17,10 @@ HTML通用
 <script>
 const ctx = document.getElementById('myChart');
       
-    const labels =["
-<p><span>;[1,2,3,4,5,6,7];</span></p>
-"];
-	labels =labels.split(";")[1];
+    const labels =[
+1,2,3,4,5,6,7
+];
+	//labels =labels.split(";")[1];
     // create random Data
     const helpData1 = labels.map( _ => Math.random() * 100);
     const helpData2 = labels.map( _ => Math.random() * 100);
