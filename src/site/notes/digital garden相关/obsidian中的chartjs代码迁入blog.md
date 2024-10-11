@@ -27,8 +27,8 @@ const ctx = document.getElementById('myChart');
 
 const labels_0= document.getElementById("测试").innerHTML;
 	//.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
-const labels=labels_0.split("[")[1];
-const labels=labels.split("]")[0];
+const labels=labels_0.split("[")[1].join("");
+const labels=labels.split("]")[0].join("");
 const labels=labels.split(",");
 //const labels=labels_0.split(";")[1];
 window.alert(labels);
