@@ -74,7 +74,8 @@ const ctx = document.getElementById('myChart');
 dataviewjs版
 ---
 
-
+<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89928
+@</pre>
 
 <div class="chart" style="height:184px">
   <canvas id="myChart2"></canvas>
