@@ -25,11 +25,11 @@
 <script>
 const ctx = document.getElementById('myChart');
 
-const textElement = document.getElementById('测试');
-const labels= textElement.innerHTML.replace(/<\/?[^>]+>/g, m => m.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]"));
+const textElement = document.getElementById("测试");
+const labels= textElement.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
 
 //const labels=labels_0.split(";")[1];
-window.alert(labels);
+window.alert("www.baidu.com");
 	//labels =labels.split(";")[1];
     // create random Data
     const helpData1 = labels.map( _ => Math.random() * 100);
