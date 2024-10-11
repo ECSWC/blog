@@ -20,38 +20,7 @@
 <script>
 	const ctx = document.getElementById('myChart');
 	
-// 分段颜色折线图用到↓
-const skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
-const down = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;					  
-//渐变↓
-let gradient_grey=(ctx) => {
-        const canvas = ctx.chart.ctx;
-        const gradient = canvas.createLinearGradient(0, 85, 0, 180);
-//(向右透明, 1的中心虚化范围, 向左透明, 向下放出1);
-        gradient.addColorStop(0, 'rgba(201, 203, 207, 0.4)');
-        gradient.addColorStop(0.35, 'rgba(201, 203, 207, 0.2)');
-        gradient.addColorStop(1, 'rgba(201, 203, 207, 0.1)');
-        return gradient;
-      };
-let gradient_red=(ctx) => {
-        const canvas = ctx.chart.ctx;
-        const gradient = canvas.createLinearGradient(0, 140, 0, 300);
-////(向右透明, 相互扩散叠加, 向左透明, 1的位置);
-       gradient.addColorStop(0, 'rgba(255, 167, 79, 0.2)');
-	   gradient.addColorStop(0.4, 'rgba(255, 187, 79, 0.4)');
-        gradient.addColorStop(1, 'rgba(255, 77, 79, 0.8)');
-        
-        return gradient;
-      };
-let gradient_green=(ctx) => {
-        const canvas = ctx.chart.ctx;
-        const gradient = canvas.createLinearGradient(0, 180, 0, 380);
-////(向右透明, 相互扩散叠加, 向左透明, 1的位置);
-        gradient.addColorStop(0, 'rgba(0,176,80, 0.1)');
-        gradient.addColorStop(0.65, 'rgba(0,176,80, 0.55)');
-        gradient.addColorStop(1, 'rgba(0,176,80,0.99)');
-        return gradient;
-      };
+
   //从HTML获取数据👇🏼
 
 	const test = document.getElementsByTagName("p");
