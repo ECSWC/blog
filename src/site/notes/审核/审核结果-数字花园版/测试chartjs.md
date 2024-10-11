@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/测试chartjs/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"created":"2024-08-22T16:25:02.891+08:00","updated":"2024-10-11T09:06:57.032+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/测试chartjs/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"created":"2024-08-22T16:25:02.891+08:00","updated":"2024-10-11T09:11:01.471+08:00"}
 ---
 
 
@@ -17,9 +17,10 @@ HTML通用
 <script>
 const ctx = document.getElementById('myChart');
       
-    const labels = 
-<p><span>[1,2,3,4,5,6,7];</span></p>
-	labels =labels.replace("<p><span>","").replace("</p></span>","");
+    const labels =[
+<p><span>;[1,2,3,4,5,6,7];</span></p>
+];
+	labels =labels.split(";")[1];
     // create random Data
     const helpData1 = labels.map( _ => Math.random() * 100);
     const helpData2 = labels.map( _ => Math.random() * 100);
