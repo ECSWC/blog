@@ -1,18 +1,13 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-11T21:30:33.517+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T01:39:07.764+08:00"}
 ---
 
 
-<p><span>1,2,3,4,5,6,7</span></p>
+<canvas><span>-</span></canvas><p><span>63.89,63.78,64.78,62.50,62.67,62.78,63.63,63.25,63.89,63.00,64.00,64.29,64.11,63.50,63.56,64.00,63.89,64.86,64.86,63.86,64.29,64.09,NaN,64.13,63.57,65.00,66.63,65.63,65.78</span></p>
 
 <!DOCTYPE html>  
 <html>  
 <body> 
-
-<b><span>打开调试控制台看数据</span></b>
-<p id="测试">
-<p><span>1,2,3,4,5,6,7</span></p>
-</p>
 
 👉🏼HTML通用
 --- 
@@ -33,7 +28,7 @@ const ctx = document.getElementById('myChart');
         labels_0.push(i+""+(test[i].innerHTML));
 };
 	
-	labels_0=labels_0[3];
+	labels_0=labels_0[1];//需要确保第一个打印
 	labels_0=labels_0.replace("3<span>","").replace("</span>","");
 	labels=labels_0.split(",");
 	
@@ -107,8 +102,7 @@ window.alert(labels);
 👉🏼dataviewjs版
 ---
 
-<pre class="dataview dataview-error">Evaluation Error: An@https://cdn.jsdelivr.net/npm/chart.js:19:89820
-@</pre>
+
 
 <div class="chart" style="height:184px">
   <canvas id="myChart2"></canvas>
