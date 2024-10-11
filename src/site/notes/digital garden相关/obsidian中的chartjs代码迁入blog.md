@@ -18,40 +18,53 @@
 </div>
       
 <script>
+const ctx = document.getElementById('myChart');
 
-	const ctx = document.getElementById('myChart');
-	let labels_0 = [];
-	let labels = [];
-	
 	const test = document.getElementsByTagName("p");
 	//test.getElementsByTagName("p")[0].innerHTML="123";
+        let labels_0 = [];
+	let labels = [];
 	for(var i = 0; i < test.length; i++){
-        labels_0.push(""+(test[i].innerHTML));
+        labels_0.push(i+""+(test[i].innerHTML));
 };
 	
-	//labels_0=labels_0[0];//需要确保第一个打印
-	//labels_0=labels_0.replace("<span>","").replace("</span>","");
-	//labels=labels_0.split(",");
-	labels=labels_0.join(",");
+	labels_0=labels_0[0];//需要确保第一个打印
+	labels_0=labels_0.replace("0<span>","").replace("</span>","");
+	labels=labels_0.split(",");
+	
+	
+		//test.getElementsByTagName("p")[0];
+//text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
+	
 
+	//document.getElementById("测试").innerHTML="kkkkk";
+	//const labels= document.getElementById("测试").HTMLParagraphElement.text;
+	
+	//.textContent;
+//.getElementsByClassName("测试")
+//const labels=labels_0.split("[")[1].join("");
+//const labels=labels.split("]")[0].join("");
+//const labels=labels.split(",");
+	
+//const labels=labels_0.split(";")[1];
 window.alert(labels);
 	//labels =labels.split(";")[1];
     // create random Data
-    //const helpData1 = labels.map( _ => Math.random() * 100);
-    //const helpData2 = labels.map( _ => Math.random() * 100);
+    const helpData1 = labels.map( _ => Math.random() * 100);
+    const helpData2 = labels.map( _ => Math.random() * 100);
     const data = {
       labels: labels,
       datasets: [
           {
             label: 'Dataset 1',
-            data: labels,
+            data: helpData1,
             borderColor: '#ff0000',
             backgroundColor: '#ff000088',
             order: 1
           },
           {
             label: 'Dataset 2',
-            data:  ,
+            data:  helpData2,
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
@@ -82,8 +95,8 @@ window.alert(labels);
         ctx,
         config
     );
-	
       </script>
+
 
 </body>
 </html>
