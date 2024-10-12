@@ -32,7 +32,6 @@ const ctx = document.getElementById('myChart');
 	labels_0=labels_0.replace("1<span>","").replace("</span>","");
 	labels=labels_0.split(",");
 	
-	
 		//test.getElementsByTagName("p")[0];
 //text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
 	
