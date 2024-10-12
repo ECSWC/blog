@@ -91,7 +91,7 @@ let gradient_green=(ctx) => {
 //const labels=labels.split(",");
 	
 //const labels=labels_0.split(";")[1];
-window.alert(wordsData);
+window.alert(wordsData_0);
 	//labels =labels.split(";")[1];
     // create random Data
     const data = {
@@ -118,7 +118,7 @@ window.alert(wordsData);
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
-            order: 0
+            order: 2
           }
       ]
     };
