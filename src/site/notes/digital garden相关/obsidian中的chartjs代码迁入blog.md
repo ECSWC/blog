@@ -74,10 +74,9 @@ let gradient_green=(ctx) => {
 	//labels=labels_0.join(",");
 	
 	let wordsData=[];
-	wordsData=wordsData_0[0];
-	//for(let i=0;i<wordsData_0.length;i++){
-		//wordsData.push({ x: filesData[i], y: wordsData_0[i]});
-	//}
+	for(var i=0;i<wordsData_0.length;i++){
+		wordsData.push(filesData[i], wordsData_0[i]);
+	};
 		//test.getElementsByTagName("p")[0];
 //text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
 	
