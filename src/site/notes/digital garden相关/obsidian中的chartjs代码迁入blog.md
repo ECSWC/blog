@@ -67,10 +67,10 @@ let gradient_green=(ctx) => {
 	//labels_0=labels_0.replace("<span>","").replace("</span>","");
 	//labels=labels_0.split(",");
 	
-	let wordsData_0=labels_0[0].replace("<span>","").replace("</span>","").split(",");
-	let sum_all_date=labels_0[1].replace("<span>","").replace("</span>","").split(",");
-	let ShuLiang_each_Percentage=labels_0[2].replace("<span>","").replace("</span>","").split(",");
-	let filesData=labels_0[3].replace("<span>","").replace("</span>","").split(",");
+	let wordsData_0=labels_0[0].replace("<span>","").replace("</span>","").split(",").join("");
+	let sum_all_date=labels_0[1].replace("<span>","").replace("</span>","").split(",").join("");
+	let ShuLiang_each_Percentage=labels_0[2].replace("<span>","").replace("</span>","").split(",").join("");
+	let filesData=labels_0[3].replace("<span>","").replace("</span>","").split(",").join("");
 	//labels=labels_0.join(",");
 	
 	let wordsData=[];
