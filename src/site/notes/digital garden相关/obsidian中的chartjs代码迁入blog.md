@@ -80,12 +80,14 @@ let gradient_green=(ctx) => {
 	
 	for(var i=0;i<wordsData_0.length;i++){
 		//x: ""+filesData[i]
-		wordsData.push(wordsData_0[i]*1)
+		wordsData[i]=(wordsData_0[i]*1);
+		//wordsData.push(wordsData_0[i]*1)
 			//({ x: i*1, y: wordsData_0[i]*1})
 	};
 	for(var i=0;i<filesData_0.length;i++){
 		//x: ""+filesData[i]
-		filesData.push(""+filesData_0[i])
+		filesData[i]=(""+filesData_0[i]);
+		//filesData.push(""+filesData_0[i])
 			//({ x: i*1, y: wordsData_0[i]*1})
 	};
 		//test.getElementsByTagName("p")[0];
@@ -117,7 +119,7 @@ window.alert(wordsData);
           },
           {
             label: '所有人得分率',
-            data:  sum_all_date_0,
+            data:  wordsData,
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
@@ -125,7 +127,7 @@ window.alert(wordsData);
           },
 	      {
             label: '数量×得分率',
-            data:  ShuLiang_each_Percentage_0,
+            data:  wordsData,
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
