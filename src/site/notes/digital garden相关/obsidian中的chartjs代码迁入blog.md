@@ -117,14 +117,6 @@ window.alert(wordsData);
             backgroundColor: '#ff000088',
             order: 1,
           },
-          {
-            label: '所有人得分率',
-            data:  sum_all_date_0,
-            borderColor: '#0000ff', 
-            backgroundColor:'#0000ff88',
-            type: 'line',
-            order: 0,
-          },
 	      {
             label: '数量×得分率',
             data:  ShuLiang_each_Percentage_0,
