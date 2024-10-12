@@ -16,7 +16,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div class="chart" style="height:184px">
+<div class="chart" style="height:300px">
   <canvas id="myChart"></canvas>
 </div>
       
@@ -110,16 +110,9 @@ window.alert(wordsData);
     const data = {
       labels: filesData,//x轴标签
       datasets: [
-          {
-            label: '你',
-            data: wordsData,
-            borderColor: '#ff0000',
-            backgroundColor: '#ff000088',
-            order: 1,
-          },
-{
-                label: "所有人",
-                data: sum_all_date_0,
+                    {
+                label: "你-增长",
+                data: wordsData_0,
                 backgroundColor: gradient_red,
                 borderColor: ['rgba(255, 77, 79, 1)'],
                 segment: {
@@ -135,30 +128,83 @@ borderDash: ctx =>skipped(ctx,[0,0]),
             pointRadius: 1.4, // 点形状的半径。如果设置为 0，则不渲染该点。
             pointStyle:'circle',
             tension: 0.3,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
-                order: 2,
+                order: 1
                 
             },
-      ]
-    };
-  
-   const config = {
-      type: 'line',
-      data: data,
-      options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
+            {
+                label: "你-下降",
+               // data:"",
+                backgroundColor: ['rgba(0,176,80,0.1)'],
+                borderColor: ['rgba(0,176,80,1)'],
+                borderWidth: 1.8,
+                },
+            {
+                label: "「所有人」",
+                data: sum_all_date_0,
+                backgroundColor: ['rgba(255, 170, 50, 0.2)'],
+                borderColor: ['rgba(255, 170, 50, 10)'],
+                borderWidth: 0.6,
+                borderDash: ctx =>(ctx,[4,4]),
+                fill:false,
+                pointRadius: 0.12,
+                tension: 0.02,
+                order: 2
+        
+               // backgroundColor: ['rgba(54, 162, 235, 0.2)'],
+               // borderColor: ['rgba(54, 162, 235, 1)'],
+        },
+        {
+                label: "你的(提交数量×得分率)",
+                data: ShuLiang_each_Percentage_0,
+                type: "line",
+                yAxisID: 'A',
+                backgroundColor: gradient_grey,
+                borderColor: ['rgba(201, 203, 207, 10)'],
+                borderWidth: 0.60,
+                borderDash: ctx =>(ctx,[4,4]),
+                fill: true,  // 填充线下方的背景区域
+            pointRadius:0.12, // 点形状的半径。如果设置为 0，则不渲染该点。
+            pointStyle:'circle',
+            tension: 0.03,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
+                order: 10,
+                
+                
+                 
+                
+
+            },],
+    },
+    options: {
+        pointHoverBorderWidth: 6,
+        interaction: {
+            mode: 'index',
+            axis: 'y',
+        },
+        plugins: {
+          legend: {  display: true,position: 'top',},//隐藏label下：bottom
+            //title: {
+                //display: true,
+               // text: '',//大标题
+               // font: { weight: 'bold italic', size: '16px', family: 'Barlow' },
+            //},
+            subtitle: {
                 display: true,
-                text: 'Chart.js Combined Line/Bar Chart'
-            },
-		  scales: {
+                text: '💯得分率(近30天)',
+                font: { size: '14px', style: 'italic', family: 'sans-serif' }
+            }
+        },
+        animations: {
+            tension: {
+                //duration: 1000,
+                //easing: 'easeInOutSine',
+                //from: 0,
+               // to: 0,//线条跳动幅度（动画），0则静止直线，相同数值为静止曲线
+                //loop: true
+            }
+        },
+        scales: {
             
             y: {
-		beginAtZero:false,
                 stacked:false,
                 //borderColor:'rgba(255, 170, 50, 10.35)',
                 border: {
@@ -175,15 +221,36 @@ borderDash: ctx =>skipped(ctx,[0,0]),
                     //borderColor:'rgba(255, 170, 50, 10.35)',
                 },
             },
-		  },		  
-          }
-      },
-    };
-          
-    new Chart(
-        ctx,
-        config
-    );
+            A: {
+            beginAtZero:true,
+            position: 'right',
+                stacked:false,
+                border: {
+                    display: true,
+                    width: 0.8,
+                },
+                grid: {
+                    display: true,
+                    drawOnChartArea: true,
+                    drawTicks: true,
+                    color: 'rgba(239, 239, 239, 0)',//轴线宽度
+                    borderColor:'rgba(255, 170, 50, 10.35)',
+                },
+            },
+            x: {
+                border: {
+                    display: true,
+                    width: 0.8,
+                },
+                grid: {
+                display: true,
+                    color: 'rgba(239, 239, 239,0)',
+                    borderColor:'rgba(255, 170, 50, 10.35)',
+                },
+            },
+        },
+    },
+};
         
 
 // 调用 obsidian chart API👇🏼
