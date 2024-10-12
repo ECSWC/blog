@@ -74,7 +74,7 @@ let gradient_green=(ctx) => {
 	//labels=labels_0.join(",");
 	
 	let wordsData=[];
-	wordsData=wordsData_0;
+	wordsData=wordsData_0[0];
 	//for(let i=0;i<wordsData_0.length;i++){
 		//wordsData.push({ x: filesData[i], y: wordsData_0[i]});
 	//}
