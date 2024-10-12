@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/Dragon/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T19:16:08.929+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/Dragon/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T19:33:17.483+08:00"}
 ---
 
 
@@ -115,8 +115,8 @@ let gradient_green=(ctx) => {
 //const labels=labels.split(",");
 	
 //const labels=labels_0.split(";")[1];
-window.alert(wordsData_0);
-window.alert(wordsData);
+//window.alert(wordsData_0);//对于测试很重要，勿删
+//window.alert(wordsData);
 	//labels =labels.split(";")[1];
     // create random Data
     const data = {
