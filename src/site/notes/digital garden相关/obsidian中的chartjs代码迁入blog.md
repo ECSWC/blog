@@ -88,9 +88,10 @@ let gradient_green=(ctx) => {
 };
 
 //这里已经成功把HTML的数据存进labels,现在可以删除HTML的数据以美化↑	
-	for(var i = 0; i < test.length; i++){
+	for(var i = 0; i < 4; i++){
         document.getElementsByTagName("p")[i].innerHTML="";
 };
+	//需要确保被删除的<p>放在前4个
 	//labels_0=labels_0[0];//需要确保第一个打印
 	//labels_0=labels_0.replace("<span>","").replace("</span>","");
 	//labels=labels_0.split(",");
