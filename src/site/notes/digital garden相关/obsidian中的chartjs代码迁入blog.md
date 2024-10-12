@@ -72,8 +72,9 @@ let gradient_green=(ctx) => {
 	let filesData=labels_0[3].replace("<span>","").replace("</span>","").split(",");
 	//labels=labels_0.join(",");
 	
-	let wordsData=new Array();
+	let wordsData=[];
 	for(var i=0;i<wordsData_0.length;i++){
+		
 		wordsData.push({ "x": ""+filesData[i], "y": wordsData_0[i]*1})
 	};
 		//test.getElementsByTagName("p")[0];
@@ -89,7 +90,7 @@ let gradient_green=(ctx) => {
 //const labels=labels.split(",");
 	
 //const labels=labels_0.split(";")[1];
-window.alert(wordsData);
+window.alert(""+wordsData);
 	//labels =labels.split(";")[1];
     // create random Data
     const chartData = {
