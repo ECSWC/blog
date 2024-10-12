@@ -127,8 +127,7 @@ borderDash: ctx =>skipped(ctx,[0,0]),
             pointRadius: 1.4, // 点形状的半径。如果设置为 0，则不渲染该点。
             pointStyle:'circle',
             tension: 0.3,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
-                order: 1
-                
+                order: 1,                
             },
             {
                 label: "你-下降",
@@ -167,8 +166,11 @@ borderDash: ctx =>skipped(ctx,[0,0]),
             tension: 0.03,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
                 order: 10,
             },],
-    },
-    options: {
+    };
+const config = {
+      type: 'line',
+      data: data,
+       options: {
         pointHoverBorderWidth: 6,
         interaction: {
             mode: 'index',
@@ -242,11 +244,12 @@ borderDash: ctx =>skipped(ctx,[0,0]),
                 },
             },
         },
-    };
+    }
+};
         
 new Chart(
         ctx,
-        chartData);
+        config);
 // 调用 obsidian chart API👇🏼
 //window.renderChart(chartData, this.container);
 
