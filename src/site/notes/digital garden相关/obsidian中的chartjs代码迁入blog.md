@@ -117,6 +117,27 @@ window.alert(wordsData);
             backgroundColor: '#ff000088',
             order: 1,
           },
+{
+                label: "所有人",
+                data: sum_all_date_0,
+                backgroundColor: gradient_red,
+                borderColor: ['rgba(255, 77, 79, 1)'],
+                segment: {
+borderColor: ctx => skipped(ctx,'rgb(0,0,0,0.4)')||down(ctx,'rgb(0,176,80)'),
+backgroundColor: ctx => skipped(ctx,'rgba(0,0,0,0.4)')||down(ctx,'rgba(0,176,80, 0.15)'),
+borderDash: ctx =>skipped(ctx,[0,0]),
+},
+//segment定义分段颜色，不要忘了定义“const skipped“和“const down”
+				//spanGaps: true,
+				//允许为null画线段↑
+                borderWidth: 1.8,
+                fill: true,  // 填充线下方的背景区域
+            pointRadius: 1.4, // 点形状的半径。如果设置为 0，则不渲染该点。
+            pointStyle:'circle',
+            tension: 0.3,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
+                order: 2,
+                
+            },
       ]
     };
   
