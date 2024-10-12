@@ -1,15 +1,15 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T10:45:31.792+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T11:06:55.257+08:00"}
 ---
 
 
 
 
 <!DOCTYPE html>  
-<html>  
+</html>  
 <body> 
 
-<p><span>[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]</span></p><p><span>64.23,63.48,63.86,63.25,63.43,63.96,63.48,63.33,63.85,63.64,63.92,63.19,63.37,63.57,63.52,64.22,63.63,63.85,64.02,63.95,64.04,63.71,63.36,63.90,63.98,64.42,64.63,65.08,64.85</span></p><p><span>5.7501,5.7402,5.8302,5,5.6403,5.6502,5.0904,5.06,5.7501,4.41,3.84,4.5003,5.7699,5.08,5.7204,5.76,5.7501,4.5402,4.5402,4.4702,4.5003,7.0499,NaN,5.1304,4.4499,5.2,5.3304,5.2504,5.9201999999999995</span></p>
+<p><span>63.89,63.78,64.78,62.50,62.67,62.78,63.63,63.25,63.89,63.00,64.00,64.29,64.11,63.50,63.56,64.00,63.89,64.86,64.86,63.86,64.29,64.09,NaN,64.13,63.57,65.00,66.63,65.63,65.78</span></p><p><span>64.23,63.48,63.86,63.25,63.43,63.96,63.48,63.33,63.85,63.64,63.92,63.19,63.37,63.57,63.52,64.22,63.63,63.85,64.02,63.95,64.04,63.71,63.36,63.90,63.98,64.42,64.63,65.08,64.85</span></p><p><span>5.7501,5.7402,5.8302,5,5.6403,5.6502,5.0904,5.06,5.7501,4.41,3.84,4.5003,5.7699,5.08,5.7204,5.76,5.7501,4.5402,4.5402,4.4702,4.5003,7.0499,NaN,5.1304,4.4499,5.2,5.3304,5.2504,5.9201999999999995</span></p><p><span>08-30,09-02,09-03,09-04,09-05,09-06,09-09,09-10,09-11,09-12,09-13,09-14,09-18,09-19,09-20,09-23,09-24,09-25,09-26,09-27,09-28,09-29,09-30,10-06,10-07,10-08,10-09,10-10,10-11</span></p>
  
 
 👉🏼HTML通用
@@ -66,11 +66,14 @@ let gradient_green=(ctx) => {
 	//labels_0=labels_0[0];//需要确保第一个打印
 	//labels_0=labels_0.replace("<span>","").replace("</span>","");
 	//labels=labels_0.split(",");
-	let wordsData=labels_0[0].replace("<span>","").replace("</span>","").split(",");
+	
+	let wordsData_0=labels_0[0].replace("<span>","").replace("</span>","").split(",");
 	let sum_all_date=labels_0[1].replace("<span>","").replace("</span>","").split(",");
 	let ShuLiang_each_Percentage=labels_0[2].replace("<span>","").replace("</span>","").split(",");
+	let filesData=labels_0[3].replace("<span>","").replace("</span>","").split(",");
 	//labels=labels_0.join(",");
 	
+	let wordsData=wordsData.map((v,i)=v.push({ x: filesData[i], y: wordsData_0[i]});
 		//test.getElementsByTagName("p")[0];
 //text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
 	
@@ -84,7 +87,7 @@ let gradient_green=(ctx) => {
 //const labels=labels.split(",");
 	
 //const labels=labels_0.split(";")[1];
-window.alert(labels);
+//window.alert(labels);
 	//labels =labels.split(";")[1];
     // create random Data
     const chartData = {
