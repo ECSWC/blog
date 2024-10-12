@@ -78,11 +78,16 @@ let gradient_green=(ctx) => {
 	let ShuLiang_each_Percentage=[];
 	let filesData=[];
 	
-	//for(var i=0;i<wordsData_0.length;i++){
+	for(var i=0;i<wordsData_0.length;i++){
 		//x: ""+filesData[i]
-		//wordsData.push({wordsData_0[i]*1})
+		wordsData.push(wordsData_0[i]*1)
 			//({ x: i*1, y: wordsData_0[i]*1})
-	//};
+	};
+	for(var i=0;i<filesData_0.length;i++){
+		//x: ""+filesData[i]
+		filesData.push(filesData_0[i]*1)
+			//({ x: i*1, y: wordsData_0[i]*1})
+	};
 		//test.getElementsByTagName("p")[0];
 //text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
 	
@@ -96,19 +101,19 @@ let gradient_green=(ctx) => {
 //const labels=labels.split(",");
 	
 //const labels=labels_0.split(";")[1];
-window.alert(wordsData_0[0]);
-window.alert(wordsData_0);
+window.alert(wordsData[0]);
+window.alert(wordsData);
 	//labels =labels.split(";")[1];
     // create random Data
     const data = {
-      labels: filesData_0,//x轴标签
+      labels: filesData,//x轴标签
       datasets: [
           {
             label: '你',
-            data: wordsData_0,
+            data: wordsData,
             borderColor: '#ff0000',
             backgroundColor: '#ff000088',
-            order: 1
+            order: 1,
           },
           {
             label: '所有人得分率',
@@ -116,8 +121,8 @@ window.alert(wordsData_0);
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
-            order: 0
-          }
+            order: 0,
+          },
 	      {
             label: '数量×得分率',
             data:  ShuLiang_each_Percentage_0,
