@@ -119,7 +119,7 @@ window.alert(wordsData);
           },
           {
             label: '所有人得分率',
-            data:  wordsData,
+            data:  sum_all_date_0,
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
@@ -127,7 +127,7 @@ window.alert(wordsData);
           },
 	      {
             label: '数量×得分率',
-            data:  wordsData,
+            data:  ShuLiang_each_Percentage_0,
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
@@ -149,7 +149,27 @@ window.alert(wordsData);
             title: {
                 display: true,
                 text: 'Chart.js Combined Line/Bar Chart'
-            }
+            },
+		  scales: {
+            
+            y: {
+                stacked:false,
+                //borderColor:'rgba(255, 170, 50, 10.35)',
+                border: {
+                    display: true,
+                    width: 0.8,//0.8
+                    //borderColor:['rgba(255, 170, 50, 10.35)'],//金色
+                },
+                
+                grid: {
+                    display: true,
+                    drawOnChartArea: true,
+                    drawTicks: true,
+                    color: 'rgba(239, 239, 239, 1)',//轴线宽度
+                    //borderColor:'rgba(255, 170, 50, 10.35)',
+                },
+            },
+		  },		  
           }
       },
     };
