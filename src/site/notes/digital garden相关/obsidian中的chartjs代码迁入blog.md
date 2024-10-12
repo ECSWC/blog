@@ -137,7 +137,7 @@ window.alert(wordsData);
     };
   
    const config = {
-      type: 'bar',
+      type: 'line',
       data: data,
       options: {
           responsive: true,
@@ -153,6 +153,7 @@ window.alert(wordsData);
 		  scales: {
             
             y: {
+		beginAtZero:false,
                 stacked:false,
                 //borderColor:'rgba(255, 170, 50, 10.35)',
                 border: {
