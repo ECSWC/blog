@@ -1,24 +1,9 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T17:36:22.560+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T17:42:52.349+08:00"}
 ---
 
 
-<!DOCTYPE html>  
-</html>  
-<body> 
-
-<body> 
-<div class="chart" style="height:360px">
-  <canvas id="myChart"></canvas>
-</div>
-
 <p><span>63.89,63.78,64.78,62.50,62.67,62.78,63.63,63.25,63.89,63.00,64.00,64.29,64.11,63.50,63.56,64.00,63.89,64.86,64.86,63.86,64.29,64.09,NaN,64.13,63.57,65.00,66.63,65.63,65.78</span></p><p><span>64.23,63.48,63.86,63.25,63.43,63.96,63.48,63.33,63.85,63.64,63.92,63.19,63.37,63.57,63.52,64.22,63.63,63.85,64.02,63.95,64.04,63.71,63.36,63.90,63.98,64.42,64.63,65.08,64.85</span></p><p><span>5.7501,5.7402,5.8302,5,5.6403,5.6502,5.0904,5.06,5.7501,4.41,3.84,4.5003,5.7699,5.08,5.7204,5.76,5.7501,4.5402,4.5402,4.4702,4.5003,7.0499,NaN,5.1304,4.4499,5.2,5.3304,5.2504,5.9201999999999995</span></p><p><span>08-30,09-02,09-03,09-04,09-05,09-06,09-09,09-10,09-11,09-12,09-13,09-14,09-18,09-19,09-20,09-23,09-24,09-25,09-26,09-27,09-28,09-29,09-30,10-06,10-07,10-08,10-09,10-10,10-11</span></p>
- 
-
-👉🏼HTML通用
---- 
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 👉🏼速览
 ---
@@ -46,6 +31,21 @@
 </ul></span></li></ul></li><li class="dataview-result-list-li"><ul class="dataview dataview-ul dataview-result-list-ul"><li class="dataview-result-list-li"><span><ul class="contains-task-list">
 <li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">“Moony-care”☝🏼</li>
 </ul></span></li></ul></li></ul></td><td><ul class="dataview dataview-ul dataview-result-list-ul"><li class="dataview-result-list-li"><span><div data-callout-metadata="" data-callout-fold="" data-callout="note123" class="callout node-insert-event"><div class="callout-title" dir="auto"><div class="callout-icon"><svg width="16" height="16"></svg></div><div class="callout-title-inner"><font color="#ff0000">可能不符合商家要求</font><br><span class="dataview inline-field"><span class="dataview inline-field-key" data-dv-key="<font color=&quot;#FFAB36&quot;>小易</font>…<font color=&quot;#FFAB36&quot;>Lanio</font>…" data-dv-norm-key="font-colorffab36小易fontfont-colorffab36laniofont"><font color="#FFAB36">小易</font>…<font color="#FFAB36">Lanio</font>…</span><span class="dataview inline-field-value" id="dataview-inline-field-0"><span><code>共出错2次</code></span></span></span></div></div></div></span></li><li class="dataview-result-list-li"><span><div data-callout-metadata="" data-callout-fold="" data-callout="note123" class="callout node-insert-event"><div class="callout-title" dir="auto"><div class="callout-icon"><svg width="16" height="16"></svg></div><div class="callout-title-inner"><font color="#ff0000">可能缺少必要的卖点</font><br><span class="dataview inline-field"><span class="dataview inline-field-key" data-dv-key="<font color=&quot;#FFAB36&quot;>王诗茹</font>…<font color=&quot;#FFAB36&quot;>小易</font>…" data-dv-norm-key="font-colorffab36王诗茹fontfont-colorffab36小易font"><font color="#FFAB36">王诗茹</font>…<font color="#FFAB36">小易</font>…</span><span class="dataview inline-field-value" id="dataview-inline-field-0"><span><code>共出错2次</code></span></span></span></div></div></div></span></li><li class="dataview-result-list-li"><span><div data-callout-metadata="" data-callout-fold="" data-callout="note123" class="callout node-insert-event"><div class="callout-title" dir="auto"><div class="callout-icon"><svg width="16" height="16"></svg></div><div class="callout-title-inner"><font color="#ff0000">可能包含性暗示</font><br><span class="dataview inline-field"><span class="dataview inline-field-key" data-dv-key="<font color=&quot;#FFAB36&quot;>Lanio</font>…" data-dv-norm-key="font-colorffab36laniofont"><font color="#FFAB36">Lanio</font>…</span><span class="dataview inline-field-value" id="dataview-inline-field-0"><span><code>共出错1次</code></span></span></span></div></div></div></span></li></ul></td></tr></tbody></table></div>
+
+
+<!DOCTYPE html>  
+</html>  
+<body> 
+
+<body> 
+<div class="chart" style="height:360px">
+  <canvas id="myChart"></canvas>
+</div>
+ 
+👉🏼HTML通用
+--- 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
 const ctx = document.getElementById('myChart');
