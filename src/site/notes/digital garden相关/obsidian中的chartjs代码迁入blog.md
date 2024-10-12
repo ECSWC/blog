@@ -80,22 +80,22 @@ let gradient_green=(ctx) => {
 	
 	for(var i=0;i<wordsData_0.length;i++){
 		//x: ""+filesData[i]
-		wordsData.push(wordsData_0[i]*1)
+		wordsData[i]=(wordsData_0[i]*1)
 			//({ x: i*1, y: wordsData_0[i]*1})
 	};
 	for(var i=0;i<sum_all_date_0.length;i++){
 		//x: ""+filesData[i]
-		sum_all_date.push(sum_all_date_0[i]*1)
+		sum_all_date[i]=(sum_all_date_0[i]*1)
 			//({ x: i*1, y: wordsData_0[i]*1})
 	};
 	for(var i=0;i<ShuLiang_each_Percentage_0.length;i++){
 		//x: ""+filesData[i]
-		ShuLiang_each_Percentage.push(ShuLiang_each_Percentage_0[i]*1)
+		ShuLiang_each_Percentage[i]=(ShuLiang_each_Percentage_0[i]*1)
 			//({ x: i*1, y: wordsData_0[i]*1})
 	};
 	for(var i=0;i<filesData_0.length;i++){
 		//x: ""+filesData[i]
-		filesData.push(""+filesData_0[i])
+		filesData[i]=(""+filesData_0[i])
 			//({ x: i*1, y: wordsData_0[i]*1})
 	};
 		//test.getElementsByTagName("p")[0];
