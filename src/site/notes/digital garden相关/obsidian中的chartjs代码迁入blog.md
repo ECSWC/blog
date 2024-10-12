@@ -109,8 +109,7 @@ window.alert(wordsData);
     // create random Data
     const data = {
       labels: filesData,//x轴标签
-      datasets: [
-                    {
+      datasets: [{
                 label: "你-增长",
                 data: wordsData_0,
                 backgroundColor: gradient_red,
@@ -148,7 +147,7 @@ borderDash: ctx =>skipped(ctx,[0,0]),
                 fill:false,
                 pointRadius: 0.12,
                 tension: 0.02,
-                order: 2
+                order: 2,
         
                // backgroundColor: ['rgba(54, 162, 235, 0.2)'],
                // borderColor: ['rgba(54, 162, 235, 1)'],
@@ -167,11 +166,6 @@ borderDash: ctx =>skipped(ctx,[0,0]),
             pointStyle:'circle',
             tension: 0.03,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
                 order: 10,
-                
-                
-                 
-                
-
             },],
     },
     options: {
@@ -252,7 +246,9 @@ borderDash: ctx =>skipped(ctx,[0,0]),
     },
 };
         
-
+new Chart(
+        ctx,
+        chartData);
 // 调用 obsidian chart API👇🏼
 //window.renderChart(chartData, this.container);
 
