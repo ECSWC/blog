@@ -87,7 +87,7 @@ let gradient_green=(ctx) => {
 //const labels=labels.split(",");
 	
 //const labels=labels_0.split(";")[1];
-//window.alert(labels);
+window.alert(wordsData);
 	//labels =labels.split(";")[1];
     // create random Data
     const chartData = {
