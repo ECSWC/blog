@@ -95,7 +95,7 @@ let gradient_green=(ctx) => {
 	};
 	for(var i=0;i<filesData_0.length;i++){
 		//x: ""+filesData[i]
-		filesData.push(filesData_0[i]*1)
+		filesData.push(""+filesData_0[i])
 			//({ x: i*1, y: wordsData_0[i]*1})
 	};
 		//test.getElementsByTagName("p")[0];
