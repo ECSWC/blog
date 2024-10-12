@@ -95,18 +95,26 @@ window.alert(wordsData);
 	//labels =labels.split(";")[1];
     // create random Data
     const data = {
-      labels: labels,
+      labels: filesData,//x轴标签
       datasets: [
           {
-            label: 'Dataset 1',
-            data: wordsData,
+            label: '你',
+            data: wordsData_0,
             borderColor: '#ff0000',
             backgroundColor: '#ff000088',
             order: 1
           },
           {
-            label: 'Dataset 2',
-            data:  wordsData,
+            label: '所有人得分率',
+            data:  sum_all_date,
+            borderColor: '#0000ff', 
+            backgroundColor:'#0000ff88',
+            type: 'line',
+            order: 0
+          }
+	      {
+            label: '数量×得分率',
+            data:  ShuLiang_each_Percentage,
             borderColor: '#0000ff', 
             backgroundColor:'#0000ff88',
             type: 'line',
