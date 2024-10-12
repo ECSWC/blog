@@ -1,12 +1,15 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T01:56:26.676+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/digital garden相关/obsidian中的chartjs代码迁入blog/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-12T10:22:29.623+08:00"}
 ---
+
+
+
 
 <!DOCTYPE html>  
 <html>  
 <body> 
 
-<p><span>63.89,63.78,64.78,62.50,62.67,62.78,63.63,63.25,63.89,63.00,64.00,64.29,64.11,63.50,63.56,64.00,63.89,64.86,64.86,63.86,64.29,64.09,NaN,64.13,63.57,65.00,66.63,65.63,65.78</span></p>
+<p><span>1,2,3,4,5,6,7</span></p>
  
 
 👉🏼HTML通用
@@ -105,3 +108,4 @@ window.alert(labels);
 - 对于解决dataviewjs在blog运行chartjs很有帮助👇🏼
 	1. [dataviewjs导入外部js的示例](https://forum.obsidian.md/t/use-chartjs-with-dataview/58752)
 	2. [html通用的chartjs示例](https://stackoverflow.com/questions/74651498/how-do-i-run-o)
+artjs示例](https://stackoverflow.com/questions/74651498/how-do-i-run-o)
