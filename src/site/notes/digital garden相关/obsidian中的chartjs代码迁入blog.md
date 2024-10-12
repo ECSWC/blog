@@ -68,15 +68,35 @@ let gradient_green=(ctx) => {
 	//labels=labels_0.split(",");
 	
 	let wordsData_0=labels_0[0].replace("<span>","").replace("</span>","").split(",");
-	let sum_all_date=labels_0[1].replace("<span>","").replace("</span>","").split(",");
-	let ShuLiang_each_Percentage=labels_0[2].replace("<span>","").replace("</span>","").split(",");
-	let filesData=labels_0[3].replace("<span>","").replace("</span>","").split(",");
+	let sum_all_date_0=labels_0[1].replace("<span>","").replace("</span>","").split(",");
+	let ShuLiang_each_Percentage_0=labels_0[2].replace("<span>","").replace("</span>","").split(",");
+	let filesData_0=labels_0[3].replace("<span>","").replace("</span>","").split(",");
 	//labels=labels_0.join(",");
 	
 	let wordsData=[];
+	let sum_all_date=[];
+	let ShuLiang_each_Percentage=[];
+	let filesData=[];
+	
 	for(var i=0;i<wordsData_0.length;i++){
 		//x: ""+filesData[i]
-		wordsData.push({ x: i*1, y: wordsData_0[i]*1})
+		wordsData.push(wordsData_0[i]*1)
+			//({ x: i*1, y: wordsData_0[i]*1})
+	};
+	for(var i=0;i<sum_all_date_0.length;i++){
+		//x: ""+filesData[i]
+		sum_all_date.push(sum_all_date_0[i]*1)
+			//({ x: i*1, y: wordsData_0[i]*1})
+	};
+	for(var i=0;i<ShuLiang_each_Percentage_0.length;i++){
+		//x: ""+filesData[i]
+		ShuLiang_each_Percentage.push(ShuLiang_each_Percentage_0[i]*1)
+			//({ x: i*1, y: wordsData_0[i]*1})
+	};
+	for(var i=0;i<filesData_0.length;i++){
+		//x: ""+filesData[i]
+		filesData.push(filesData_0[i]*1)
+			//({ x: i*1, y: wordsData_0[i]*1})
 	};
 		//test.getElementsByTagName("p")[0];
 //text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
