@@ -196,8 +196,7 @@ borderDash: ctx =>skipped(ctx,[0,0]),
                 //loop: true
             }
         },
-        scales: {
-            
+        scales: {       
             y: {
                 stacked:false,
                 //borderColor:'rgba(255, 170, 50, 10.35)',
@@ -243,8 +242,7 @@ borderDash: ctx =>skipped(ctx,[0,0]),
                 },
             },
         },
-    },
-};
+    };
         
 new Chart(
         ctx,
