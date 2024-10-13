@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/参考视频/WalkFit/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-13T22:30:13.514+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/参考视频/WalkFit/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-14T02:40:56.037+08:00"}
 ---
 
 
@@ -36,3 +36,6 @@ Brand's restrictions
 ---
 1.  Plus-size&#x2F;obese women 35+ who are can’t do high-intensity trainings  can use can take a test and learn how much they need to walk to lose 42 lbs or go from XL to size L.
 
+
+</body>
+</html>  
