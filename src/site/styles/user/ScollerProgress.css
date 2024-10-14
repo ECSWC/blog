@@ -19,6 +19,6 @@ section {
 
 #scroll-progress {
     width: 0%;
-    height: 4px;
+    min-height: 4px;
     background-color: green;
 }
