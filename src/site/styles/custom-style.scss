@@ -1,3 +1,10 @@
 body {
-
+#scroll-progress {
+  position: fixed;
+  top: 500px;
+  width: 0%;
+  height: 4px;
+  background: #7983ff;
+  z-index: 10000;
+}
 }
