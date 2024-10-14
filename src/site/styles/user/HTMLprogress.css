@@ -1,47 +1,30 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-body {
-	font-family: 'Cabin', sans-serif;
-	background-color: white;
-	overscroll-behavior-y: none;
-}
-section {
-	margin: 10% 20%;
-}
-h1 {
-	font-size: 3rem;
-	padding: 2rem 0rem;
-	font-weight: bold;
-	color: rgb(0, 0, 0);
-}
-h2 {
-	font-size: 2rem;
-	padding: 2rem 0rem;
-	font-weight: bold;
-	color: rgb(255, 20, 59);
-}
-p {
-	font-size: 1rem;
-	line-height: 175%;
-	color: rgb(29, 29, 29);
-}
-p span {
-	font-weight: bolder;
-}
-li {
-	font-size: 1rem;
-	margin: 0.7rem;
-	line-height: 175%;
-	color: rgb(29, 29, 29);
-}
-.image {
-	margin: 1rem;
-	text-align: center;
-}
-.image img {
-	width: 400px;
-}
 a {
+	text-decoration: none;
+	color: blue;
+}
+.progressBar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 8px;
+	background: linear-gradient(to right, #ff5f6d, #ffc371);
+	width: 0%;
+	z-index: 100;
+	transition: width 0.2s ease-out;
+}
+::-webkit-scrollbar {
+	width: 5px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 15px;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	background: rgb(255, 61, 94);
+}
+
+@media screen and (max-width: 768px) {
+	.image img {
+		width: 200px;
+	}
+}
