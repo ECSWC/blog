@@ -1,3 +1,43 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky Header with progress-Bar Document</title>
+    <style type="text/css">
+     #header-wrap {
+         position:fixed;
+         margin: 0;
+         top:0px;
+         left:0;
+         background-color: blue;
+         min-height: 80px;
+         width:100%;
+         transition: top 666ms;
+     }
+     #header-content {
+         margin: 0;
+         padding: 10px;
+         background-color: lightblue;
+         min-height: 75px;
+         box-sizing:border-box;
+     }
+     #header-progress {
+         padding:0px;
+         box-sizing:border-box;
+         background-color: red;
+         height: 5px;
+         width: 0%;
+         overflow:hidden;
+         transition: width 333ms linear;
+     }
+     #page-content {
+         margin-top:80px;
+         padding:5px;
+         box-sizing:border-box;
+         background-color: white;
+         width: 100%;
+         overflow:scroll;
+     }
+    </style>
+    </head>
 <script>
         window.prevOffset = 0;
         var smartScrollThrottle = 0;
