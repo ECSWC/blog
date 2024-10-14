@@ -1,4 +1,5 @@
- #content_progress {
+/* 顶部进度条css */
+#content_progress {
       /* Positioning */
       position: fixed;
       left: 0;
@@ -13,15 +14,15 @@
       background-color: transparent;
       color: #35a935;
 }
-
+ 
 #content_progress::-webkit-progress-bar {
       background-color: transparent;
 }
-
+ 
 #content_progress::-webkit-progress-value {
       background-color: #35a935;
 }
-
+ 
 #content_progress::-moz-progress-bar {
       background-color: #35a935;
 }
