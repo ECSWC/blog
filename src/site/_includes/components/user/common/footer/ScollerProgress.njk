@@ -1,25 +1,51 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<title>Progress Indicator Animation</title>
+
+<div class="progress-indicator">
+  <svg>
+    <g>
+      <circle cx="0" cy="0" r="20" stroke="black" class="animated-circle" transform="translate(50,50) rotate(-90)" />
+    </g>
+    <g>
+      <circle cx="0" cy="0" r="38" transform="translate(50,50) rotate(-90)" />
+    </g>
+  </svg>
+  <div class="progress-count"></div>
+</div>
 <script>
-var contentSections = $('.single_page_post');
-jQuery(window).on('scroll', function () {
-    updateNavigation();
-});
-function updateNavigation() {
-    contentSections.each(function () {
-        $this = $(this);
-        var theID = $this.attr("id");
-        if ($this.offset().top - $(window).scrollTop() < 0) {
-            var s = $(window).scrollTop()-13,
-            d = $this.outerHeight(),
-            c = $this.offset().top;
-            var scrollPercent = ((s-c) / (d)) * 100;
-            var progressheight = 100-scrollPercent;
-            $("a[href='#" + theID + "']").prev().css({'height' : progressheight+"%", 'display' : 'block'});
-            $("a[href='#" + theID + "']").parents('.post_page_sidebar').addClass("current");
-        } else {
-            $("a[href='#" + theID + "']").prev().css({'display' : 'none'});
-            $("a[href='#" + theID + "']").parents('.post_page_sidebar').removeClass("current");
-        }
+(function() {
+  var $w = $(window);
+  var $circ = $('.animated-circle');
+  var $progCount = $('.progress-count');
+  var wh, h, sHeight;
+  function setSizes() {
+    wh = $w.height();
+    h = $('body').height();
+    sHeight = h - wh;
+  }
+  setSizes();
+  $w.on('scroll', function() {
+    var _top = $(window).scrollTop();
+    $(window).scroll(function() {
+      var _cur_top = $(window).scrollTop();
+      if (_top < _cur_top) {
+        _direction = 'down';
+        var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
+        updateProgress(perc);
+        console.log(perc.toFixed(2) * 100);
+      }
+      _top = _cur_top;
     });
-} 
+  }).on('resize', function() {
+    setSizes();
+    $w.trigger('scroll');
+  });
+  function updateProgress(perc) {
+    var circle_offset = 126 * perc;
+    $circ.css({
+      "stroke-dashoffset": 126 - circle_offset
+    });
+    $progCount.html(Math.round(perc * 100) + "%");
+  }
+}());
 </script>
