@@ -1,1 +1,48 @@
+body {
+  min-height: 200vh;
+}
 
+#scroll-progress {
+  position: fixed;
+  top: 500px;
+  width: 0%;
+  height: 4px;
+  background: #7983ff;
+  z-index: 10000;
+}
+
+p {
+  position: fixed;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Unrelated styles */
+:root {
+  font-size: 18px;
+}
+
+body {
+  height: 80vh;
+  line-height: 1.5;
+  font-family: sans-serif;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-content {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h2 small {
+  opacity: 0.7;
+  font-weight: normal;
+}
