@@ -1,12 +1,48 @@
 <script>
-$(window).scroll(function () {
-  var s = $(window).scrollTop(),
-        d = $(document).height(),
-        c = $(window).height();
-        scrollPercent = (s / (d-c)) * 100;
-        var position = scrollPercent;
+        window.prevOffset = 0;
+        var smartScrollThrottle = 0;
+        const smartScrollHeader = document.getElementById('header-wrap');
+        const smartProgressBar = document.getElementById('header-progress');
+        const smartScrollPage = document.getElementById('page-content');
+        
+        var smartScroll = function () {
+                    
+            if(new Date().getTime()-smartScrollThrottle<200){
+                //console.log('smartScrollThrottle is active',smartScrollThrottle);
+                return false;
+            }
+            // reset throttle after minimum of 200ms, allows smartScroll only 5 times per second
+            smartScrollThrottle = (new Date()).getTime();
+            
+            var tempOffset = window.pageYOffset;
+            //console.log('tempOffset', tempOffset);
+            //console.log('prevOffset', window.prevOffset);
+            
+            if(tempOffset > (window.prevOffset+25) || tempOffset < 100){
+                // hide 75 pixels from the total 80 px 
+                smartScrollHeader.style.top = '-75px';
+            }
+            if(tempOffset < (window.prevOffset-25) || tempOffset < 75){
+                // show all 80 pixels
+                smartScrollHeader.style.top = '0px';
+            }
+            
+            // update the prevOffset value for the next scroll event
+            window.prevOffset = window.pageYOffset;
+            //console.log('scrollHeight', smartScrollPage.scrollHeight);
+            
+            // reuse tempOffset value but now for the progress-bar as percentage
+            tempOffset = (tempOffset)/(document.documentElement.scrollHeight-(window.innerHeight || document.documentElement.clientHeight));
+            //console.log('Scroll percentage', tempOffset);
+            if(tempOffset<0){tempOffset=0;}
+            if(tempOffset>1){tempOffset=1;}
+            smartProgressBar.style.width = Math.round(tempOffset*100)+"%";
 
-   $("#progressbar").attr('value', position);
+            // Chrome and Firefox do not send scroll events when the pages bottom is reached, so we must fix it
+             setTimeout(smartScroll, 333); // just trigger one more smartScroll event 333ms after the last browser event
 
-});
+        } // end of smartScroll
+        
+        window.addEventListener('scroll', smartScroll);
+        smartScroll(); // init the progress bar on page refresh
 </script>
