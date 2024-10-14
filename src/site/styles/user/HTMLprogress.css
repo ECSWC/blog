@@ -1,7 +1,7 @@
 .progress-bar {
     background: #ff4163;
     height: 8px;
-    width: 100%;
+    width: 0%;
     position: fixed;
     top: 0;
     z-index: 1000;
