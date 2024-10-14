@@ -1,20 +1,23 @@
-body {
-  height: 200vh;
-}
-
-.progress-bar-wrap {
+Example
+/* Style the header: fixed position (always stay at the top) */
+.header {
   position: fixed;
   top: 0;
-  left: 0;
+  z-index: 1;
   width: 100%;
-  height: 3px;
-  background-color: #ddd;
+  background-color: #f1f1f1;
 }
 
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
 .progress-bar {
-  position: absolute;
-  left: 0;
-  height: 100%;
-  content: "";
-  background-color: #0089f2;
+  height: 8px;
+  background: #04AA6D;
+  width: 0%;
 }
