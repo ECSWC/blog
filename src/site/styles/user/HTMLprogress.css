@@ -1,22 +1,47 @@
-/* Style the header: fixed position (always stay at the top) */
-.header {
-  position: fixed;
-  top: 100px;
-  z-index: 1;
-  width: 100%;
-  background-color: #f1f1f1;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
-/* The progress container (grey background) */
-.progress-container {
-  width: 100%;
-  height: 8px;
-  background: #ccc;
+body {
+	font-family: 'Cabin', sans-serif;
+	background-color: white;
+	overscroll-behavior-y: none;
 }
-
-/* The progress bar (scroll indicator) */
-.progress-bar {
-  height: 8px;
-  background: #04AA6D;
-  width: 0%;
+section {
+	margin: 10% 20%;
 }
+h1 {
+	font-size: 3rem;
+	padding: 2rem 0rem;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+}
+h2 {
+	font-size: 2rem;
+	padding: 2rem 0rem;
+	font-weight: bold;
+	color: rgb(255, 20, 59);
+}
+p {
+	font-size: 1rem;
+	line-height: 175%;
+	color: rgb(29, 29, 29);
+}
+p span {
+	font-weight: bolder;
+}
+li {
+	font-size: 1rem;
+	margin: 0.7rem;
+	line-height: 175%;
+	color: rgb(29, 29, 29);
+}
+.image {
+	margin: 1rem;
+	text-align: center;
+}
+.image img {
+	width: 400px;
+}
+a {
