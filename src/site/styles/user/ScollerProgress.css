@@ -31,12 +31,12 @@ section {
     position: fixed;
     top: 50px;
     right: 0;
-    left: -50px;
+    left: 0px;
     width: 0%;
     height: 20px;
     background-color: rgba(52,211,153,0.8);
     z-index: 2;
-    border-radius: 1000px;
+    border-radius: 0px;
 }
 /*纯css进度条↓relative
 main {
