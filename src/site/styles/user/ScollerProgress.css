@@ -26,11 +26,17 @@ main::after {
     z-index: -1;
 }
 /*纯css进度条↑*/
+.progress {
+    position: fixed;
+    top: 300px;
+    width: 100%;
+    z-index: -1000;
+}
 .progress-bar {
     background: #ff4163;
     height: 10px;
     width: 0%;
     position: fixed;
     top: 300px;
-    z-index: 1;
+    z-index: -1000;
 }
