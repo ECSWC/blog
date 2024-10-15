@@ -1,12 +1,12 @@
 .progress-bar-container {
     position: fixed;
-    top: 0px;
+    top: 300px;
     width: 100%;
     background: #6c2fa2;
     z-index: 999;
 }
 .progress-bar {
-    height: 7px;
+    height: 300px;
     background: #e131ff;
     animation-name: width;
 
