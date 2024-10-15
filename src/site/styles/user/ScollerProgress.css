@@ -19,7 +19,7 @@ section {
     width: 100%;
     height: 10px;
     background-color: green;
-    z-index: 80;
+    z-index: 4;
 }
 
 #scroll-progress {
@@ -28,7 +28,7 @@ section {
     width: 0%;
     height: 10px;
     background-color: red;
-    z-index: 90;
+    z-index: 5;
 }
 /*纯css进度条↓relative
 main {
