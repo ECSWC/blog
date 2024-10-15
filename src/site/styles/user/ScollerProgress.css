@@ -29,11 +29,11 @@ section {
 
 #scroll-progress {
     position: fixed;
-    top: 0px;
+    top: 50px;
     right: 0;
     left: -50px;
     width: 0%;
-    height: 70px;
+    height: 20px;
     background-color: rgba(52,211,153,0.8);
     z-index: 2;
     border-radius: 100px;
