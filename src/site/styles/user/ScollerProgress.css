@@ -1,7 +1,7 @@
 .progress-bar-container {
     position: fixed;
     top: 300px;
-    width: 50%;
+    width: 10%;
     background: #6c2fa2;
     z-index: 999;
 }
