@@ -5,8 +5,10 @@
 }
 
 main {
+    width: 100%;
 }
 section {
+    background-color: lightgray;
 }
 
 .scroll {
