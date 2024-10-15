@@ -13,15 +13,19 @@ section {
 }
 
 .scroll {
+    position: fixed;
+    top: 0px;
     width: 100%;
-    height: 4px;
+    height: 8px;
     background-color: lightgray;
 }
 
 #scroll-progress {
+    position: fixed;
+    top: 0px;
     width: 0%;
-    height: 4px;
-    background-color: green;
+    height: 8px;
+    background-color: yellow;
 }
 /*纯css进度条↓relative*/
 main {
