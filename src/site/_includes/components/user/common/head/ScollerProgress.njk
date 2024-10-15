@@ -39,7 +39,7 @@
   // 生成元素并添加到文档尾部
   var progress = document.createElement('progress');
   progress.id = 'progress'; 
-  document.main.appendChild(progress); 
+  document.head.appendChild(progress); 
   // 计算当前页面的高度并赋值给进度条
   var H;
   window.onload = function () {
@@ -48,7 +48,7 @@
   }
   // 监听滚动，实时计算滚动条进度值
   window.onscroll = function () {
-    var h = document.documentElement.scrollTop || document.main.scrollTop;
+    var h = document.documentElement.scrollTop || document.head.scrollTop;
     progress.value = h;
     var radio = (h / H >= 1) ? 1 : h / H;
     progress.innerHTML = progress.title = Math.floor(100 * radio) + '%';
