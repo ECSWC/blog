@@ -7,7 +7,7 @@
 /*纯css进度条↓*/
 main {
     position: relative;
-    padding: 50px;
+    padding: 25px;
     font-size: 24px;
     line-height: 30px;
     background-image: linear-gradient(to right top, #ffcc00 50%, #eee 50%);
