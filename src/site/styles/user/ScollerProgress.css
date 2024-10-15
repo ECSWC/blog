@@ -1,20 +1,36 @@
-.progress-bar-container {
-    position: fixed;
-    top: 300px;
-    width: 10%;
-    background: #6c2fa2;
-    z-index: 999;
-}
-.progress-bar {
-    height: 30px;
-    background: #e131ff;
-    animation-name: width;
+*{ padding: 0; margin: 0;}
 
-    /* animation timeline is tied to vertical scroll position */
-    animation-timeline: scroll(y);
+#top{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #2E7CFF;
+	height: inherit;
 }
 
-@keyframes width {
-    from { width: 0 }
-    to   { width: 100% }
+.progress{
+	position: relative;
+	width: 100%;
+}
+
+#percent{
+	position: absolute;
+	display: block;
+	bottom: -3px;
+	height: 3px;
+	width: 0;
+	background-color: #FF2E7F;
+}
+
+#top{
+	transition: all ease-in-out 0.8s;
+}
+
+#percent{
+	transition: all ease-in-out 0.1s;
+}
+
+.content{
+    height: 4000px;
+    padding-top: 100px;
 }
