@@ -11,6 +11,8 @@
 .progress{
 	position: relative;
 	width: 100%;
+	-webkit-transition: none;
+	transition: none;
 }
 
 #percent{
@@ -27,7 +29,7 @@
 }
 
 #percent{
-	transition: all ease-in-out 0.1s;
+	transition: all ease-in-out 0.8s;
 }
 
 .content{
