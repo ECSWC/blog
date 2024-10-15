@@ -5,7 +5,7 @@
     width: 100%;
 }
 /*纯css进度条↓relative*/
-main {
+main::after {
     position: fixed;
     padding: 5px;
     font-size: 24px;
@@ -14,10 +14,10 @@ main {
     background-size: 100% calc(100% - 100vh + 5px);
     background-position: fixed;
     background-repeat: no-repeat;
-    z-index: 1;
+    z-index: 1000;
 }
 
-main::after {
+main::after::after {
     content: "";
     position: fixed;
     top: 60px;
