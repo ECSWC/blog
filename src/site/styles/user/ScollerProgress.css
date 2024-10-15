@@ -31,13 +31,13 @@ section {
     position: fixed;
     top: 50px;
     right: 0;
-    left: -4px;
+    left: 0px;
     width: 0%;
     height: 20px;
     background-color: rgba(52,211,153,10.4);
-    background: linear-gradient(90deg, rgba(255,0,0,.8), #f69d3c 170.71%);
+    background: linear-gradient(90deg,#f69d3c rgba(255,0,0,.8) 170.71%);
     z-index: 2;
-    border-radius: 10px;
+    border-radius: 1px;
 }
 /*纯css进度条↓relative
 main {
