@@ -30,12 +30,13 @@ section {
 #scroll-progress {
     position: fixed;
     top: 0px;
-    right: 5px;
+    right: 0;
+    left: -5px;
     width: 0%;
     height: 70px;
     background-color: rgba(52,211,153,0.8);
     z-index: 2;
-    border-radius: 100px;
+    border-radius: 10px;
 }
 /*纯css进度条↓relative
 main {
