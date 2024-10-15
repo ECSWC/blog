@@ -6,6 +6,8 @@
 }
 
 main {
+    background-image: linear-gradient(to right top, #ffcc00 50%, #eee 50%);
+    background-repeat: no-repeat;
 }
 section {
     background-color: lightgray;
