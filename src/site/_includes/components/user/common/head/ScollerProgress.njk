@@ -1,15 +1,13 @@
 <script
-  defer
-  src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js"
-></script>
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script>
-return {
-  scrollPx: 0,
-  scrollPercent: 0,
-  atStart: true / false,
-  atEnd: true / false,
+const main = document.querySelector('main');
+const scrollProgress = document.getElementById('scroll-progress')
+const progress = () => {
+    const scroll = main.scrollTop;
+    const height = main.scrollHeight - main.clientHeight;
+    const percent = (scroll / height) * 100;
+    scrollProgress.style.width = percent + "%";
 }
+main.addEventListener('scroll', progress);
 </script>
 
         
