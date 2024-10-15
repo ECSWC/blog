@@ -35,7 +35,7 @@ section {
     width: 0%;
     height: 20px;
     background-color: rgba(52,211,153,10.4);
-    background: linear-gradient(90deg,#f69d3c rgba(255,0,0,.8) 170.71%);
+    background: linear-gradient(90deg, #f69d3c,rgba(255,0,0,.8) 170.71%);
     z-index: 2;
     border-radius: 1px;
 }
