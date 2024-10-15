@@ -5,12 +5,8 @@
 }
 
 main {
-  height: 20%;
-  overflow-y: auto;
-  background-color: green;
 }
 section {
-    height: 100%;
 }
 
 .scroll {
