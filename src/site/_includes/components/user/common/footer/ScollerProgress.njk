@@ -1,2 +1,15 @@
-
+<div class="scroll">
+<div class="scroll-bar" id="scroll-progress"></div>
+</div>
+<script>
+const main = document.querySelector('main');
+const scrollProgress = document.getElementById('scroll-progress')
+const progress = () => {
+    const scroll = main.scrollTop;
+    const height = main.scrollHeight - main.clientHeight;
+    const percent = (scroll / height) * 100;
+    scrollProgress.style.width = percent + "%";
+}
+main.addEventListener('scroll', progress);
+</script>
 
