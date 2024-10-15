@@ -32,7 +32,7 @@ section {
     top: 0px;
     width: 0%;
     height: 70px;
-    background-color: yellow;
+    background-color: rgba(255,255,255,0.6);
     z-index: 3;
 }
 /*纯css进度条↓relative
@@ -72,7 +72,7 @@ main::after {
 .progress-value {
   animation: load 3s normal forwards;
   box-shadow: 0 10px 40px -10px rgba(255,255,255,0.4);
-  border-radius: 100px;
+  border-radius: 0px;
   background: rgba(255,255,255,0.8);
   height: 30px;
   width: 0;
