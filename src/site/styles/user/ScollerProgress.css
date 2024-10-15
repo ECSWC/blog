@@ -5,7 +5,7 @@
     width: 100%;
 }
 /*纯css进度条↓relative*/
-section {
+main {
     position: fixed;
     padding: 5px;
     font-size: 24px;
@@ -15,7 +15,7 @@ section {
     background-repeat: no-repeat;
     z-index: 1;
 }
-section::after {
+main::after {
     content: "";
     position: fixed;
     top: 60px;
