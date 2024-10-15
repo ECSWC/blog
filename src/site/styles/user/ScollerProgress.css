@@ -15,6 +15,10 @@ main {
     background-repeat: no-repeat;
     z-index: 1;
 }
+.background-img {
+  position: absolute;
+  z-index: 1000;
+}
 main::after {
     content: "";
     position: fixed;
