@@ -35,7 +35,7 @@ section {
     width: 0%;
     height: 20px;
     background: linear-gradient(90deg, #f69d3c,rgba(255,0,0,.9) 100.11%);
-    z-index: 2;
+    z-index: 101;
     border-radius: 1px;
 }
 /*纯css进度条↓relative
