@@ -15,7 +15,7 @@ main {
     background-repeat: no-repeat;
     z-index: 1;
 }
-.background-img {
+.background-image {
   position: absolute;
   z-index: 1000;
 }
