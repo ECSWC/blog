@@ -26,6 +26,15 @@ main::after {
     z-index: -1;
 }
 /*纯css进度条↑*/
+.g-progress {
+    background: linear-gradient(90deg, #0f0, #0ff var(--progress), transparent 0);
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+}
 section {
     background-color: lightgray;
 }
