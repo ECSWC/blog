@@ -7,6 +7,7 @@
 main {
   height: 100%;
   overflow-y: auto;
+  background-color: lightgray;
 }
 section {
     height: 100%;
