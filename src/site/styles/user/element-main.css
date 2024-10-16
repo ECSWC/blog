@@ -7,10 +7,13 @@
 .table-view-table>thead>tr>th{
     background-color:white;
 }
-filetree-sidebar{
-    padding:2px;
-    background-color:rgba(181, 230, 181,0);/*左栏透明*/
-}
+.filetree-sidebar {
+    padding: 10px;
+    top: 25px;
+    background-color: rgba(181, 230, 181,0);/*左栏透明*/
 .navbar{
     background-color:rgba(181, 230, 181,0);/*顶栏透明*/
 }
+    main{
+        top:50px;
+    }
