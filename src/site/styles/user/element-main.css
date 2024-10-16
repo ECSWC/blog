@@ -1,6 +1,6 @@
 .content {
-    max-width:64%;
+    min-width:64%;
 }
 .table-view-table>thead>tr>th{
-    background-color:yellow;
+    background-color:white;
 }
