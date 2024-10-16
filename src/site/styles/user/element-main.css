@@ -9,12 +9,13 @@
 }
 .filetree-sidebar {
     padding: 0px;
-    top: 50px;
+    top: 30px;
     /*左栏透明*/
 }
 .navbar{
     background-color:rgba(181, 230, 181,0);/*顶栏透明*/
+    height:30px;
 }
     main{
-        top:50px;
+        top:30px;
     }
