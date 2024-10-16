@@ -1,4 +1,5 @@
 .content {
+    flex:0 1 auto;
     padding:0px;
     width:100%;
     margin: auto;
