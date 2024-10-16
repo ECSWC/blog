@@ -2,8 +2,11 @@
     padding:0px;
     min-width:64%;
     margin:auto;
-    background-color:rgba(181, 230, 181,0.3);
+    background-border:rgba(181, 230, 181,10.3);
 }
 .table-view-table>thead>tr>th{
     background-color:white;
+}
+.filetree-sidebar{
+    padding:0px;
 }
