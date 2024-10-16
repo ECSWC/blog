@@ -1,7 +1,8 @@
 .content {
+    padding:0px;
     min-width:64%;
-    margin:0px;
-    background-color:rgba(181, 230, 181,0.1);
+    margin:auto;
+    background-color:rgba(181, 230, 181,0.3);
 }
 .table-view-table>thead>tr>th{
     background-color:white;
