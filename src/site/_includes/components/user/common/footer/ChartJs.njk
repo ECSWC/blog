@@ -19,7 +19,7 @@ let gradient_grey=(ctx) => {
 let red_height=document.getElementById('myChart').height;
 let gradient_red=(ctx) => {
         const canvas = ctx.chart.ctx;
-        const gradient = canvas.createLinearGradient(0, 0, 0, red_height*4);
+        const gradient = canvas.createLinearGradient(0, 0, 0, red_height*3);
 ////(向右透明, 相互扩散叠加, 向左透明, 1的位置);
       //gradient.addColorStop(180deg, rgba(255, 187, 79, 0.8),rgba(255, 77, 79, 0.8) 100.11%);
 //gradient.addColorStop(0, 'rgba(255, 167, 79, 0.2)');
