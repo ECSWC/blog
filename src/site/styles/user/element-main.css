@@ -27,5 +27,8 @@
 /*on this page的padding↓*/
 .toc ol{
     padding:5px;
+    margin:5px;
+    border-coler:black;
+    border-width:1px;
 }
 
