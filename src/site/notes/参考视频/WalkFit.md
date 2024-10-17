@@ -1,13 +1,13 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/参考视频/WalkFit/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-17T18:15:38.022+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/参考视频/WalkFit/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-17T18:50:20.764+08:00"}
 ---
 
 
 
 ## 👉🏼应用信息
 
-Product name: WalkFit
-App pronunciation: Walk-fit
+1. Product name: WalkFit
+2. App pronunciation: Walk-fit
 
 ## 👉🏼商家要求
 ### Brand’s requirements
