@@ -21,8 +21,8 @@ let gradient_red=(ctx) => {
         const gradient = canvas.createLinearGradient(0, 140, 0, 300);
 ////(向右透明, 相互扩散叠加, 向左透明, 1的位置);
        gradient.addColorStop(0, 'rgba(255, 167, 79, 0.2)');
-	   gradient.addColorStop(0.6, 'rgba(255, 187, 79, 0.4)');
-        gradient.addColorStop(1, 'rgba(255, 77, 79, 0.8)');
+	   gradient.addColorStop(0.2, 'rgba(255, 187, 79, 0.4)');//金，数值↓→向下扩散
+        gradient.addColorStop(1, 'rgba(255, 77, 79, 0.8)');//红
         
         return gradient;
       };
