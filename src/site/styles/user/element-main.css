@@ -25,7 +25,7 @@
     background-color:rgba(130,214,130,0.4);
 }
 /*on this page的padding↓*/
-element.style{
+.toc ol{
     padding:5px;
 }
 
