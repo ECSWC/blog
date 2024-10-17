@@ -6,7 +6,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer YOUR_API_KEY' // 替换为您的API密钥
+                    'Authorization': 'API Key为: sk-houkgi1dGcCqmenoAU4CAgrxNtlLExZsZq1qevNVwoB55gyU' // 替换为您的API密钥
                 },
                 body: JSON.stringify({
                     prompt: userInput,
@@ -17,12 +17,8 @@
             document.getElementById('result').innerText = data.choices[0].text;
         }
     </script>
-</head>
-<body>
-
 <h1>AI写作助手</h1>
 <textarea id="userInput" rows="4" cols="50" placeholder="输入您的内容..."></textarea><br>
 <button onclick="generateText()">生成文本</button>
-
 <h2>生成的文本：</h2>
 <p id="result"></p>
