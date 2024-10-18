@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/Lanio/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-18T17:05:45.099+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/Lanio/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-18T18:19:43.344+08:00"}
 ---
 
 
@@ -10,7 +10,7 @@
 <div class="chart" style="height:auto">
   <canvas id="myChart"></canvas>
 </div>
-<section>调整浏览器窗口后，请按F5刷新画布大小☝🏼</section>
+
 
 <p><span>63.86,65.40,64.33,NaN,63.29,65.00,66.20,64.70,65.80,64.86,66.90,65.25,NaN,66.22,NaN,NaN,NaN,64.80</span></p><p><span>63.88,64.26,63.95,64.04,63.71,63.46,64.00,64.12,64.43,64.63,65.08,64.85,64.29,64.93,64.79,64.58,64.96,64.35</span></p><p><span>4.4702,3.27,3.8598000000000003,NaN,4.4303,1.95,3.31,6.47,6.58,4.5402,6.69,5.22,NaN,5.9598,NaN,NaN,NaN,3.24</span></p><p><span>09-25,09-26,09-27,09-28,09-29,09-30,10-06,10-07,10-08,10-09,10-10,10-11,10-12,10-14,10-15,10-16,10-17,10-18</span></p>
 

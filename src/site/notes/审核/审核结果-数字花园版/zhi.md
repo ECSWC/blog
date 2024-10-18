@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/zhi/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-18T12:10:56.131+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/审核/审核结果-数字花园版/zhi/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-18T18:19:09.827+08:00"}
 ---
 
 
@@ -10,7 +10,6 @@
 <div class="chart" style="height:auto">
   <canvas id="myChart"></canvas>
 </div>
-<section>调整浏览器窗口后，请按F5刷新画布大小☝🏼</section>
 
 <p><span>62.45,62.56,62.63,63.38,63.88,63.71,64.22,63.50,64.00,64.50,63.30,NaN,63.22,63.78,63.88,64.14,64.70,NaN,NaN,63.75,65.00,63.70,64.20,64.00</span></p><p><span>63.19,63.37,63.57,63.52,64.22,63.63,63.88,64.26,63.95,64.04,63.71,63.46,64.00,64.12,64.43,64.63,65.08,64.85,64.29,64.93,64.79,64.58,64.96,64.35</span></p><p><span>6.8695,5.6304,5.010400000000001,5.0704,5.1104,4.459700000000001,5.7798,5.08,4.48,5.16,6.33,NaN,5.6898,5.7402,5.1104,4.4898,6.47,NaN,NaN,5.1,5.85,6.37,6.42,6.4</span></p><p><span>09-14,09-18,09-19,09-20,09-23,09-24,09-25,09-26,09-27,09-28,09-29,09-30,10-06,10-07,10-08,10-09,10-10,10-11,10-12,10-14,10-15,10-16,10-17,10-18</span></p>
 
