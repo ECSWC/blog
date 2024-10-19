@@ -56,7 +56,7 @@ $tab-wrap-border-radius: 6px;
     cursor: pointer;
     display: block;
     text-decoration: none;
-    color: #333;
+    color: linear-gradient(to left, #dfe9f3 0%, white 100%);/*#333;*/
     flex-grow: 3;
     text-align: center;
     background-color: #f2f2f2;
