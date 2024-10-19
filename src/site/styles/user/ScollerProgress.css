@@ -45,7 +45,7 @@ section::after {
     right: 0;
     left: 0px;
     width: 0%;
-    height: 30px;
+    height: 10px;
     background: linear-gradient(90deg, #f69d3c,rgba(255,0,0,.9) 100.11%);
     z-index: 2;
     border-radius: 1px;
