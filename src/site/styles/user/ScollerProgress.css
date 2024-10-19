@@ -18,8 +18,8 @@ main {
 }
 /*纯css进度条↓relative*/
 section {
-    height: 300px;
-    background-image: linear-gradient(to right top, #ffcc00 50%, #eee 50%);
+    height: auto;
+    background-image: linear-gradient(to left, #dfe9f3 0%, white 100%);
     background-size: 100% calc(100% - 100vh + 5px);
     background-repeat: no-repeat;
     z-index: 1;
