@@ -16,7 +16,7 @@ main {
   overflow-y: auto;
   background-size: 100%;
 }
-/*纯css进度条↓relative*/
+/*纯css进度条↓relative
 section {
     height: auto;
     background-image: linear-gradient(to left, #dfe9f3 0%, white 100%);
@@ -29,7 +29,7 @@ section::after {
     background: #fff;
     z-index: -1;
 }
-/*纯css进度条↑*/
+纯css进度条↑*/
 
 .scroll {
     position: fixed;
