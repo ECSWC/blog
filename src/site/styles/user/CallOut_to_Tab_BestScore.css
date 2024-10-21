@@ -93,6 +93,7 @@
 .vertical ul li .content {
   height: 0px;
   border-top: 0;
+  width:auto;
 }
 .vertical [type="radio"]:checked ~ label ~ .content,
 .vertical [type="checkbox"]:checked ~ label ~ .content {
