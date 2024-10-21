@@ -55,7 +55,7 @@
 .accordion .content {
   height:auto;
   width:auto;
-  margin:auto;
+  margin:0 0px;
   padding: 0 10px;
   overflow: hidden;
   border: 1px solid #fff; /* Make the border match the background so it fades in nicely */
