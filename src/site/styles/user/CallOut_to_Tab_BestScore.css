@@ -47,7 +47,7 @@
 .accordion ul li label:hover,
 .accordion [type="radio"]:checked ~ label,
 .accordion [type="checkbox"]:checked ~ label {
-  background: #c02942;
+  background: linear-gradient(270deg, #f69d3c,rgba(255,0,0,.9) 100.11%);
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
