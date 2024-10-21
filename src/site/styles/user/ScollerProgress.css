@@ -16,6 +16,10 @@ main {
   overflow-y: auto;
   background-size: 100%;
 }
+section {
+    height: auto;
+    width:auto;
+}
 /*纯css进度条↓relative
 section {
     height: auto;
