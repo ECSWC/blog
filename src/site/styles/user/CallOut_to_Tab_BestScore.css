@@ -32,6 +32,7 @@
   display: none;
 }
 .accordion label {
+  width:auto;
   display: block;
   font-size: 16px;
   line-height: 16px;
