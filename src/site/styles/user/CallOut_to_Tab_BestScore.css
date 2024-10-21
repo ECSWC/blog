@@ -5,30 +5,24 @@
 *    Info:     http://www.mraffaele.com/blog/2011/10/25/css-accordion-no-javascript/
 *
 */
-.conten{
-  margin:auto;
-  width:auto;
-}
+
 /* Shared for all accordion types */
 .accordion {
   font-family: Arial, Helvetica, sans-serif;
-  margin:auto;
+  margin: 0 auto;
   font-size: 14px;
-  border: 1px solid linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  border: 1px solid #542437;
   border-radius: 10px;
-  width: auto;
-  height:auto;
+  width: 600px;
   padding: 10px;
   background: #fff;
 }
 .accordion ul {
-  width:auto;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 .accordion li {
-  width:auto;
   margin: 0;
   padding: 0;
 }
@@ -37,15 +31,14 @@
   display: none;
 }
 .accordion label {
-  width:auto;
   display: block;
   font-size: 16px;
   line-height: 16px;
   background: linear-gradient(90deg, white,#f69d3c,rgba(255,0,0,.9) 100.11%);
-  border: 1px solid linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  border: 1px solid #542437;
   color: #542437;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
-  font-weight: auto;
+  font-weight: 700;
   cursor: pointer;
   text-transform: uppercase;
   -webkit-transition: all 0.2s ease-out;
@@ -54,17 +47,14 @@
 .accordion ul li label:hover,
 .accordion [type="radio"]:checked ~ label,
 .accordion [type="checkbox"]:checked ~ label {
-  background: linear-gradient(270deg, #f69d3c,rgba(255,0,0,.9) 100.11%);
+  background: linear-gradient(90deg,#f69d3c,rgba(255,0,0,.9) 100.11%);;
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 .accordion .content {
-  height:auto;
-  width:100%;
-  margin:auto;
   padding: 0 10px;
   overflow: hidden;
-  border: 1px solid linear-gradient(120deg, #f6d365 0%, #fda085 100%); /* Make the border match the background so it fades in nicely */
+  border: 1px solid #fff; /* Make the border match the background so it fades in nicely */
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
 }
@@ -91,16 +81,16 @@
   border-bottom: 0;
 }
 .vertical ul li label:hover {
-  border: 1px solid linear-gradient(120deg, #f6d365 0%, #fda085 100%); /* We don't want the border to disappear on hover */
+  border: 1px solid #542437; /* We don't want the border to disappear on hover */
 }
 .vertical ul li .content {
   height: 0px;
   border-top: 0;
-  width:auto;
 }
 .vertical [type="radio"]:checked ~ label ~ .content,
 .vertical [type="checkbox"]:checked ~ label ~ .content {
-  height: auto;
-  width:auto;
-  border: 1px solid linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  height: 300px;
+  border: 1px solid #542437;
 }
+
+  
