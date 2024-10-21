@@ -57,7 +57,7 @@
 }
 .accordion .content {
   height:auto;
-  width:auto;
+  width:100%;
   margin:auto;
   padding: 0 10px;
   overflow: hidden;
