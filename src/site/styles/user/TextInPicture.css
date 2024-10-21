@@ -1,3 +1,7 @@
+#container {
+	width: 300px;
+	margin: 0 auto;
+}
 .thumbnail {
 	-webkit-backface-visibility: hidden;
 	display: inline-block;
