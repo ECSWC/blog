@@ -11,7 +11,7 @@
   font-family: Arial, Helvetica, sans-serif;
   margin:auto;
   font-size: 14px;
-  border: 1px solid #542437;
+  border: 1px solid linear-gradient(120deg, #f6d365 0%, #fda085 100%);;
   border-radius: 10px;
   width: auto;
   height:auto;
@@ -37,8 +37,8 @@
   display: block;
   font-size: 16px;
   line-height: 16px;
-  background: linear-gradient(90deg, #f69d3c,rgba(255,0,0,.9) 100.11%);
-  border: 1px solid #542437;
+  background: linear-gradient(90deg, white,#f69d3c,rgba(255,0,0,.9) 100.11%);
+  border: 1px solid linear-gradient(120deg, #f6d365 0%, #fda085 100%);;
   color: #542437;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
   font-weight: auto;
@@ -60,7 +60,7 @@
   margin:auto;
   padding: 0 10px;
   overflow: hidden;
-  border: 1px solid #fff; /* Make the border match the background so it fades in nicely */
+  border: 1px solid linear-gradient(120deg, #f6d365 0%, #fda085 100%);; /* Make the border match the background so it fades in nicely */
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
 }
