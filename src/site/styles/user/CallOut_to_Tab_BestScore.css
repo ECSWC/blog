@@ -5,7 +5,10 @@
 *    Info:     http://www.mraffaele.com/blog/2011/10/25/css-accordion-no-javascript/
 *
 */
-
+.conten{
+  margin:auto;
+  width:auto;
+}
 /* Shared for all accordion types */
 .accordion {
   font-family: Arial, Helvetica, sans-serif;
