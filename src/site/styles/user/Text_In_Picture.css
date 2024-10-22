@@ -34,6 +34,7 @@
 	margin:0;
 	transform: translateY(-100%) scale(.8);
 	background: rgba(0,0,0,.4);
+	backdrop-filter: blur(1px);
 	font-size: auto;
 	font-weight: auto;
 	font-family: Merriweather, serif;
