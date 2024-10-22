@@ -151,6 +151,13 @@ borderDash: ctx =>skipped(ctx,[6,6]),
             pointStyle:'circle',
             tension: 0.03,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
                 order: 10,
+                segment: {
+borderColor: ctx => skipped(ctx,'rgba(201, 203, 207, 0.6)'),
+backgroundColor: ctx => skipped(ctx,'rgba(0,0,0,0)'),
+borderDash: ctx =>skipped(ctx,[6,6]),
+},
+//segment定义分段颜色，不要忘了定义“const skipped“和“const down”
+				spanGaps: true,
             },],
     };
 const config = {
