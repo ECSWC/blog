@@ -38,7 +38,7 @@
   border: 0px solid #542437;
   color: #542437;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
-  font-weight: 100%;
+  font-weight: auto;
   cursor: pointer;
   text-transform: uppercase;
   -webkit-transition: all 0.2s ease-out;
@@ -89,7 +89,7 @@
 }
 .vertical [type="radio"]:checked ~ label ~ .content,
 .vertical [type="checkbox"]:checked ~ label ~ .content {
-  height: 300px;
+  height: 100%;
   border: 0px solid #542437;
 }
 
