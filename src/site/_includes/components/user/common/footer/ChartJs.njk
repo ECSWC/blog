@@ -101,9 +101,9 @@ let gradient_green=(ctx) => {
                 backgroundColor: gradient_red,
                 borderColor: ['rgba(255, 77, 79, 1)'],
                 segment: {
-borderColor: ctx => skipped(ctx,'rgba(0,0,0,0.4)')||down(ctx,'rgb(0,176,80)'),
-backgroundColor: ctx => skipped(ctx,'rgba(0,0,0,0.1)')||down(ctx,'rgba(0,176,80, 0.15)'),
-borderDash: ctx =>skipped(ctx,[0,0]),
+borderColor: ctx => skipped(ctx,'rgba(0,0,0,10.4)')||down(ctx,'rgb(0,176,80)'),
+backgroundColor: ctx => skipped(ctx,'rgba(0,0,0,0)')||down(ctx,'rgba(0,176,80, 0.15)'),
+borderDash: ctx =>skipped(ctx,[3,3]),
 },
 //segment定义分段颜色，不要忘了定义“const skipped“和“const down”
 				spanGaps: true,
