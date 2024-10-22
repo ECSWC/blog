@@ -89,7 +89,7 @@
 }
 .vertical [type="radio"]:checked ~ label ~ .content,
 .vertical [type="checkbox"]:checked ~ label ~ .content {
-  height: 1000px;
+  height: 300px;
   border: 0px solid #542437;
 }
 
