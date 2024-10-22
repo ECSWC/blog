@@ -47,7 +47,7 @@
 	transform: translateY(100%) scale(.8);
 	background: rgba(0,0,0,.4);
 	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(1px);
 	color: #f1f1f1;
 	font-size: auto;
 	font-weight: auto;
