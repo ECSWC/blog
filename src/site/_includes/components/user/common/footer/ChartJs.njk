@@ -36,6 +36,15 @@ let gradient_green=(ctx) => {
         gradient.addColorStop(1, 'rgba(0,176,80,0.99)');
         return gradient;
       };
+let GapColor=(ctx) => {
+        const canvas = ctx.chart.ctx;
+        const gradient = canvas.createLinearGradient(0, 10, 0, 100);
+////(向右透明, 相互扩散叠加, 向左透明, 1的位置);
+        gradient.addColorStop(0, #fee140 100%);
+	gradient.addColorStop(0.5, #fa709a 0%);//金，0.4只改变渐变效果
+        gradient.addColorStop(1, #fee140 100%);//红        
+        return gradient;
+      };
 	const test = document.getElementsByTagName("p");
 	//test.getElementsByTagName("p")[0].innerHTML="123";
         let labels_0 = [];
@@ -93,7 +102,6 @@ let gradient_green=(ctx) => {
 //window.alert(wordsData);
 	//labels =labels.split(";")[1];
     // create random Data
-let GapColor=linear-gradient(to right, #fee140 100%, #fa709a 0%, #fee140 100%);
     const data = {
       labels: filesData,//x轴标签
       datasets: [{
