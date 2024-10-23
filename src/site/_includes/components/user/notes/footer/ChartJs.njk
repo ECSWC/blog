@@ -1,0 +1,251 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('myChart');
+
+// 分段颜色折线图用到↓
+const skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
+const down = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;					  
+//渐变↓
+let gradient_grey=(ctx) => {
+        const canvas = ctx.chart.ctx;
+        const gradient = canvas.createLinearGradient(0, 85, 0, 180);
+//(向右透明, 1的中心虚化范围, 向左透明, 向下放出1);
+        gradient.addColorStop(0, 'rgba(201, 203, 207, 0.4)');
+        gradient.addColorStop(0.35, 'rgba(201, 203, 207, 0.2)');
+        gradient.addColorStop(1, 'rgba(201, 203, 207, 0.1)');
+        return gradient;
+      };
+let red_height=document.getElementById('myChart').height;
+let gradient_red=(ctx) => {
+        const canvas = ctx.chart.ctx;
+        const gradient = canvas.createLinearGradient(0, 1, 0, red_height*4);
+////(向右透明, 相互扩散叠加, 向左透明, 1的位置);
+      //gradient.addColorStop(180deg, rgba(255, 187, 79, 0.8),rgba(255, 77, 79, 0.8) 100.11%);
+        gradient.addColorStop(0, 'rgba(255, 77, 79, 0.4)');
+	gradient.addColorStop(1, 'rgba(255, 187, 79, 0.4)');//金，0.4只改变渐变效果
+        //gradient.addColorStop(1, 'rgba(255, 255, 255, 0.2)');//红        
+        return gradient;
+      };
+let gradient_green=(ctx) => {
+        const canvas = ctx.chart.ctx;
+        const gradient = canvas.createLinearGradient(0, 180, 0, 380);
+////(向右透明, 相互扩散叠加, 向左透明, 1的位置);
+        gradient.addColorStop(0, 'rgba(0,176,80, 0.1)');
+        gradient.addColorStop(0.65, 'rgba(0,176,80, 0.55)');
+        gradient.addColorStop(1, 'rgba(0,176,80,0.99)');
+        return gradient;
+      };
+	const test = document.getElementsByTagName("p");
+	//test.getElementsByTagName("p")[0].innerHTML="123";
+        let labels_0 = [];
+	let labels = [];
+	for(var i = 0; i < test.length; i++){
+        labels_0.push(""+(test[i].innerHTML));
+};
+
+//这里已经成功把HTML的数据存进labels,现在可以删除HTML的数据以美化☝🏼
+	for(var i = 0; i < 4; i++){
+        document.getElementsByTagName("p")[i].innerHTML="";
+};
+//需要确保被删除的<p>放在前4个☝🏼
+	//labels_0=labels_0[0];//需要确保第一个打印
+	//labels_0=labels_0.replace("<span>","").replace("</span>","");
+	//labels=labels_0.split(",");
+	
+	let wordsData_0=labels_0[0].replace("<span>","").replace("</span>","").split(",");
+	let sum_all_date_0=labels_0[1].replace("<span>","").replace("</span>","").split(",");
+	let ShuLiang_each_Percentage_0=labels_0[2].replace("<span>","").replace("</span>","").split(",");
+	let filesData_0=labels_0[3].replace("<span>","").replace("</span>","").split(",");
+	//labels=labels_0.join(",");
+	
+	let wordsData=[];
+	let sum_all_date=[];
+	let ShuLiang_each_Percentage=[];
+	let filesData=[];
+	
+	for(var i=0;i<wordsData_0.length;i++){
+		//x: ""+filesData[i]
+		wordsData[i]=(wordsData_0[i]*1);
+		//wordsData.push(wordsData_0[i]*1)
+			//({ x: i*1, y: wordsData_0[i]*1})
+	};
+	for(var i=0;i<filesData_0.length;i++){
+		//x: ""+filesData[i]
+		filesData[i]=(""+filesData_0[i]);
+		//filesData.push(""+filesData_0[i])
+			//({ x: i*1, y: wordsData_0[i]*1})
+	};
+		//test.getElementsByTagName("p")[0];
+//text.innerHTML=text.innerHTML.replaceAll("<p><span>[", "[").replaceAll("]</span></p>", "]");
+	
+	//document.getElementById("测试").innerHTML="kkkkk";
+	//const labels= document.getElementById("测试").HTMLParagraphElement.text;
+	
+	//.textContent;
+//.getElementsByClassName("测试")
+//const labels=labels_0.split("[")[1].join("");
+//const labels=labels.split("]")[0].join("");
+//const labels=labels.split(",");
+	
+//const labels=labels_0.split(";")[1];
+//window.alert(wordsData_0);//对于测试很重要，勿删
+//window.alert(wordsData);
+	//labels =labels.split(";")[1];
+    // create random Data
+    const data = {
+      labels: filesData,//x轴标签
+      datasets: [{
+                label: "你-增长",
+                data: wordsData_0,
+                backgroundColor: gradient_red,
+                borderColor: ['rgba(255, 77, 79, 1)'],
+                segment: {
+borderColor: ctx => skipped(ctx,'rgba(201, 203, 207, 0.8)')||down(ctx,'rgb(0,176,80)'),
+backgroundColor: ctx => skipped(ctx,'rgba(0,0,0,0)')||down(ctx,'rgba(0,176,80, 0.15)'),
+borderDash: ctx =>skipped(ctx,[0,0]),
+},
+//segment定义分段颜色，不要忘了定义“const skipped“和“const down”
+				//spanGaps: true,
+				//允许为null画线段↑
+                borderWidth: 1.8,
+                fill: true,  // 填充线下方的背景区域
+            pointRadius: 1.4, // 点形状的半径。如果设置为 0，则不渲染该点。
+            pointStyle:'circle',
+            tension: 0.3,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
+                order: 1,                
+            },
+            {
+                label: "你-下降",
+               // data:"",
+                backgroundColor: ['rgba(0,176,80,0.1)'],
+                borderColor: ['rgba(0,176,80,1)'],
+                borderWidth: 1.8,
+                },
+            {
+                label: "「所有人」",
+                data: sum_all_date_0,
+                backgroundColor: ['rgba(255, 170, 50, 0.2)'],
+                borderColor: ['rgba(255, 170, 50, 10)'],
+                borderWidth: 0.6,
+                borderDash: ctx =>(ctx,[4,4]),
+                fill:false,
+                pointRadius: 0.12,
+                tension: 0.02,
+                order: 2,
+        
+               // backgroundColor: ['rgba(54, 162, 235, 0.2)'],
+               // borderColor: ['rgba(54, 162, 235, 1)'],
+        },
+        {
+                label: "你的(提交数量×得分率)",
+                data: ShuLiang_each_Percentage_0,
+                type: "line",
+                yAxisID: 'A',
+                backgroundColor: gradient_grey,
+                borderColor: ['rgba(201, 203, 207, 10)'],
+                borderWidth: 0.60,
+                borderDash: ctx =>(ctx,[4,4]),
+                fill: true,  // 填充线下方的背景区域
+            pointRadius:0.12, // 点形状的半径。如果设置为 0，则不渲染该点。
+            pointStyle:'circle',
+            tension: 0.03,  // 线的贝塞尔曲线张力。设置为 0 以绘制直线。
+                order: 10,
+                segment: {
+borderColor: ctx => skipped(ctx,'rgba(201, 203, 207, 10.6)'),
+backgroundColor: ctx => skipped(ctx,'rgba(0,0,0,0)'),
+borderDash: ctx =>skipped(ctx,[6,6]),
+},
+//segment定义分段颜色，不要忘了定义“const skipped“和“const down”
+				//spanGaps: true,
+            },],
+    };
+const config = {
+      type: 'line',
+      data: data,
+       options: {
+        pointHoverBorderWidth: 6,
+        interaction: {
+            mode: 'index',
+            axis: 'y',
+        },
+        plugins: {
+          legend: {  display: true,position: 'top',},//隐藏label下：bottom
+            //title: {
+                //display: true,
+               // text: '',//大标题
+               // font: { weight: 'bold italic', size: '16px', family: 'Barlow' },
+            //},
+            subtitle: {
+                display: true,
+                text: '💯得分率(近30天)',
+                font: { size: '14px', style: 'italic', family: 'sans-serif' }
+            }
+        },
+        animations: {
+            tension: {
+                //duration: 1000,
+                //easing: 'easeInOutSine',
+                //from: 0,
+               // to: 0,//线条跳动幅度（动画），0则静止直线，相同数值为静止曲线
+                //loop: true
+            }
+        },
+        scales: {       
+            y: {
+                stacked:false,
+                //borderColor:'rgba(255, 170, 50, 10.35)',
+                border: {
+                    display: true,
+                    width: 0.8,//0.8
+                    //borderColor:['rgba(255, 170, 50, 10.35)'],//金色
+                },
+                
+                grid: {
+                    display: true,
+                    drawOnChartArea: true,
+                    drawTicks: true,
+                    color: 'rgba(239, 239, 239, 1)',//轴线宽度
+                    //borderColor:'rgba(255, 170, 50, 10.35)',
+                },
+            },
+            A: {
+            beginAtZero:true,
+            position: 'right',
+                stacked:false,
+                border: {
+                    display: true,
+                    width: 0.8,
+                },
+                grid: {
+                    display: true,
+                    drawOnChartArea: true,
+                    drawTicks: true,
+                    color: 'rgba(239, 239, 239, 0)',//轴线宽度
+                    borderColor:'rgba(255, 170, 50, 10.35)',
+                },
+            },
+            x: {
+                border: {
+                    display: true,
+                    width: 0.8,
+                },
+                grid: {
+                display: true,
+                    color: 'rgba(239, 239, 239,0)',
+                    borderColor:'rgba(255, 170, 50, 10.35)',
+                },
+            },
+        },
+    }
+};
+        
+new Chart(
+        ctx,
+        config);
+// 调用 obsidian chart API👇🏼
+//window.renderChart(chartData, this.container);
+
+// P.S.
+// renderChart 可以多次调用即绘制多张图表
+      </script>
