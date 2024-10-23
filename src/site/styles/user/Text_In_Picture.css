@@ -52,7 +52,8 @@
 	backdrop-filter: blur(1px);
 	color: #f1f1f1;
 	font-size: auto;
-	font-weight: auto;
+	font-weight: 80%;
+	font-height:80%;
 	text-align: center;
 }
 .thumbnail:hover::after,
