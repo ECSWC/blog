@@ -36,7 +36,7 @@
 	background: rgba(0,0,0,.4);
 	-webkit-backdrop-filter: blur(1px);
 	backdrop-filter: blur(1px);
-	font-size: auto;
+	font-size: 115%;
 	font-weight: auto;
 	font-family: Merriweather, serif;
 	text-align: center;
@@ -51,7 +51,7 @@
 	-webkit-backdrop-filter: blur(1px);
 	backdrop-filter: blur(1px);
 	color: #f1f1f1;
-	font-size: 90%;
+	font-size: 85%;
 	font-weight: 80%;
 	font-height:80%;
 	text-align: center;
