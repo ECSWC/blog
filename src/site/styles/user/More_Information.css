@@ -90,7 +90,7 @@ hr {
     position: absolute;
     bottom: 0;
     left: 0;
-    transition: all .3s linear;
+    transition: all .0s linear;
 }
 .image-hover:hover::after{
     width: 100%;
