@@ -37,10 +37,10 @@
 
 .hover {
   overflow:hidden;
-  width:0;
-  height:0;
+  width:auto;
+  height:auto;
   opacity:1.9;
-  position:relative;
+  position:absolute;
   z-index:2;
   top:0;
   left:0;
@@ -51,11 +51,11 @@
   transition:all 0.5s ease-in-out 0s;
   animation:roll-anim-end 0.5s ease 0s;
   p {
-    width:300px;
+    width:auto;
     text-align:center;
     color:#fff;
     margin:5px;
-    font-size:auto;
+    font-size:90%;
   }
 }
 hr {
@@ -90,7 +90,7 @@ hr {
     position: absolute;
     bottom: 0;
     left: 0;
-    transition: all .0s linear;
+    transition: all .3s linear;
 }
 .image-hover:hover::after{
     width: 100%;
