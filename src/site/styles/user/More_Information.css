@@ -14,11 +14,11 @@
     font-size:90%;
   }
   &:hover .hover{
-      width:0;
-      height:0;
+      width:auto;
+      height:auto;
       top:0px;
       left:0;
-      margin:0px;
+      margin:50px;
       -webkit-animation:roll-anim 0.5s ease 0s;
       hr {
         -webkit-transition:all 0.7s ease 0.3s;
@@ -37,8 +37,8 @@
 
 .hover {
   overflow:hidden;
-  width:auto;
-  height:auto;
+  width:0;
+  height:0;
   opacity:1.9;
   position:absolute;
   z-index:2;
