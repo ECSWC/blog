@@ -50,7 +50,7 @@
   transition:all 0.5s ease-in-out 0s;
   animation:roll-anim-end 0.5s ease 0s;
   p {
-    width:auto;
+    width:150%;
     text-align:center;
     color:#fff;
     margin:5px;
