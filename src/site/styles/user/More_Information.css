@@ -37,8 +37,8 @@
 
 .hover {
   overflow:hidden;
-  width:auto;
-  height:auto;
+  width:0;
+  height:0;
   opacity:1.9;
   position:absolute;
   z-index:2;
@@ -55,7 +55,7 @@
     text-align:center;
     color:#fff;
     margin:5px;
-    font-size:90%;
+    font-size:80%;
   }
 }
 hr {
