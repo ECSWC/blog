@@ -1,7 +1,7 @@
 .image-hover {
   position:relative;
   display:inline-block;
-  border:1px solid white;
+  border:0px solid white;
   background-color:black;
   width:auto;
   height:auto;
