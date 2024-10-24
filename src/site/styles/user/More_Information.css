@@ -14,8 +14,8 @@
     font-size:90%;
   }
   &:hover .hover{
-      width:200%;
-      height:200%;
+      width:0;
+      height:0;
       top:0px;
       left:0;
       margin:0px;
@@ -51,7 +51,7 @@
   transition:all 0.5s ease-in-out 0s;
   animation:roll-anim-end 0.5s ease 0s;
   p {
-    width:auto;
+    width:150%;
     text-align:center;
     color:#fff;
     margin:5px;
