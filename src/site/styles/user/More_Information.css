@@ -37,8 +37,8 @@
 
 .hover {
   overflow:hidden;
-  width:0;
-  height:0;
+  width:auto;
+  height:auto;
   opacity:1.9;
   position:absolute;
   z-index:2;
