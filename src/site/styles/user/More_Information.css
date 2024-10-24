@@ -10,7 +10,7 @@
   p {
     text-align:center;
     color:white;
-    margin:0;
+    margin:5px;
     font-size:90%;
   }
   &:hover .hover{
