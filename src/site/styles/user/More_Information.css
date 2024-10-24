@@ -20,7 +20,7 @@
       top:0px;
       left:0;
       margin:0px;
-      -webkit-animation:roll-anim 0.5s ease 0s;
+      -webkit-animation:roll-anim 0.5s ease 0.5s;
       z-index:1000;
       hr {
         -webkit-transition:all 0.7s ease 0.3s;
@@ -49,7 +49,7 @@
   margin:0;
   background-color:black;
   border-radius:5px;
-  transition:all 0.5s ease-in-out 0s;
+  transition:all 0s ease-in-out 0s;
   animation:roll-anim-end 0s ease 0s;
   p {
     width:auto;
