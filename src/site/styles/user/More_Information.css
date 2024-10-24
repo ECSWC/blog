@@ -5,6 +5,7 @@
   background-color:black;
   width:auto;
   height:auto;
+  transform: scale(1);
   border-radius:5px;
   padding:0px;
   p {
@@ -94,7 +95,7 @@ hr {
     left: 0;
     transition: all .3s linear;
 }
-.image-hover:hover::after{
-    transform: scale(1);
+.image-hover:hover{
+    transform: scale(0);
     
 }
