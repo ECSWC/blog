@@ -2,16 +2,16 @@
   position:relative;
   display:inline-block;
   border:0px solid black;
-  background-color:#ce4b4b;
+  background-color:black;
   width:auto;
   height:auto;
-  border-radius:1px;
+  border-radius:5px;
   padding:0px;
   p {
     text-align:center;
     color:white;
     margin:0;
-    font-size:auto;
+    font-size:90%;
   }
   &:hover .hover{
       width:auto;
