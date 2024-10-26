@@ -7,7 +7,7 @@
  
   padding: 1px 8px;
   margin: 1px;
-  font-size: 77%;
+  font-size: 66%;
   font-weight: 300;
  
   border-radius:9px;
@@ -87,7 +87,7 @@ p{
   border-style:dashed;
   border-width:1px;
   border-color:yellow;
-  
+  z-index:999;
   p{
     color:white;
   }
