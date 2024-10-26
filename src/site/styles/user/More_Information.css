@@ -14,6 +14,7 @@
   
   border-style:dashed;
   border-width:1px;
+  border-height:4px;
   border-color:green;
    
   color: #FFF;
@@ -27,6 +28,7 @@
   
   transition: all 0.3s ease-in-out;
   cursor: default;
+  z-index:999;
 p{
     width:auto;
     height:auto;
