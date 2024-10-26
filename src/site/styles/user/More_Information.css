@@ -7,7 +7,7 @@
  
   padding: 1px 8px;
   margin: 1px;
-  font-size: 90%;
+  font-size: 77%;
   font-weight: 300;
  
   border-radius:9px;
@@ -60,6 +60,7 @@ p{
   transition: all 0.0s ease-in-out;
   
   box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
+  z-index:999px
   p{
     width:300px;
     height:auto;
