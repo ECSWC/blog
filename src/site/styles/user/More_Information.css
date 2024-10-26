@@ -5,7 +5,7 @@
   position: relative;
   background: yellow;
  
-  padding: 1px 8px;
+  padding: 1px 4px;
   margin: 1px;
   font-size: 66%;
   font-weight: 300;
@@ -101,7 +101,7 @@ p{
   opacity: 1;
   transition: .3s linear;
   animation: odsoky 1s ease-in-out infinite  alternate;
-
+  z-index:999;
 }
 @keyframes odsoky {
   0%{
