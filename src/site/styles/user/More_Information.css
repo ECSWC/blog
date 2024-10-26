@@ -1,11 +1,11 @@
 /*tooltip Box*/
 .con-tooltip {
-  height:4px;
+  height:auto;
 
   position: relative;
   background: yellow;
  
-  padding: 1px 4px;
+  padding: 1px 1px;
   margin: 1px;
   font-size: 66%;
   font-weight: 300;
@@ -126,7 +126,7 @@ p{
 
 /*bottom*/
 
-.bottom .tooltip { top:115%; left:-20%; }
+.bottom .tooltip { top:115%; left:-0%; }
 
 .bottom .tooltip::after{
   
