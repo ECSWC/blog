@@ -90,13 +90,11 @@ p{
   z-index:999;
     p{
     color:white;
-    width:300px;
-    height:auto;
-    margin:5px;
-    padding:0;
      }
   }
 .con-tooltip:hover .tooltip{
+  width:300px;
+  height:auto;
   visibility: visible;
   transform: translateY(-10px);
   opacity: 1;
