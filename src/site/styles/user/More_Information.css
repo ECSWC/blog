@@ -88,9 +88,13 @@ p{
   border-width:1px;
   border-color:yellow;
   z-index:999;
-  p{
+    p{
     color:white;
-  }
+    width:300px;
+    height:auto;
+    margin:5px;
+    padding:0;
+     }
   }
 .con-tooltip:hover .tooltip{
   visibility: visible;
