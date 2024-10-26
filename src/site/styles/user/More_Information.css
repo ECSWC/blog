@@ -9,6 +9,7 @@
    
   color: #FFF;
   transition: all .3s linear;
+  z-index:2;
 }
 .tooltip:after {
   position: absolute;
