@@ -15,7 +15,10 @@ dfn {
 	
   padding: 0 0.04em;
   cursor: help;
+	
   font-style: normal;
+  font-color:black;
+	
   position: relative;
 	
   transition: all .3s linear;
