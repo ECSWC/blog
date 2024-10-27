@@ -52,7 +52,8 @@ dfn::after {
   z-index:9999999;
 }
 dfn:hover {z-index: 299999;
-background: white;
+	   font-color:gold;
+           background: white;
 } /* Keeps the info boxes on top of other elements */
 dfn:hover::after,
 dfn:hover::before {opacity: 1;}
