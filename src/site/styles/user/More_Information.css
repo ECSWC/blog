@@ -44,6 +44,8 @@ dfn::after {
   transition: opacity 250ms, top 250ms;
   white-space: pre-wrap;
   animation: odsoky 1s ease-in-out infinite  alternate;
+
+  z-index:999;
 }
 dfn:hover {z-index: 2;
 background: white;
