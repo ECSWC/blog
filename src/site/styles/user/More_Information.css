@@ -13,7 +13,7 @@ dfn {
   border-width:0px;
   border-style:dashed;
 	
-  padding: 0 0.4em;
+  padding: 0 0.04em;
   cursor: help;
   font-style: normal;
   position: relative;
@@ -39,7 +39,7 @@ dfn::after {
   border-style:dashed;
 	
   background: rgba(0,0,0,10.8);
-  color: red;
+  color: white;
   pointer-events: none; /* This prevents the box from apearing when hovered. */
   transition: opacity 250ms, top 250ms;
   white-space: pre-wrap;
