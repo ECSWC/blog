@@ -4,9 +4,9 @@ a.dfn-hover {
 }
 
 /** Code for hover info **/
-
+/*弹出前的界面↓↓↓*/
 dfn {
-  background: black;
+  background: gold;
   border-bottom: dashed 1px rgba(0,0,0,10.8);
   border-radius:9px;
   border-color:black;
@@ -21,6 +21,7 @@ dfn {
   transition: all .3s linear;
   
 }
+/*弹出后的界面↓↓↓*/
 dfn::after {
   content: attr(data-info);
   display: inline;
@@ -47,7 +48,7 @@ dfn::after {
 
   z-index:9999999;
 }
-dfn:hover {z-index: 2;
+dfn:hover {z-index: 299999;
 background: white;
 } /* Keeps the info boxes on top of other elements */
 dfn:hover::after,
