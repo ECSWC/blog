@@ -1,4 +1,4 @@
-h1 {
+h1_FlyIn_HoverJump {
     display:inline-block;
     font-size: 4.3em;
     letter-spacing: -4px;
@@ -7,7 +7,7 @@ h1 {
     text-align: center;
     animation: odsoky 0.88s ease-in-out infinite  alternate;
 }
-h1:hover {
+h1_FlyIn_HoverJump:hover {
     
     color: red;
     text-shadow: -1px 1px 0 #7e2ea0;
