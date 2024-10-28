@@ -1,11 +1,11 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/tiktok/疑难杂症/初期/Tik Tok新号播放量如何破0？/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-27T20:14:30.696+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/tiktok/疑难杂症/初期/Tik Tok新号播放量如何破0？/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-10-28T20:54:49.022+08:00"}
 ---
 
 
 
 
-### **以ios 设备为例：**
+ <h1 class="cssanimation sequence leRotateYZoomIn">以ios 设备为例：</h1>
 
 如果 ios 上连接了 VPN，同时可以打开其他屏蔽网页比如 Google, Youtube 等，但是 TikTok 无法使用或新作品播放量为0。请参考以下设置 ：<dfn data-info="（需要 iOS 版本为 17 以上，其他版本可能不适用）">🍊</dfn>
 
@@ -19,4 +19,6 @@
 6. 去到“系统设置-一般设置-日期与时间-时区”设置为**目标地区的时区**。
 7. 去到“系统设置-一般设置-语言与地区-地区”设置为**目标地区**。
 8. 打开 TikTok，重新注册或者登录。
+
+---
 
