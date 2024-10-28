@@ -1,0 +1,40 @@
+h1 {
+    display:inline-block;
+    font-size: 4.3em;
+    letter-spacing: -4px;
+    font-weight: auto;
+    color: #7e2ea0 ;
+    text-align: center;
+}
+h1:hover {
+    
+    color: red;
+    text-shadow: -1px 1px 0 #7e2ea0;
+              
+    transition: all .3s linear;
+    animation: odsoky 0.88s ease-in-out infinite  alternate;
+}
+@keyframes odsoky {
+  0%{
+    transform: translateY(0px);	
+  }
+
+  100%{
+    transform: translateY(22px);	
+  }
+}
+.cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.leRotateYZoomIn span { animation-name: leRotateYZoomIn }
+@keyframes leRotateYZoomIn {
+    from {
+        transform: perspective(600px) translate3d(0, -60px, -2000px) rotateY(75deg);
+        opacity: 0
+    }
+    5% { transform: perspective(600px) translate3d(0, -60px, -1500px) rotateY(75deg) }
+}
