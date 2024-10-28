@@ -10,8 +10,8 @@
 #FlyIn_HoverJump:hover {
     
     color: red;
-    text-shadow: -1px 1px 0 #7e2ea0;
-    animation: leRotateYZoomIn 0.88s ease-in-out;    
+    text-shadow: -1px 1px 0 black; 
+    animation: odsoky 2.22s ease-in-out infinite  alternate;
     transition: all .3s linear;
 }
 
@@ -25,10 +25,3 @@
   }
 }
 
-@keyframes leRotateYZoomIn {
-    from {
-        transform: perspective(600px) translate3d(0, -60px, -2000px) rotateY(75deg);
-        opacity: 0
-    }
-    5% { transform: perspective(600px) translate3d(0, -60px, -1500px) rotateY(75deg) }
-}
