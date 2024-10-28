@@ -3,17 +3,15 @@
     font-size: 1.3em;
     letter-spacing: 0px;
     font-weight: auto;
-    color: red ;
+    color: black ;
     text-align: center;
     animation: odsoky 0.88s ease-in-out infinite  alternate;
 }
 #FlyIn_HoverJump:hover {
     
-    color: red;
-    text-shadow: -0.3px -0.3px 0 black,
-              0.3px -0.3px 0 black,
-              -0.3px 0.3px 0 black,
-              0.3px 0.3px 0 black; 
+    color: white;
+    background-color:black;
+    border-radius:3px;
     animation: odsoky 2.22s ease-in-out infinite  alternate;
     transition: all .3s linear;
 }
@@ -27,3 +25,4 @@
     transform: translateY(22px);	
   }
 }
+
