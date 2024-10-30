@@ -51,8 +51,9 @@ dfn::after {
   border-color:red;
   border-style:solid;
   border-inline:1.23px;
-	
-  background: rgba(0,0,0,0.88);
+  border-top:0.23px;
+  
+  background: rgba(0,0,0,0.77);
   color: white;
   pointer-events: none; /* This prevents the box from apearing when hovered. */
   transition: opacity 250ms, top 250ms;
