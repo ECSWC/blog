@@ -1,7 +1,7 @@
 .content {
     padding:0px;
     min-width:64%;/*解决中间过窄*/
-    margin:5px;
+    margin:auto;
     background-border:rgba(181, 230, 181,10.3);
 }
 .table-view-table>thead>tr>th{
@@ -18,7 +18,7 @@
 }
     main{
         top:30px;
-        
+        margin:5 5px;
     }
 /*on this page的背景↓*/
 .toc{
