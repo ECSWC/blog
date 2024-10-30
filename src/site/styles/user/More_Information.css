@@ -1,24 +1,16 @@
-a.dfn-hover {
-	color: #333;
-	text-decoration: none;
-}
-
 /** Code for hover info **/
 /*弹出前的界面↓↓↓*/
 dfn {
   background: gold;
   border-bottom: dashed 1px rgba(0,0,0,10.8);
   border-radius:9px;
-  border-color:black;
+  border-color:gold;
   border-width:0px;
   border-style:dashed;
 	
   padding: 0 0.04em;
   cursor: help;
-	
   font-style: normal;
-  font-color:black;
-	
   position: relative;
 	
   transition: all .3s linear;
@@ -31,7 +23,7 @@ dfn::after {
   position: fixed;
 	top:0%;
 	left:33%;
-	/*transform:translate(-50%,-50%);*/
+	/*transform:translate(-0%,-0%);*/
   /*top: 22px; left: 0;*/
   opacity: 0;
   width: 230px;
@@ -55,16 +47,21 @@ dfn::after {
   z-index:9999999;
 }
 dfn:hover {z-index: 299999;
-	   font-color:gold;
-           background: white;
-} /* Keeps the info boxes on top of other elements */
+           background:white;
+           border-radius:9px;
+           border-color:gold;
+           border-width:1.11px;
+           border-style:dashed;
+          } /* Keeps the info boxes on top of other elements */
 dfn:hover::after,
 dfn:hover::before {opacity: 1;}
 dfn:hover::after {
-		  top:33%;
-	          left:33%;
+	top:33%;
+	left:33%;
+	/*transform:translate(-50%,-50%);*/
+		  
 		  z-index:9999999;}
-dfn:hover::before {top: 20px;}
+dfn:hover::before {/*top: 20px;*/}
 
 
 @keyframes odsoky {
