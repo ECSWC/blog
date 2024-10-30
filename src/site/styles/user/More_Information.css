@@ -36,7 +36,7 @@ dfn::after {
   display: inline;
   position: fixed;
 	top:0%;
-	left:50%;
+	left:44%;
 	/*transform:translate(-0%,-0%);*/
   /*top: 22px; left: 0;*/
   opacity: 0;
@@ -73,7 +73,7 @@ dfn:hover::after,
 dfn:hover::before {opacity: 1;}
 dfn:hover::after {
 	top:22%;
-	left:50%;
+	left:44%;
 	/*transform:translate(-50%,-50%);*/
 		  
 		  z-index:9999999;}
