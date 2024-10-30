@@ -1,3 +1,4 @@
+
 /** Code for hover info **/
 /*弹出前的界面↓↓↓*/
 dfn {
@@ -15,6 +16,19 @@ dfn {
 	
   transition: all .3s linear;
   
+}
+/*下划线，after用掉了，所以只能装在before↓↓↓↓*/
+dfn:before {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: red;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 /*弹出后的界面↓↓↓*/
 dfn::after {
@@ -47,12 +61,14 @@ dfn::after {
   z-index:9999999;
 }
 dfn:hover {z-index: 299999;
-           background:white;
-           border-radius:9px;
-           border-color:gold;
-           border-width:1.11px;
-           border-style:dashed;
+          
+  background-color: white;
           } /* Keeps the info boxes on top of other elements */
+/*下划线的↓↓↓*/
+dfn:hover:before { 
+  width: 100%; 
+  left: 0; 
+}
 dfn:hover::after,
 dfn:hover::before {opacity: 1;}
 dfn:hover::after {
@@ -73,3 +89,4 @@ dfn:hover::before {/*top: 20px;*/}
     transform: translateY(1px);	
   }
 }
+
