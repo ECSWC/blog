@@ -8,7 +8,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: calc(var(--deco-height) * -0.344);
+    bottom: calc(var(--deco-height) * -0.33);
     height: var(--deco-height);
     
     background-color:none;
