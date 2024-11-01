@@ -1,9 +1,11 @@
 .H1_Underline {
+  font-color:red;
+  font-size:111%;
   position: relative;
   white-space: nowrap;
   &:after {
-    width:97%;
-    --deco-height: 0.1em;
+    width:99.9%;
+    --deco-height: 0.08em;
     content: "";
     position: absolute;
     left: 0;
