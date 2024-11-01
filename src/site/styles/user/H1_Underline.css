@@ -1,0 +1,26 @@
+.H1_Underline {
+  position: relative;
+  white-space: nowrap;
+  &:after {
+    width:97%;
+    --deco-height: 0.1em;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--deco-height) * -0.625);
+    height: var(--deco-height);
+    
+    background-color:none;
+    background-size: auto 100%;
+    background-repeat: round;
+    background-position: 0em;
+
+    border-color:grey;
+    border-width:1px;
+    border-style:dashed;
+    border-top:1px;
+    border-left:1px;
+    border-right:1px;
+  }
+}
