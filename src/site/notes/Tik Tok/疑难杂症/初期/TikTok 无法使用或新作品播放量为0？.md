@@ -4,7 +4,7 @@
 
 
 
- <h1 id="FlyIn_HoverJump">以ios 设备为例：</h1>
+ <h1 class="H1_Underline">以ios 设备为例：</h1>
 
 如果 ios 上连接了 VPN，同时可以打开其他屏蔽网页比如 Google, Youtube 等，但是 <dfn data-info="拔出国内运营商提供的SIM卡通常是基本要求，或者也可以插入一张国外的SIM废卡（无流量无话费），用来提供国外身份信息，这对于运营相关可能会更好（此时国内运营商提供的SIM卡，可拔，也可不拔）">TikTok 无法使用</dfn>或新作品播放量为0。请参考<dfn data-info="需要 iOS 版本为 17 以上，其他版本可能不适用">以下设置：</dfn>
 
