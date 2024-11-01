@@ -4,9 +4,6 @@
     min-width:64%;/*解决中间过窄*/
     margin:auto;
     background-border:rgba(181, 230, 181,10.3);
-
-    animation:fade-in auto linear;
-    animation-timeline:view(500px 0);
 }
 .table-view-table>thead>tr>th{
     background-color:white;
@@ -37,12 +34,3 @@
     border-width:1px;
 }
 
-@keyframes fade in {
-from { opacity:.3;
-transform:scale(5);
-}
-to {
-opacity:1;
-transform:scale(1);
-}
-}
