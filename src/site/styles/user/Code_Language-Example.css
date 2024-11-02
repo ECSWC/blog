@@ -1,5 +1,4 @@
 body{
-    --code-normal:white;
     --code-function:rgb(18, 129, 18);
     --code-important: var(--color-orange);
     --code-keyword: #e6cd69;
@@ -16,11 +15,11 @@ body{
 }
 
 .cm-s-obsidian .HyperMD-codeblock{
-     color:#F4F5F6;
+     color:white;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock{
-    color:#F4F5F6;
+    color:white;
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg, .cm-s-obsidian div.HyperMD-codeblock-end-bg{
