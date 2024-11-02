@@ -52,13 +52,13 @@ body{
 }
 
 code.language-例子.language-none{
-    background-color: rgba(0, 0, 0, 0.84); /* 半透明背景颜色 */
+    background-color: rgba(0, 0, 0, 0.73); /* 半透明背景颜色 */
     backdrop-filter: brightness(0.96) blur(1.63px); /* 应用亮度和模糊效果 */
 }
 
 
 code.language-javascript {
-    background-color: rgba(0, 0, 0, 0.84); /* 半透明背景颜色 */
+    background-color: rgba(0, 0, 0, 0.73); /* 半透明背景颜色 */
     backdrop-filter: brightness(0.96) blur(1.63px); /* 应用亮度和模糊效果 */
 }
 
