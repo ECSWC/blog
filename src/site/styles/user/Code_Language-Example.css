@@ -12,3 +12,17 @@
   padding:0;
   margin:0;
 }
+
+code.language-例子.language-none{
+  background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+  backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
+  padding:0;
+  margin:0;
+}
+
+code.language-JavaScript.language-none{
+  background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+  backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
+  padding:0;
+  margin:0;
+}
