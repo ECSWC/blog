@@ -55,7 +55,7 @@ code.language-例子.language-none{
     color:white;
     font-size:96%;
     background-color: rgba(0, 0, 0, 0.69); /* 半透明背景颜色 */
-    backdrop-filter: brightness(0.96) blur(6.66px); /* 应用亮度和模糊效果 */
+    backdrop-filter: brightness(0.96) blur(0.233px); /* 应用亮度和模糊效果 */
     
 }
 
@@ -64,7 +64,7 @@ code.language-javascript {
     color:white;
     font-size:96%;
     background-color: rgba(0, 0, 0, 0.69); /* 半透明背景颜色 */
-    backdrop-filter: brightness(0.96) blur(6.66px); /* 应用亮度和模糊效果 */
+    backdrop-filter: brightness(0.96) blur(0.233px); /* 应用亮度和模糊效果 */
     
 }
 
