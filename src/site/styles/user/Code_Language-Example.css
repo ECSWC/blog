@@ -1,3 +1,15 @@
+body{
+    --code-function:rgb(18, 129, 18);
+    --code-important: var(--color-orange);
+    --code-keyword: #e6cd69;
+    --code-operator: #e6cd69;
+    --code-property: #55b5db;;
+    --code-punctuation: var(--text-muted);
+    --code-string:  rgb(18, 129, 18);
+    --code-tag: var(--color-red);
+    --code-value: #cd3f45;
+
+}
 .cm-comment{
     --text-faint: #52707b;
 }
