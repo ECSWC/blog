@@ -1,9 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+
 .H1_Underline {
+    font-family: "Ma Shan Zheng", cursive !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    color: black !important;
+    font-size: 23.4px !important;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); /* 保留文本阴影 */
+  
   position: relative;
   white-space: nowrap;
   z-index:3;
   &:after {
-    width:99%;
+    width:55%;
     height:1.23px;
     --deco-height: 0.1em;
     content: "";
@@ -12,7 +22,7 @@
     right: 0;
     bottom: calc(var(--deco-height) * -0.125);
     /*height: var(--deco-height);*/
-    background:linear-gradient(to right, black 0%, grey 55%, rgba(0,0,0,0) 100%);
+    background:linear-gradient(to right, grey 0%, rgba(0,0,0,0) 100%);
     background-size: auto 100%;
     background-repeat: round;
     /*background-position: 0em;*/
@@ -27,8 +37,8 @@
   }
   &:hover:after {
     height:1.23px;
-    width:33%;
-    background:linear-gradient(to right, black 0%, rgba(0,0,0,0) 100%);
+    width:99%;
+    background:linear-gradient(to right, grey 0%, rgba(0,0,0,0) 100%);
     border-bottom:solid gold 0px;
     border-top:solid grey 0px;
     border-left:solid grey 0px;
