@@ -1,4 +1,26 @@
+.cm-comment{
+    --text-faint: #52707b;
+}
 
+.cm-s-obsidian .HyperMD-codeblock{
+     color:#F4F5F6;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock{
+    color:#F4F5F6;
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg, .cm-s-obsidian div.HyperMD-codeblock-end-bg{
+
+    background-color:rgb(40, 42, 54);
+
+
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-bg{
+    background-color:rgb(40, 42, 54);
+}
+/*minimal主题代码块样式☝🏻*/
 .markdown-rendered pre {
 
     background-image: url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
@@ -18,13 +40,13 @@
 }
 
 code.language-例子.language-none{
-    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景颜色 */
+    background-color: rgba(0, 0, 0, 0.63); /* 半透明背景颜色 */
     backdrop-filter: brightness(0.96) blur(0.69px); /* 应用亮度和模糊效果 */
 }
 
 
 code.language-javascript {
-    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景颜色 */
+    background-color: rgba(0, 0, 0, 0.63); /* 半透明背景颜色 */
     backdrop-filter: brightness(0.96) blur(0.69px); /* 应用亮度和模糊效果 */
 }
 
