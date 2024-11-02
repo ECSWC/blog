@@ -28,12 +28,13 @@
 }
 
 code.language-例子.language-none{
+  background: rgba(255, 255, 255, 0); /* 半透明背景 */
     
 }
 
 
 code.language-javascript {
-    
+    background: rgba(255, 255, 255, 0); /* 半透明背景 */
 }
 
 
