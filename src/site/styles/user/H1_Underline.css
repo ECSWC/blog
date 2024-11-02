@@ -4,7 +4,7 @@
   z-index:3;
   &:after {
     width:99%;
-    height:20.2px;
+    height:1.23px;
     --deco-height: 0.1em;
     content: "";
     position: absolute;
@@ -12,12 +12,11 @@
     right: 0;
     bottom: calc(var(--deco-height) * -0.125);
     /*height: var(--deco-height);*/
-    background:linear-gradient(to top, gold 0%, rgba(0,0,0,0) 12.3%, rgba(0,0,0,0) 100%);
+    background:linear-gradient(to right, black 0%, grey 55%, rgba(0,0,0,0) 100%);
     background-size: auto 100%;
     background-repeat: round;
     /*background-position: 0em;*/
-    border-color:grey;
-    border-bottom:solid grey 1px;
+    border-bottom:solid gold 0px;
     border-top:solid grey 0px;
     border-left:dashed grey 0px;
     border-right:0px;
@@ -27,8 +26,10 @@
 
   }
   &:hover:after {
-    height:0.202px;
-    border-bottom:solid grey 1px;
+    height:1.23px;
+    width:33%;
+    background:linear-gradient(to right, black 0%, rgba(0,0,0,0) 100%);
+    border-bottom:solid gold 0px;
     border-top:solid grey 0px;
     border-left:solid grey 0px;
     border-right:1px;
