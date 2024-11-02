@@ -1,4 +1,9 @@
-code.language-例子.language-none{
+code.language-JavaScript{
+    background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+    backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
+}
+
+code.language-none{
     background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
     backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
 }
