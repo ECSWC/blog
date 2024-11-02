@@ -20,14 +20,14 @@
 }
 
 code.language-例子.language-none{
-    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景颜色 */
-    backdrop-filter: brightness(0.97) blur(12.3px); /* 应用亮度和模糊效果 */
+    background-color: rgba(255, 255, 255, 0); /* 半透明背景颜色 */
+    backdrop-filter: brightness(0.69) blur(6.9px); /* 应用亮度和模糊效果 */
 }
 
 
 code.language-javascript {
-    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景颜色 */
-    backdrop-filter: brightness(0.97) blur(12.3px); /* 应用亮度和模糊效果 */
+    background-color: rgba(255, 255, 255, 0); /* 半透明背景颜色 */
+    backdrop-filter: brightness(0.69) blur(6.9px); /* 应用亮度和模糊效果 */
 }
 
 
