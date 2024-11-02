@@ -15,11 +15,11 @@ body{
 }
 
 .cm-s-obsidian .HyperMD-codeblock{
-     color:white;
+     color: #F4F5F6;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock{
-    color:white;
+    color: #F4F5F6;
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg, .cm-s-obsidian div.HyperMD-codeblock-end-bg{
@@ -52,12 +52,14 @@ body{
 }
 
 code.language-例子.language-none{
+    color:white;
     background-color: rgba(0, 0, 0, 0.73); /* 半透明背景颜色 */
     backdrop-filter: brightness(0.96) blur(1.63px); /* 应用亮度和模糊效果 */
 }
 
 
 code.language-javascript {
+    color:white;
     background-color: rgba(0, 0, 0, 0.73); /* 半透明背景颜色 */
     backdrop-filter: brightness(0.96) blur(1.63px); /* 应用亮度和模糊效果 */
 }
