@@ -4,6 +4,13 @@
   backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
   padding:0;
   margin:0;
+
+    background-image: url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
+    background-size: 100%; /* 保持背景图像的比例并覆盖整个元素 */
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景颜色 */
+    backdrop-filter: brightness(0.97) blur(12.3px); /* 应用亮度和模糊效果 */
+    padding: 0;
+    margin: 0;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
@@ -11,25 +18,22 @@
   backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
   padding:0;
   margin:0;
-}
 
-code.language-例子.language-none{
     background-image: url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
-    background-size: cover; /* 保持背景图像的比例并覆盖整个元素 */
+    background-size: 100%; /* 保持背景图像的比例并覆盖整个元素 */
     background-color: rgba(255, 255, 255, 0.5); /* 半透明背景颜色 */
     backdrop-filter: brightness(0.97) blur(12.3px); /* 应用亮度和模糊效果 */
     padding: 0;
     margin: 0;
+}
+
+code.language-例子.language-none{
+    
 }
 
 
 code.language-javascript {
-    background-image: url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
-    background-size: cover; /* 保持背景图像的比例并覆盖整个元素 */
-    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景颜色 */
-    backdrop-filter: brightness(0.97) blur(12.3px); /* 应用亮度和模糊效果 */
-    padding: 0;
-    margin: 0;
+    
 }
 
 
