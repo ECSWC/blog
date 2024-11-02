@@ -1,26 +1,37 @@
 .H1_Underline {
   position: relative;
   white-space: nowrap;
+  z-index:3;
   &:after {
-    width:99.9%;
+    width:99%;
+    height:20.2px;
     --deco-height: 0.1em;
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    bottom: calc(var(--deco-height) * -0.33);
-    height: var(--deco-height);
-    
-    background-color:none;
+    bottom: calc(var(--deco-height) * -0.125);
+    /*height: var(--deco-height);*/
+    background:linear-gradient(to left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
     background-size: auto 100%;
     background-repeat: round;
-    background-position: 0em;
+    /*background-position: 0em;*/
+    border-color:grey;
+    border-bottom:solid grey 0px;
+    border-top:solid grey 1px;
+    border-left:dashed grey 0px;
+    border-right:0px;
+    border-radius:0px;
 
-    border-color:black;
-    border-width:1.23px;
-    border-style:dashed;
-    border-top:1px;
-    border-left:1px;
+    transition: all .3s linear;
+
+  }
+  &:hover:after {
+    height:0.0202px;
+    border-bottom:solid grey 0px;
+    border-top:solid grey 1px;
+    border-left:solid grey 0px;
     border-right:1px;
+    transition: all .3s linear;
   }
 }
