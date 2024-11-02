@@ -15,9 +15,8 @@
 
 code.language-例子.language-none{
   background-image: url("https://ice.frostsky.com/2024/11/02/d27f33da7acb91df9a1898d897704b2f.jpeg");
-  width: auto;
-  background-size: cover; /* 适应背景图像的大小 */
-  backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
+  background-size: 100%; /* 适应背景图像的大小 */
+  backdrop-filter: brightness(0.55) blur(5px); /* 应用亮度和模糊效果 */
   padding: 0;
   margin: 0;
 }
@@ -25,9 +24,8 @@ code.language-例子.language-none{
 
 code.language-javascript {
     background-image: url("https://ice.frostsky.com/2024/11/02/d27f33da7acb91df9a1898d897704b2f.jpeg");
-    width: auto;
-    background-size: cover; /* 适应背景图像的大小 */
-    backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
+    background-size: 100%; /* 适应背景图像的大小 */
+    backdrop-filter: brightness(0.55) blur(5px); /* 应用亮度和模糊效果 */
     padding: 0;
     margin: 0;
 }
