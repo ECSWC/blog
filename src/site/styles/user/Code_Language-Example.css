@@ -15,6 +15,8 @@
 
 code.language-例子.language-none{
   background-img:url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
+  width: 100%;
+  background-repeat:no-repeat;
   background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
   backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
   padding:0;
@@ -23,6 +25,8 @@ code.language-例子.language-none{
 
 code.language-javascript{
   background-img:url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
+  width: 100%;
+  background-repeat:no-repeat;
   background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
   backdrop-filter: brightness(0.35) blur(5px); /* 应用亮度和模糊效果 */
   padding:0;
