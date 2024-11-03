@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@200..900&family=ZCOOL+KuaiLe&display=swap');
+
+.long-cang {
+  display:inline-block;
+  
+  color:gold !important;
+  font-family: "Long Cang", serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size:111% !important;
+
+  background:rgba(0,0,0,0);
+  border-radius:3px !important;
+  background-image:url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
+  background-size:277% !important;
+
+  width:auto;
+  padding:1.23px !important;
+}
