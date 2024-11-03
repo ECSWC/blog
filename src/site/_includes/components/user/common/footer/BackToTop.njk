@@ -2,10 +2,11 @@
 <script>
 // Get the button:
 let mybutton = document.getElementById("myBtn");
+const main = document.querySelector('main');
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
-  if (document.main.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (main.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
@@ -13,7 +14,10 @@ function scrollFunction() {
 }
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.main.scrollTop = 0; // For Safari
+  main.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>
+
+
+  
