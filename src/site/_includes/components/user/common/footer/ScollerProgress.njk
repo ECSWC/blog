@@ -1,18 +1,19 @@
-<a href="#" 
-    class="scrollbutton" 
-    id="scrollbuttonid">
-    Scroll to Top
-</a>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script>
-// script.js
-let mysBtn = document
-    .getElementById('scrollbuttonid');
-window.addEventListener('scroll', function () {
-    if (document.main.scrollTop > 20
-        || document.documentElement.scrollTop > 20) {
-        mysBtn.style.display = 'block';
-    } else {
-        mysBtn.style.display = 'none';
-    }
-});
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.main.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.main.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 </script>
