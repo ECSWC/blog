@@ -3,16 +3,18 @@
 .long-cang {
   display:inline-block;
   
-  color:gold !important;
+  color:white !important;
   font-family: "Long Cang", serif !important;
   font-weight: 400 !important;
   font-style: normal !important;
   font-size:111% !important;
 
-  background:rgba(0,0,0,0);
-  border-radius:3px !important;
-  background-image:url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
-  background-size:277% !important;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
+
+  background:rgba(0,0,0,0.3);
+  border-radius:6px !important;
+  background-image:url("https://ice.frostsky.com/2024/11/04/55cde806643f2d1b86f56c5fbd4f5974.jpeg");
+  background-size:123% !important;
 
   width:auto;
   padding:1.23px !important;
