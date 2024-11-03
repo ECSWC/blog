@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@200..900&family=ZCOOL+KuaiLe&display=swap');
 /** Code for hover info **/
 /*弹出前的界面↓↓↓*/
 dfn {
@@ -41,8 +42,11 @@ dfn::after {
   /*top: 22px; left: 0;*/
   opacity: 0;
   width: 230px;
-  font-size: 88.8%;
-  font-weight: 700;
+  font-family: "ZCOOL KuaiLe", sans-serif;
+  font-weight: 333;
+  font-style: normal;
+  font-size: 88%;
+  
   line-height: 1.5em;
   padding: 0.5em 0.8em;
 	
@@ -91,3 +95,4 @@ dfn:hover::before {/*top: 20px;*/}
     transform: translateY(1px);	
   }
 }
+
