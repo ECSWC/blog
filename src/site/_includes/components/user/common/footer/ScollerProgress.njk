@@ -1,20 +1,17 @@
-<nav>
-  <div class="nav"></div>
-<div class="scroll"><div class="scroll-bar" id="scroll-progress"></div></div>
-</nav>
+<a id="button-BackToTop"></a>
 <script>
-//<div class="scroll"><div class="scroll-bar" id="scroll-progress"></div></div>
-//<div class="progress"<div class="progress-value" id="scroll-progress"></div></div>
-const main = document.querySelector('main');
-const scrollProgress = document.getElementById('scroll-progress')
-const progress = () => {
-    const scroll = main.scrollTop;
-    const height = main.scrollHeight - main.clientHeight;
-    const percent = (scroll / height) * 100;
-    scrollProgress.style.width = percent + "%";
-}
-main.addEventListener('scroll', progress);
+var btn = $('#button-BackToTop');
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body, main').animate({scrollTop:0}, '300');
+});
 </script>
-
   
 
