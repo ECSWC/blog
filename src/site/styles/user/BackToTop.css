@@ -1,36 +1,19 @@
-#button-BackToTop {
-  display: inline-block;
-  background-color: #FF9800;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: background-color .3s, 
-    opacity .5s, visibility .5s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
+.scrollbutton {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 40%;
+    background-color: #1b5490;
+    color: #e8e8e8;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
 }
-#button-BackToTop::after {
-  content: "\f077";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #fff;
-}
-#button-BackToTop:hover {
-  cursor: pointer;
-  background-color: #333;
-}
-#button-BackToTop:active {
-  background-color: #555;
-}
-#button-BackToTop.show {
-  opacity: 1;
-  visibility: visible;
+
+.scrollbutton:hover {
+    background-color: #2d6418;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
 }
