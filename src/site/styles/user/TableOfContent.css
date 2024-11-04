@@ -1,4 +1,4 @@
-        /* TOC 按钮样式 */
+       /* TOC 按钮样式 */
         .toc-button {
             position: fixed;
             top: 20px; /* 距离顶部 */
@@ -10,11 +10,14 @@
             padding: 10px 15px; /* 内边距 */
             cursor: pointer; /* 指针样式 */
             z-index: 1000; /* 确保按钮在最上层 */
+            display: flex; /* 使用 Flexbox 使图标和文本垂直对齐 */
+            flex-direction: column; /* 垂直排列 */
+            align-items: center; /* 中心对齐 */
         }
 
         /* TOC 样式 */
         .toc {
-            color: white !important;
+            color: white !important; /* 全部字体颜色为白色 */
             text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23);
             position: fixed;
             top: 60px; /* 距离顶部 */
@@ -28,10 +31,36 @@
             z-index: 999; /* 确保在按钮下方 */
         }
 
-        .toc ol {
-            padding: 5px;
-            margin: 5px;
-            border-color: black;
-            border-width: 1px;
-            border-style: solid; /* 确保边框样式 */
+        .toc ul {
+            padding: 0; /* 去掉默认内边距 */
+            list-style-type: none; /* 去掉项目符号 */
+        }
+
+        .toc li {
+            margin: 5px 0; /* 每个项目的上下间距 */
+        }
+
+        .toc a {
+            color: white; /* 确保链接颜色为白色 */
+            text-decoration: none; /* 去掉下划线 */
+        }
+
+        /* 竖线表示层级结构 */
+        .toc li {
+            position: relative;
+        }
+
+        .toc li:before {
+            content: "";
+            position: absolute;
+            left: -10px; /* 适当调整左边距 */
+            top: 0;
+            bottom: 50%;
+            width: 1px; /* 竖线宽度 */
+            background-color: white; /* 竖线颜色 */
+        }
+
+        /* 子级缩进 */
+        .toc ul {
+            margin-left: 20px; /* 缩进 */
         }
