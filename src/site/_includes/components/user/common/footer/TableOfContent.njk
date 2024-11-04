@@ -11,7 +11,10 @@
     </div>
 </aside>
 
-<button class="toc-button" id="toggle-toc">显示 TOC</button>
+<button class="toc-button" id="toggle-toc">
+    <div>🗺️</div>
+    <div style="font-size: 12px;">显示本页目录</div>
+</button>
 
 <script>
 // 创建TOC的JavaScript逻辑
@@ -19,12 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const tocList = document.getElementById('toc-list');
     const tocContainer = document.getElementById('toc-container');
     const toggleButton = document.getElementById('toggle-toc');
-    const headers = document.querySelectorAll('main h2, main h3'); // 选取所有 main 内的 h2, h3
+    
+    // 只选择带类的 h2, h3, h4
+    const headers = document.querySelectorAll('main h2[class], main h3[class], main h4[class]'); 
 
     // 创建 TOC 条目
     headers.forEach(function(header) {
         const title = header.innerText;
-        const id = encodeURIComponent(title) // 编码整个标题
+        const id = encodeURIComponent(title)
             .replace(/%20/g, '-')          // 替换 %20 为 -
             .replace(/[^\w-]+/g, '');      // 移除无效字符
 
@@ -33,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const level = header.tagName.toLowerCase(); // 获取标题级别
         const listItem = document.createElement('li');
 
-        listItem.innerHTML = `<a href="#${id}">${title}</a>`; // 使用 ⤷ 符号，保持 # 锚点链接
+        listItem.innerHTML = `<a href="#${id}">⤷ ${title}</a>`; // 使用 ⤷ 符号，保持 # 锚点链接
 
         // 检查标题的级别并嵌套
         if (level === 'h3') {
@@ -48,6 +53,21 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 tocList.appendChild(listItem);
             }
+        } else if (level === 'h4') {
+            const parent = tocList.querySelector(`li:has(a[href="#${id.split('-')[0]}"])`);
+            const grandparent = tocList.querySelector(`ul li:has(ul) a[href="#${id.split('-')[0]}"]`);
+            if (parent || grandparent) {
+                const sublist = grandparent ? grandparent.parentElement : parent.querySelector('ul');
+                if (sublist) {
+                    sublist.appendChild(listItem);
+                } else {
+                    const newSublist = document.createElement('ul');
+                    parent.appendChild(newSublist);
+                    newSublist.appendChild(listItem);
+                }
+            } else {
+                tocList.appendChild(listItem);
+            }
         } else {
             tocList.appendChild(listItem);
         }
@@ -57,11 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleButton.addEventListener('click', function() {
         if (tocContainer.style.display === "none" || tocContainer.style.display === "") {
             tocContainer.style.display = "block"; // 展开 TOC
-            toggleButton.innerText = "隐藏 TOC"; // 修改按钮文本
+            toggleButton.querySelector('div:last-child').innerText = "隐藏 TOC"; // 修改按钮文本
         } else {
             tocContainer.style.display = "none"; // 隐藏 TOC
-            toggleButton.innerText = "显示 TOC"; // 修改按钮文本
+            toggleButton.querySelector('div:last-child').innerText = "点击显示 TOC"; // 修改按钮文本
         }
     });
 });
 </script>
+
