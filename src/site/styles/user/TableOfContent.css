@@ -1,30 +1,33 @@
-/*on this page的背景↓*/
-.toc{
-    color:white !important;
+.toc {
+    color: white !important;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
     
-    background-image:url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
-    background-size:333% !important;
-    /*rgba(86,143,86,0.8),rgba(130,214,130,0.8)*/
+    background-image: url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
+    background-size: 333% !important;
     backdrop-filter: blur(10px); /* 磨砂效果 */
-    ppadding:5px;
+    
+    padding: 5px; /* 修正拼写错误之前是 ppadding */
 }
-/*on this page的padding↓*/
-.toc ol{
-    padding:5px;
-    margin:5px;
-    border-coler:black;
-    border-width:1px;
+
+/* on this page 的 padding ↓ */
+.toc ol {
+    padding: 5px;
+    margin: 5px;
+    border-color: black; /* 修正拼写错误 */
+    border-width: 1px;
+    border-style: solid; /* 确保边框样式 */
 }
+
 /* 添加磨砂背景图片 */
 .toc-container {
-    color:white !important;
+    color: white !important;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.36); /* 保留文本阴影 */
     
     background: rgba(255, 255, 255, 0.69); /* 背景颜色和透明度 */
     backdrop-filter: blur(2.33px); /* 磨砂效果 */
 
-    height:auto;
+    overflow: auto; /* 确保内容超出时可以滚动 */
+    max-height: calc(100vh - 200px); /* 设置最大高度，防止溢出 */
     
     padding: 15px;
     border-radius: 8px; /* 可选，增加圆角 */
