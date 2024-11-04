@@ -7,6 +7,7 @@
     background-size:333% !important;
     /*rgba(86,143,86,0.8),rgba(130,214,130,0.8)*/
     backdrop-filter: blur(10px); /* 磨砂效果 */
+    ppadding:5px;
 }
 /*on this page的padding↓*/
 .toc ol{
