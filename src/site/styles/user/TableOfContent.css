@@ -23,6 +23,8 @@
     
     background: rgba(255, 255, 255, 0.69); /* 背景颜色和透明度 */
     backdrop-filter: blur(2.33px); /* 磨砂效果 */
+
+    height:auto;
     
     padding: 15px;
     border-radius: 8px; /* 可选，增加圆角 */
