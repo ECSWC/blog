@@ -81,30 +81,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         tocList.appendChild(listItem); // 直接添加到 TOC
     });
-
-    // 获取所有 TOC 链接
-    const tocLinks = document.querySelectorAll('.toc-container a');
-
-    tocLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // 阻止默认链接行为
-            e.preventDefault();
-            // 获取目标元素
-            const targetID = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetID);
-
-            if (targetElement) {
-                // 计算滚动位置并滚动
-                const offset = 50; // 顶部的高度偏移
-                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                const offsetPosition = elementPosition + offset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth' // 平滑滚动
-                });
-            }
-        });
-    });
 });
 </script>
