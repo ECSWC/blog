@@ -20,7 +20,7 @@
     color:white !important;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0); /* 保留文本阴影 */
     
-    background: rgba(255, 255, 255, 0.5); /* 背景颜色和透明度 */
+    background: rgba(255, 255, 255, 0.3); /* 背景颜色和透明度 */
     backdrop-filter: blur(10px); /* 磨砂效果 */
     
     padding: 15px;
