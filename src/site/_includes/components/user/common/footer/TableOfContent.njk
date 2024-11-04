@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         header.setAttribute('id', id); // 设置锚点 ID
 
         const listItem = document.createElement('li');
-        listItem.innerHTML = `<a href="⤷${id}">${title}</a>`;
+        listItem.innerHTML = `<a href="#${id}">${title}</a>`;
 
         const level = parseInt(header.tagName[1]); // 获取标题的级别（1, 2, 3, 4）
 
