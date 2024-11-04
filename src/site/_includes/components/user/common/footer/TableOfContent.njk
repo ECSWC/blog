@@ -11,7 +11,7 @@
     </div>
 </aside>
 
-<button class="toc-button" id="toggle-toc">显示 TOC</button>
+<button class="toc-button" id="toggle-toc">🗺️显示本页目录</button>
 
 <script>
 // 创建TOC的JavaScript逻辑
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         header.setAttribute('id', id); // 设置锚点 ID
 
         const listItem = document.createElement('li');
-        listItem.innerHTML = `<a href="javascript:void(0);" onclick="scrollToTarget('${id}')">⤷ ${title}</a>`; // 使用 ⤷ 符号
+        listItem.innerHTML = `<a href="#${id}">⤷ ${title}</a>`; // 使用 ⤷ 符号，保持 # 锚点链接
 
         tocList.appendChild(listItem); // 添加到 TOC
     });
@@ -40,27 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleButton.addEventListener('click', function() {
         if (tocContainer.style.display === "none" || tocContainer.style.display === "") {
             tocContainer.style.display = "block"; // 展开 TOC
-            toggleButton.innerText = "隐藏 TOC"; // 修改按钮文本
+            toggleButton.innerText = "🏝️隐藏本页目录"; // 修改按钮文本
         } else {
             tocContainer.style.display = "none"; // 隐藏 TOC
-            toggleButton.innerText = "显示 TOC"; // 修改按钮文本
+            toggleButton.innerText = "🗺️显示本页目录"; // 修改按钮文本
         }
     });
 });
-
-// 创建滚动函数
-function scrollToTarget(id) {
-    const targetElement = document.getElementById(id); // 获取目标元素
-    if (targetElement) {
-        const offset = 70; // 顶部偏移量
-        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - offset; // 计算滚动位置
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth' // 平滑滚动
-        });
-    }
-}
 </script>
-
