@@ -66,7 +66,7 @@
 // 创建TOC的JavaScript逻辑
 document.addEventListener('DOMContentLoaded', function() {
     const tocList = document.getElementById('toc-list');
-    const headers = document.querySelectorAll('h1, h2, h3'); // 选取所有 h1, h2, h3
+    const headers = document.querySelectorAll('h2, h3, h4'); // 选取所有 h1, h2, h3
 
     headers.forEach(function(header) {
         const title = header.innerText;
