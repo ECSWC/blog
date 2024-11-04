@@ -13,7 +13,7 @@
 
 <button class="toc-button" id="toggle-toc">
     <div>🗺️</div>
-    <div style="font-size: 12px;">显示本页目录</div>
+    <div style="font-size: 12px;">点击显示 TOC</div>
 </button>
 
 <script>
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const level = header.tagName.toLowerCase(); // 获取标题级别
         const listItem = document.createElement('li');
 
-        listItem.innerHTML = `<a href="#${id}">⤷ ${title}</a>`; // 使用 ⤷ 符号，保持 # 锚点链接
+        listItem.innerHTML = `<a href="#${id}">${title}</a>`; // 继续保持链接
 
         // 检查标题的级别并嵌套
         if (level === 'h3') {
@@ -65,8 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     parent.appendChild(newSublist);
                     newSublist.appendChild(listItem);
                 }
-            } else {
-                tocList.appendChild(listItem);
             }
         } else {
             tocList.appendChild(listItem);
@@ -77,12 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleButton.addEventListener('click', function() {
         if (tocContainer.style.display === "none" || tocContainer.style.display === "") {
             tocContainer.style.display = "block"; // 展开 TOC
-            toggleButton.querySelector('div:last-child').innerText = "隐藏 TOC"; // 修改按钮文本
+            toggleButton.innerText = "隐藏 TOC"; // 修改按钮文本
         } else {
             tocContainer.style.display = "none"; // 隐藏 TOC
-            toggleButton.querySelector('div:last-child').innerText = "点击显示 TOC"; // 修改按钮文本
+            toggleButton.innerText = "显示 TOC"; // 修改按钮文本
         }
     });
 });
 </script>
-
