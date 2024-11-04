@@ -1,85 +1,85 @@
-<aside>
-      <div class="sidebar">
-            <div class="sidebar-container">
-                  {% for imp in dynamics.sidebar.top %}
-                        {% include imp %}
-                  {% endfor %}
-                  {%if settings.dgShowLocalGraph === true%}
-                        {%include "components/graphScript.njk"%}
-                  {%endif%}
+好的，以下是修改后的完整代码，能够识别带有不同类的 `h1`, `h2`, 和 `h3` 标签以生成 TOC（目录）。我根据你提供的代码结构进行了适当的调整。
 
-                  {%if settings.dgShowToc === false%}
-                        {%- set tocHtml = '' -%}
-{%- set headers = content | regex_findall('<(h[1-3]) class="[^"]*">(.*?)</\\1>') -%}
-{%- if headers -%}
-    <div class="toc">
-        <div class="toc-title-container">
-            <div class="toc-title">
-                🗺️ 本页面包含的内容：
-            </div>
-        </div>
-        <div class="toc-container">
-            <ul>
-            {%- for header in headers -%}
-              {%- set tag = header[0] -%}
-              {%- set title = header[1] -%}
-              <li>
-                  <a href="#{{ title | slugify }}">{{ title }}</a>
-              </li>
-            {%- endfor -%}
-            </ul>
+```html
+<aside>
+    <div class="sidebar">
+        <div class="sidebar-container">
+            {% for imp in dynamics.sidebar.top %}
+                {% include imp %}
+            {% endfor %}
+            {% if settings.dgShowLocalGraph === true %}
+                {% include "components/graphScript.njk" %}
+            {% endif %}
+
+            {% if settings.dgShowToc === false %}
+                {% set tocHtml = '' %}
+                {% set headers = content | regex_findall('<(h[1-3]) class="[^"]*">(.*?)</\\1>') %}
+                {% if headers %}
+                    <div class="toc">
+                        <div class="toc-title-container">
+                            <div class="toc-title">
+                                🗺️ 本页面包含的内容：
+                            </div>
+                        </div>
+                        <div class="toc-container">
+                            <ul>
+                            {% for header in headers %}
+                                {% set tag = header[0] %}
+                                {% set title = header[1] %}
+                                <li>
+                                    <a href="#{{ title | slugify }}">{{ title }}</a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            {% if settings.dgShowBacklinks === true %}
+                <div class="backlinks">
+                    <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
+                    <div class="backlink-list">
+                        {% if page.url == "/" %}
+                            {% if graph.nodes[graph.homeAlias].backLinks.length === 0 %}
+                                <div class="backlink-card">
+                                    <span class="no-backlinks-message">No other pages mention this page</span>
+                                </div>
+                            {% endif %}
+                        {% for backlink in graph.nodes[graph.homeAlias].backLinks %}
+                            {% if graph.nodes[backlink].url != graph.homeAlias %}
+                                <div class="backlink-card">
+                                    {% if not meta.noteIconsSettings.backlinks %}<i icon-name="link"></i> {% endif %}<a href="{{graph.nodes[backlink].url}}" data-note-icon="{{graph.nodes[backlink].noteIcon}}" class="backlink">{{graph.nodes[backlink].title}}</a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% else %}
+                            {% if graph.nodes[page.url].backLinks.length === 0 %}
+                                <div class="backlink-card">
+                                    <span class="no-backlinks-message">No other pages mention this page</span>
+                                </div>
+                            {% endif %}
+                        {% for backlink in graph.nodes[page.url].backLinks %}
+                            {% if graph.nodes[backlink].url != page.url %}
+                                <div class="backlink-card">
+                                    {% if not meta.noteIconsSettings.backlinks %}<i icon-name="link"></i> {% endif %}<a href="{{graph.nodes[backlink].url}}" data-note-icon="{{graph.nodes[backlink].noteIcon}}" class="backlink">{{graph.nodes[backlink].title}}</a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+            {% for imp in dynamics.sidebar.bottom %}
+                {% include imp %}
+            {% endfor %}
         </div>
     </div>
-{%- endif -%}
-
-
-                  {%endif%}
-
-                        {%if settings.dgShowBacklinks === true %}
-                              {%if settings.dgShowBacklinks === true %}
-                              <div class="backlinks">
-                                    <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list">
-                                          {%- if page.url == "/" -%}
-                                                {%- if graph.nodes[graph.homeAlias].backLinks.length === 0 -%}
-                                                      <div class="backlink-card">
-                                                            <span class="no-backlinks-message">No other pages mentions this page</span>
-                                                      </div>
-                                                {%- endif -%}
-                                          {%- for backlink in graph.nodes[graph.homeAlias].backLinks -%}
-                                                {%- if graph.nodes[backlink].url != graph.homeAlias -%}
-                                                <div class="backlink-card">
-                                                      {%- if not meta.noteIconsSettings.backlinks -%}<i  icon-name="link"></i> {%- endif -%}<a href="{{graph.nodes[backlink].url}}" data-note-icon="{{graph.nodes[backlink].noteIcon}}" class="backlink">{{graph.nodes[backlink].title}}</a>
-                                                </div>
-                                                {%- endif -%}
-                                          {%- endfor -%}
-                                          {%- else -%}
-                                                {%- if graph.nodes[page.url].backLinks.length === 0 -%}
-                                                      <div class="backlink-card">
-                                                            <span class="no-backlinks-message">No other pages mentions this page</span>
-                                                      </div>
-                                                {%- endif -%}
-                                          {%- for backlink in graph.nodes[page.url].backLinks -%}
-                                                {%- if graph.nodes[backlink].url != page.url -%}
-                                                <div class="backlink-card">
-                                                      {%- if not meta.noteIconsSettings.backlinks -%}<i  icon-name="link"></i> {%- endif -%}<a href="{{graph.nodes[backlink].url}}" data-note-icon="{{graph.nodes[backlink].noteIcon}}" class="backlink">{{graph.nodes[backlink].title}}</a>
-                                                </div>
-                                                {%- endif -%}
-                                          {%- endfor -%}
-                                    {%- endif -%}
-                                    </div>
-                              </div>
-                        {%endif%}
-                  {%endif%}
-                  {% for imp in dynamics.sidebar.bottom %}
-                        {% include imp %}
-                  {% endfor %}
-            </div>
-      </div>
 </aside>
+
 <script>
-//☝🏻TOC在不同情况（比如思维导图是否隐藏）情况下的HTML布局方式
-//👇🏻搜索h1h2…
+// ☝🏻 TOC 在不同情况（比如思维导图是否隐藏）情况下的 HTML 布局方式
+// 👇🏻 搜索 h1 h2 …
 var lis = document.querySelectorAll('div.sidebar-nav li');
 var items = document.querySelectorAll('.item');
 for (var i = 0; i < lis.length; i++) {
@@ -97,3 +97,22 @@ for (var i = 0; i < lis.length; i++) {
     }
 }
 </script>
+
+{%- macro slugify(text) -%}
+    {{ text | lower | replace(' ', '-') | replace('?', '') | replace('!', '') | replace('.', '') }}
+{%- endmacro -%}
+```
+
+### 说明：
+
+1. **TOC 生成逻辑**：
+   - 通过 `regex_findall` 函数识别带有类的 `h1`, `h2`, 和 `h3` 标签，并捕获它们的内容。
+   - 对于每个标题生成一个 TOC 项，使用 `slugify` 函数进行 URL 安全化。
+
+2. **slugify 宏**：
+   - 该宏将标题转换为适合用于锚点的格式（小写，空格替换为连字符等）。
+
+3. **保留已有逻辑**：
+   - 保持了原代码中的其他部分，包括 backlinks 的逻辑等。
+
+确保正确测试并根据实际内容进行适当调整，以确保 TOC 能够正确显示内容。
