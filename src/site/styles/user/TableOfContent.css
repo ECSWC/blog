@@ -1,5 +1,7 @@
 /*on this page的背景↓*/
 .toc{
+    color:white !important;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
     /*rgba(86,143,86,0.8),rgba(130,214,130,0.8)*/
     background: rgba(255, 255, 255, 0.5); /* 背景颜色和透明度 */
     backdrop-filter: blur(10px); /* 磨砂效果 */
@@ -14,7 +16,7 @@
 /* 添加磨砂背景图片 */
 .toc-container {
     background-image:url("https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg");
-    background-size:123% !important;
+    background-size:333% !important;
     padding: 15px;
     border-radius: 8px; /* 可选，增加圆角 */
 }
