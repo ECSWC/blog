@@ -20,8 +20,8 @@
     color:white !important;
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.36); /* 保留文本阴影 */
     
-    background: rgba(255, 255, 255, 0.36); /* 背景颜色和透明度 */
-    backdrop-filter: blur(3.3px); /* 磨砂效果 */
+    background: rgba(255, 255, 255, 0.69); /* 背景颜色和透明度 */
+    backdrop-filter: blur(2.33px); /* 磨砂效果 */
     
     padding: 15px;
     border-radius: 8px; /* 可选，增加圆角 */
