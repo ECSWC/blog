@@ -18,9 +18,9 @@
 /* 添加磨砂背景图片 */
 .toc-container {
     color:white !important;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 1.23); /* 保留文本阴影 */
     
-    background: rgba(255, 255, 255, 0.5); /* 背景颜色和透明度 */
+    background: rgba(0, 0, 0, 0.5); /* 背景颜色和透明度 */
     
     padding: 15px;
     border-radius: 8px; /* 可选，增加圆角 */
