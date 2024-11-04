@@ -1,0 +1,35 @@
+/* 添加磨砂背景图片 */
+.toc {
+    background: rgba(255, 255, 255, 0.5); /* 背景颜色和透明度 */
+    backdrop-filter: blur(10px); /* 磨砂效果 */
+    padding: 15px;
+    border-radius: 8px; /* 可选，增加圆角 */
+}
+
+.toc-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* TOC 列表样式 */
+#toc-list {
+    padding-left: 0; /* 去掉默认左边距 */
+}
+
+#toc-list li {
+    border-bottom: 1px solid transparent; /* 初始边界为透明 */
+    transition: border-color 0.3s; /* 平滑的边界变化效果 */
+}
+
+#toc-list li:hover {
+    border-color: #ccc; /* 鼠标悬停时显示的边界颜色 */
+}
+
+#toc-list li a {
+    text-decoration: none; /* 去掉链接下划线 */
+    color: #333; /* 文本颜色 */
+}
+
+#toc-list li a:hover {
+    color: #007bff; /* 鼠标悬停时的文本颜色 */
+}
