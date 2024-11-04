@@ -62,45 +62,27 @@
     </div>
 </aside>
 
+
 <script>
 // 创建TOC的JavaScript逻辑
 document.addEventListener('DOMContentLoaded', function() {
     const tocList = document.getElementById('toc-list');
     const headers = document.querySelectorAll('main h2, main h3, main h4'); // 选取所有 main 内的 h1, h2, h3, h4
-    const stack = []; // 用于管理层级结构
 
     headers.forEach(function(header) {
         const title = header.innerText;
-        const id = title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''); // 生成锚点 ID
-        header.setAttribute('id', id); // 设置锚点 id
+        const id = title
+            .toLowerCase() // 转换为小写
+            .replace(/^[^\w]+/, '') // 移除开头的特殊字符
+            .replace(/\s+/g, '-') // 替换空格为连字符
+            .replace(/[^\w-]+/g, ''); // 移除无效字符
+
+        header.setAttribute('id', id); // 设置锚点 ID
 
         const listItem = document.createElement('li');
         listItem.innerHTML = `<a href="#${id}">${title}</a>`;
 
-        const level = parseInt(header.tagName[1]); // 获取级别（1, 2, 3）
-
-        // 处理层级结构
-        while (stack.length && stack[stack.length - 1].level >= level) {
-            stack.pop(); // 弹出已有的层级
-        }
-
-        if (stack.length === 0) {
-            tocList.appendChild(listItem); // 在根级别添加
-        } else {
-            const parentUl = stack[stack.length - 1].ul;
-            if (!parentUl) {
-                return; // 如果没有父级，退出
-            }
-            let childUl = parentUl.querySelector('ul');
-            if (!childUl) {
-                childUl = document.createElement('ul');
-                parentUl.appendChild(childUl);
-            }
-            childUl.appendChild(listItem); // 将项添加到子级 UL
-        }
-
-        // 将当前级别和对应的列表项推入栈中
-        stack.push({ level, ul: listItem });
+        tocList.appendChild(listItem); // 直接添加到 TOC
     });
 });
 </script>
