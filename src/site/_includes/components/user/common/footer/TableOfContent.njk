@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (targetElement) {
                 // 计算滚动位置并滚动
-                const offset = 70; // 增加偏移为70px以确保标题下移一些
+                const offset = 50; // 顶部的高度偏移
                 const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                const offsetPosition = elementPosition - offset;
+                const offsetPosition = elementPosition + offset;
 
                 window.scrollTo({
                     top: offsetPosition,
