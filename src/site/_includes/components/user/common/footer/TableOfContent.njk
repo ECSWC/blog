@@ -66,7 +66,7 @@
 // 创建TOC的JavaScript逻辑
 document.addEventListener('DOMContentLoaded', function() {
     const tocList = document.getElementById('toc-list');
-    const headers = document.querySelectorAll('main h2, main h3, main h4'); // 选取所有 main 内的 h1, h2, h3, h4
+    const headers = document.querySelectorAll('main h2, main h3, main h4'); // 选取所有 main 内的 h2, h3, h4
     const stack = []; // 用于管理层级结构
 
     headers.forEach(function(header) {
@@ -78,9 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
         header.setAttribute('id', id); // 设置锚点 ID
 
         const listItem = document.createElement('li');
-        listItem.innerHTML = `<a href="#${id}">${title}</a>`;
+        listItem.innerHTML = `<a href="javascript:void(0);" onclick="scrollToTarget('${id}')">⤷ ${title}</a>`; // 使用 ⤷ 符号
 
-        const level = parseInt(header.tagName[1]); // 获取标题的级别（1, 2, 3, 4）
+        const level = parseInt(header.tagName[1]); // 获取标题的级别（2, 3, 4）
 
         while (stack.length && stack[stack.length - 1].level >= level) {
             stack.pop(); // 弹出比当前级别高或相等的层级
@@ -101,4 +101,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// 创建滚动函数
+function scrollToTarget(id) {
+    const targetElement = document.getElementById(id); // 获取目标元素
+    if (targetElement) {
+        const offset = 70; // 顶部偏移量
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset; // 计算滚动位置
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth' // 平滑滚动
+        });
+    }
+}
 </script>
