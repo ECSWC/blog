@@ -71,11 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     headers.forEach(function(header) {
         const title = header.innerText;
-        const id = title
-            .toLowerCase() // 转换为小写
-            .replace(/^[^\w]+/, '') // 移除开头的特殊字符
-            .replace(/\s+/g, '-') // 替换空格为连字符
-            .replace(/[^\w-]+/g, ''); // 移除无效字符
+        const id = encodeURIComponent(title) // 编码整个标题
+            .replace(/%20/g, '-')          // 替换 %20 为 -
+            .replace(/[^\w-]+/g, '');      // 移除无效字符
 
         header.setAttribute('id', id); // 设置锚点 ID
 
