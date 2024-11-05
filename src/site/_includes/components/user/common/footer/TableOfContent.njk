@@ -3,7 +3,7 @@
         <div class="sidebar-container">
             <!-- 此处为…原思维导图代码… -->
 
-            {% if settings.dgShowToc === false %}
+            {% if settings.dgShowToc === true %}
                 {% set tocHtml = (content and (content|toc)) %}
                 {% if tocHtml %}
                     <div class="toc">
@@ -69,5 +69,66 @@
     </div>
 </aside>
 
+<style>
+    .sidebar {
+        position: fixed;     /* 固定定位 */
+        right: 0;           /* 靠右 0px */
+        top: 20%;           /* 距离顶部 20% */
+        width: 300px;       /* 设置宽度 */
+        max-height: 80%;    /* 最大高度 */
+        overflow-y: auto;   /* 允许竖向滚动 */
+        background: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+        border-radius: 8px; /* 圆角边框 */
+        z-index: 1000;      /* 确保在最上面 */
+    }
 
+    .toc {
+        padding: 15px;      /* 内边距 */
+    }
+
+    .toc-title-container {
+        margin-bottom: 10px; /* 底部间距 */
+    }
+
+    .toc-title {
+        font-weight: bold; /* 加粗标题 */
+        font-size: 1.2em;  /* 字体大小 */
+    }
+
+    .toc-container {
+        padding: 0;
+    }
+
+    .toc a {
+        text-decoration: none; /* 去掉下划线 */
+        color: black;         /* 链接颜色 */
+        display: block;       /* 块状显示，便于点击 */
+        overflow: hidden;     /* 隐藏溢出文本 */
+        white-space: nowrap;  /* 不换行 */
+        text-overflow: ellipsis; /* 溢出文本省略 */
+    }
+
+    .toc a:hover {
+        background-color: #f0f0f0; /* 鼠标悬浮背景 */
+    }
+
+    .toc-container h2,
+    .toc-container h3,
+    .toc-container h4 {
+        margin: 5px 0;          /* 间距 */
+    }
+
+    .toc-container h2 {
+        font-size: 1.5em;       /* h2 字体大小 */
+    }
+
+    .toc-container h3 {
+        font-size: 1.25em;      /* h3 字体大小 */
+    }
+
+    .toc-container h4 {
+        font-size: 1em;         /* h4 字体大小 */
+    }
+</style>
 
