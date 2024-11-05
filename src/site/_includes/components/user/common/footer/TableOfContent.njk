@@ -1,15 +1,16 @@
 
- <style>
-    .toc {
+<style>
+    .toc-container {
         background: rgba(255, 255, 255, 0.9); /* 白色背景 */
         backdrop-filter: blur(10px);          /* 磨砂效果 */
         padding: 10px;
         position: fixed;                       /* 固定定位 */
-        top: 10%;                             /* 距离顶部10% */
-        right: 10px;                          /* 距离右侧10px */
+        top: 50%;                             /* 距离顶部50%以居中 */
+        right: 15px;                          /* 距离右侧15px */
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         display: none;                        /* 初始隐藏 */
+        width: 300px;                         /* 设置宽度为 300px */
         max-height: 80%;                      /* 最大高度 */
         overflow-y: auto;                     /* 允许竖向滚动 */
         z-index: 1000;                        /* 确保在上方 */
@@ -37,6 +38,9 @@
     .toc a {
         color: black;                       /* 字体颜色 */
         text-decoration: none;              /* 去掉下划线 */
+        overflow: hidden;                  /* 隐藏溢出文本 */
+        white-space: nowrap;                /* 不换行 */
+        text-overflow: ellipsis;            /* 字符溢出用…表示 */
     }
 
     .toc ul {
@@ -49,10 +53,15 @@
         margin-left: 15px;                  /* 只在每个项左边增加外边距以缩进 */
     }
 
+    .toc ul li h3 {
+        margin-left: 30px;                  /* h3 相对 h2 额外缩进 */
+    }
+
     .toc ul ul li {
-        margin-left: 15px;                  /* 进一步缩进子标题 */
+        margin-left: 30px;                  /* 进一步缩进子标题 */
     }
 </style>
+
 
 
 <button class="toc-button" id="toggle-toc">
