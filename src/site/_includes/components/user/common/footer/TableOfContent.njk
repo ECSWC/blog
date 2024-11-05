@@ -1,64 +1,99 @@
+<aside>
+    <div class="sidebar">
+        <div class="sidebar-container">
+            {% for imp in dynamics.sidebar.top %}
+                {% include imp %}
+            {% endfor %}
+            
+            <!-- 此处为…原思维导图代码… -->
 
-    <style>
-        .sidebar {
-            position: fixed;
-            right: 0;
-            top: 20%;
-            width: 100px;
-            max-height: 50%;
-            overflow-y: auto;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            z-index: 1000;
-            padding: 15px;
-        }
+            <div class="toc-wrapper">
+                <div class="toc-button" onclick="toggleToc()">+</div> <!-- 点击按钮 -->
+                <div class="toc">
+                    <div class="toc-title-container">
+                        <div class="toc-title">
+                            On this page
+                        </div>
+                    </div>
+                    <div class="toc-container">
+                        {% if settings.dgShowToc === false %}
+                            {% set tocHtml = (content and (content|toc)) %}
+                            {% if tocHtml %}
+                                {{ tocHtml | safe }}
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
 
-        .toc a {
-            text-decoration: none;
-            color: black;
-        }
+            <!-- 此处为…原反链代码… -->
+            {% for imp in dynamics.sidebar.bottom %}
+                {% include imp %}
+            {% endfor %}
+        </div>
+    </div>
+</aside>
+<!-- 以下是添加的css及js -->
+<style>
+    .sidebar {
+        position: fixed;
+        right: 0;
+        top: 20%;
+        width: 300px;
+        max-height: 80%;
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        z-index: 1000;
+        padding: 15px;
+    }
 
-        .toc a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .toc-wrapper {
+        position: relative;
+        transition: width 0.3s, height 0.3s; /* Smooth transition */
+    }
     
-    <script>
-        // 定义查找标题的函数
-        function findHeadings(content) {
-            const headingRegex = /<h([2-4])>(.*?)<\/h\1>/g;
-            const headings = [];
-            let match;
+    .toc-button {
+        width: 50px;     /* 按钮的宽度 */
+        height: 50px;    /* 按钮的高度 */
+        background-color: #007bff; /* 按钮背景色 */
+        color: white;
+        border: none;
+        border-radius: 50%;          /* 圆形按钮 */
+        font-size: 24px;             /* 字体大小 */
+        text-align: center;          /* 文本居中 */
+        line-height: 50px;           /* 使文字垂直居中 */
+        cursor: pointer;             /* 鼠标手势 */
+        z-index: 1;                  /* 确保按钮在上方 */
+        transition: background-color 0.3s; /* 悬停时改变背景色 */
+    }
 
-            while ((match = headingRegex.exec(content)) !== null) {
-                headings.push({
-                    level: parseInt(match[1], 10),
-                    title: match[2],
-                    id: match[2].replace(/\s+/g, '-').toLowerCase() // 转为 ID
-                });
-            }
+    .toc-button:hover {
+        background-color: #0056b3; /* 悬停时按钮颜色 */
+    }
 
-            return headings;
-        }
+    .toc {
+        display: none;               /* 默认隐藏 TOC 内容 */
+        width: 300px;               /* 展开后的宽度 */
+        height: 300px;              /* 定义为正方形 */
+        background-color: white;     /* TOC 背景颜色 */
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* TOC 阴影 */
+        position: absolute;          /* 绝对定位在按钮下方 */
+        top: 60px;                  /* 距离按钮的顶部高度 */
+        right: 0;                   /* 靠右对齐 */
+        border-radius: 8px;         /* 圆角 */
+        overflow-y: auto;           /* 允许纵向滚动 */
+        z-index: -1;
+    }
+</style>
 
-        // 创建并显示目录
-        function generateTOC() {
-            const content = document.getElementById('content').innerHTML;
-            const headings = findHeadings(content);
-            const tocContainer = document.getElementById('toc');
-            let tocHtml = '<h2>目录</h2><ul>';
-
-            headings.forEach(entry => {
-                tocHtml += `<li style="margin-left: ${entry.level * 20}px;"><a href="#${entry.id}">${entry.title}</a></li>`;
-            });
-
-            tocHtml += '</ul>';
-            tocContainer.innerHTML = tocHtml;
-        }
-
-        window.onload = generateTOC; // 在窗口加载时生成目录
-    </script>
-    <aside class="sidebar" id="toc">
-        <!-- TOC 将在此处生成 -->
-    </aside>
+<script>
+    function toggleToc() {
+        const toc = document.querySelector('.toc');
+        const isVisible = toc.style.display === 'block';
+        
+        toc.style.display = isVisible ? 'none' : 'block'; // 切换显示状态
+    }
+</script>
