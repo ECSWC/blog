@@ -33,7 +33,7 @@
         </div>
     </div>
 </aside>
-<!-- 以下是添加的css及js -->
+
 <style>
     .sidebar {
         position: fixed;
@@ -47,12 +47,11 @@
         border-radius: 8px;
         z-index: 1000;
         padding: 15px;
-        display:hidden;
     }
 
     .toc-wrapper {
         position: relative;
-        transition: width 0.3s, height 0.3s; /* Smooth transition */
+        transition: width 0.3s, height 0.3s; /* 平滑过渡 */
     }
     
     .toc-button {
@@ -75,26 +74,31 @@
     }
 
     .toc {
-        display: none;               /* 默认隐藏 TOC 内容 */
+        opacity: 0;                 /* 初始为透明 */
+        max-height: 0;              /* 默认隐藏 */
+        transition: opacity 0.3s ease, max-height 0.3s ease; /* 动画过渡 */
         width: 300px;               /* 展开后的宽度 */
         height: 300px;              /* 定义为正方形 */
         background-color: white;     /* TOC 背景颜色 */
         padding: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* TOC 阴影 */
         position: absolute;          /* 绝对定位在按钮下方 */
-        top: 60px;                  /* 距离按钮的顶部高度 */
-        right: 0;                   /* 靠右对齐 */
+        top: 60px;                   /* 距离按钮的顶部高度 */
+        right: 0;                    /* 靠右对齐 */
         border-radius: 8px;         /* 圆角 */
         overflow-y: auto;           /* 允许纵向滚动 */
-        z-index: -1;
+        z-index: 1;                 /* 使 TOC 值在上 */
+    }
+
+    .toc.show {
+        opacity: 1;                 /* 显示时不透明 */
+        max-height: 300px;          /* 设置最大高度 */
     }
 </style>
 
 <script>
     function toggleToc() {
         const toc = document.querySelector('.toc');
-        const isVisible = toc.style.display === 'block';
-        
-        toc.style.display = isVisible ? 'none' : 'block'; // 切换显示状态
+        toc.classList.toggle('show'); // 切换 show 类
     }
 </script>
