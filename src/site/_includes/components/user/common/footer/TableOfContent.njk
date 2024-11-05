@@ -1,61 +1,58 @@
 
-    <style>
-        
-        .toc {
-            background: rgba(255, 255, 255, 0.9); /* 白色背景 */
-            backdrop-filter: blur(10px);          /* 磨砂效果 */
-            padding: 10px;
-            position: fixed;                   /* 固定定位 */
-            top: 10%;                         /* 距离顶部10% */
-            right: 10px;                      /* 距离右侧10px */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: none;                    /* 初始隐藏 */
-            max-height: 80%;                  /* 最大高度 */
-            overflow-y: auto;                 /* 允许竖向滚动 */
-            z-index: 1000;                    /* 确保在上方 */
-        }
+  <style>
+    .toc {
+        background: rgba(255, 255, 255, 0.9); /* 白色背景 */
+        backdrop-filter: blur(10px);          /* 磨砂效果 */
+        padding: 10px;
+        position: fixed;                       /* 固定定位 */
+        top: 10%;                             /* 距离顶部10% */
+        right: 10px;                          /* 距离右侧10px */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: none;                        /* 初始隐藏 */
+        max-height: 80%;                      /* 最大高度 */
+        overflow-y: auto;                     /* 允许竖向滚动 */
+        z-index: 1000;                        /* 确保在上方 */
+    }
 
-        .toc-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+    .toc-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
 
-        .toc-button {
-            position: fixed;                    /* 固定定位 */
-            top: 50%;                          /* 垂直居中 */
-            right: 15px;                       /* 距离右侧15px */
-            transform: translateY(-50%);       /* 垂直居中修正 */
-            z-index: 1001;                     /* 确保按钮在上面 */
-            background: white;                 /* 按钮背景 */
-            border: none;                      /* 无边框 */
-            padding: 10px;                     /* 内边距 */
-            border-radius: 5px;                /* 圆角 */
-            cursor: pointer;                   /* 鼠标手势 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
+    .toc-button {
+        position: fixed;                      /* 固定定位 */
+        top: 50%;                            /* 垂直居中 */
+        right: 15px;                         /* 距离右侧15px */
+        transform: translateY(-50%);         /* 垂直居中修正 */
+        z-index: 1001;                       /* 确保按钮在上面 */
+        background: white;                   /* 按钮背景 */
+        border: none;                        /* 无边框 */
+        padding: 10px;                       /* 内边距 */
+        border-radius: 5px;                  /* 圆角 */
+        cursor: pointer;                     /* 鼠标手势 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-        .toc a {
-            color: black;                         /* 字体颜色 */
-            text-decoration: none;               /* 去掉下划线 */
-        }
+    .toc a {
+        color: black;                       /* 字体颜色 */
+        text-decoration: none;              /* 去掉下划线 */
+    }
 
-        .toc ul {
-            list-style-type: none;                /* 去掉列表标记 */
-            padding-left: 0;                      /* 不需要左边距 */
-            margin: 0;                            /* 去掉外边距 */
-        }
+    .toc ul {
+        list-style-type: none;              /* 去掉列表标记 */
+        padding-left: 0;                    /* 不需要左边距 */
+        margin: 0;                          /* 去掉外边距 */
+    }
 
-        .toc ul li {
-            padding-left: 15px;                   /* 只在每个项左边增加填充 */
-        }
+    .toc ul li {
+        margin-left: 15px;                  /* 只在每个项左边增加外边距以缩进 */
+    }
 
-        .toc ul ul li {
-            padding-left: 15px;                   /* 进一步缩进子标题 */
-        }
-
-        
-    </style>
+    .toc ul ul li {
+        margin-left: 15px;                  /* 进一步缩进子标题 */
+    }
+</style>
 
 <button class="toc-button" id="toggle-toc">
     <div>🗺️</div>
