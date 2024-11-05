@@ -1,6 +1,9 @@
 <aside>
     <div class="sidebar">
         <div class="sidebar-container">
+           {% for imp in dynamics.sidebar.top %}
+                        {% include imp %}
+                  {% endfor %}
             <!-- 此处为…原思维导图代码… -->
 
             {% if settings.dgShowToc === true %}
@@ -65,6 +68,9 @@
             {% endif %}
 
             <!-- 此处为…原反链代码… -->
+         {% for imp in dynamics.sidebar.bottom %}
+                        {% include imp %}
+                  {% endfor %}
         </div>
     </div>
 </aside>
