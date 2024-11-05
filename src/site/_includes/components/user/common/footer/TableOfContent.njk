@@ -1,146 +1,73 @@
 <aside>
-      <div class="sidebar">
-            <div class="sidebar-container">
-                  {% for imp in dynamics.sidebar.top %}
-                        {% include imp %}
-                  {% endfor %}
-                  {%if settings.dgShowLocalGraph === true%}
-                        {%include "components/graphScript.njk"%}
-                  {%endif%}
+    <div class="sidebar">
+        <div class="sidebar-container">
+            <!-- 此处为…原思维导图代码… -->
 
-                  {%if settings.dgShowToc === false%}
-                        {%set tocHtml= (content and (content|toc)) %}
-                        {%if tocHtml %}
-                              <div class="toc">
-                                    <div class="toc-title-container">
-                                          <div class="toc-title">
-                                                On this page
-                                          </div>
-                                    </div>
-                                    <div class="toc-container">
-                                          {{ tocHtml | safe }}
-                                    </div>
-                              </div>
-                        {%endif%}
+            {% if settings.dgShowToc === false %}
+                {% set tocHtml = (content and (content|toc)) %}
+                {% if tocHtml %}
+                    <div class="toc">
+                        <div class="toc-title-container">
+                            <div class="toc-title">
+                                On this page
+                            </div>
+                        </div>
+                        <div class="toc-container">
+                            <ul>
+                                {% for section in tocHtml %}
+                                    {% if section.type == 'h2' %}
+                                        <li>
+                                            <h2><a href="#{{ section.id }}">{{ section.title }}</a></h2>
+                                            {% if section.children %}
+                                                <ul>
+                                                    {% for child in section.children %}
+                                                        {% if child.type == 'h3' %}
+                                                            <li>
+                                                                <h3><a href="#{{ child.id }}">{{ child.title }}</a></h3>
+                                                                {% if child.children %}
+                                                                    <ul>
+                                                                        {% for grandchild in child.children %}
+                                                                            {% if grandchild.type == 'h4' %}
+                                                                                <li>
+                                                                                    <h4><a href="#{{ grandchild.id }}">{{ grandchild.title }}</a></h4>
+                                                                                </li>
+                                                                            {% endif %}
+                                                                        {% endfor %}
+                                                                    </ul>
+                                                                {% endif %}
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+                                    {% elseif section.type == 'h3' %}
+                                        <li>
+                                            <h3><a href="#{{ section.id }}">{{ section.title }}</a></h3>
+                                            {% if section.children %}
+                                                <ul>
+                                                    {% for child in section.children %}
+                                                        {% if child.type == 'h4' %}
+                                                            <li>
+                                                                <h4><a href="#{{ child.id }}">{{ child.title }}</a></h4>
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
 
-                  {%endif%}
-
-                        {%if settings.dgShowBacklinks === true %}
-                              {%if settings.dgShowBacklinks === true %}
-                              <div class="backlinks">
-                                    <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list">
-                                          {%- if page.url == "/" -%}
-                                                {%- if graph.nodes[graph.homeAlias].backLinks.length === 0 -%}
-                                                      <div class="backlink-card">
-                                                            <span class="no-backlinks-message">No other pages mentions this page</span>
-                                                      </div>
-                                                {%- endif -%}
-                                          {%- for backlink in graph.nodes[graph.homeAlias].backLinks -%}
-                                                {%- if graph.nodes[backlink].url != graph.homeAlias -%}
-                                                <div class="backlink-card">
-                                                      {%- if not meta.noteIconsSettings.backlinks -%}<i  icon-name="link"></i> {%- endif -%}<a href="{{graph.nodes[backlink].url}}" data-note-icon="{{graph.nodes[backlink].noteIcon}}" class="backlink">{{graph.nodes[backlink].title}}</a>
-                                                </div>
-                                                {%- endif -%}
-                                          {%- endfor -%}
-                                          {%- else -%}
-                                                {%- if graph.nodes[page.url].backLinks.length === 0 -%}
-                                                      <div class="backlink-card">
-                                                            <span class="no-backlinks-message">No other pages mentions this page</span>
-                                                      </div>
-                                                {%- endif -%}
-                                          {%- for backlink in graph.nodes[page.url].backLinks -%}
-                                                {%- if graph.nodes[backlink].url != page.url -%}
-                                                <div class="backlink-card">
-                                                      {%- if not meta.noteIconsSettings.backlinks -%}<i  icon-name="link"></i> {%- endif -%}<a href="{{graph.nodes[backlink].url}}" data-note-icon="{{graph.nodes[backlink].noteIcon}}" class="backlink">{{graph.nodes[backlink].title}}</a>
-                                                </div>
-                                                {%- endif -%}
-                                          {%- endfor -%}
-                                    {%- endif -%}
-                                    </div>
-                              </div>
-                        {%endif%}
-                  {%endif%}
-                  {% for imp in dynamics.sidebar.bottom %}
-                        {% include imp %}
-                  {% endfor %}
-            </div>
-      </div>
+            <!-- 此处为…原反链代码… -->
+        </div>
+    </div>
 </aside>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
 
-        .toc {
-            /* 初始状态是按钮 */
-            width: 50px;                           /* 按钮宽度 */
-            height: 50px;                          /* 按钮高度 */
-            background-color: #ffffff;             /* 背景颜色 */
-            border: 1px solid #ccc;                /* 边框 */
-            border-radius: 8px;                    /* 圆角 */
-            display: flex;                         /* Flex 布局 */
-            align-items: center;                   /* 垂直居中 */
-            justify-content: center;               /* 水平居中 */
-            cursor: pointer;                       /* 鼠标手势 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: width 0.3s, height 0.3s;  /* 添加过渡效果 */
-        }
-
-        .toc-container {
-            display: none;                         /* 默认隐藏内容 */
-            position: absolute;                    /* 自由定位 */
-            top: 60px;                             /* 距离顶部 60px */
-            right: 15px;                          /* 距离右侧 15px */
-            width: 300px;                         /* 展开后宽度 */
-            max-height: 400px;                    /* 最大高度 */
-            overflow-y: auto;                     /* 允许竖向滚动 */
-            background: rgba(255, 255, 255, 0.9); /* 白色背景 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;                   /* 圆角 */
-            z-index: 1000;                        /* 确保在上方 */
-        }
-
-        .toc-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .toc a {
-            text-decoration: none;                 /* 去掉下划线 */
-            color: black;                         /* 字体颜色 */
-            display: inline-block;                 /* 使链接支持宽度和高度 */
-            overflow: hidden;                     /* 隐藏溢出文本 */
-            white-space: nowrap;                  /* 不换行 */
-            text-overflow: ellipsis;              /* 溢出文本使用省略号表示 */
-        }
-
-        /* 为了兼容性调整 */
-        .toc span {
-            display: inline-block;
-            max-width: 100%;
-        }
-    </style>
-
-
-
-<script>
-    const toc = document.getElementById('toc');
-    const tocContainer = toc.querySelector('.toc-container');
-
-    toc.addEventListener('click', () => {
-        if (tocContainer.style.display === 'none' || tocContainer.style.display === '') {
-            tocContainer.style.display = 'block'; // 展开 TOC
-            toc.style.width = '300px';            // 设置到固定宽度
-            toc.style.height = '400px';           // 设置到固定高度
-        } else {
-            tocContainer.style.display = 'none';   // 隐藏 TOC
-            toc.style.width = '50px';              // 恢复到按钮状态
-            toc.style.height = '50px';             // 恢复到按钮状态
-        }
-    });
-</script>
 
