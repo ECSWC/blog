@@ -1,156 +1,119 @@
 
-<style>
-    .toc-container {
-        background: rgba(255, 255, 255, 0.9); /* 白色背景 */
-        backdrop-filter: blur(10px);          /* 磨砂效果 */
-        padding: 10px;
-        position: fixed;                       /* 固定定位 */
-        top: 50%;                             /* 距离顶部50%以居中 */
-        right: 15px;                          /* 距离右侧15px */
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        display: none;                        /* 初始隐藏 */
-        width: 300px;                         /* 设置宽度为 300px */
-        max-height: 80%;                      /* 最大高度 */
-        overflow-y: auto;                     /* 允许竖向滚动 */
-        z-index: 1000;                        /* 确保在上方 */
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-    .toc-title {
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
+        .toc-container {
+            background: rgba(255, 255, 255, 0.9); /* 白色背景 */
+            backdrop-filter: blur(10px);          /* 磨砂效果 */
+            padding: 10px;
+            position: fixed;                       /* 固定定位 */
+            top: 10%;                             /* 距离顶部 10% */
+            right: 15px;                          /* 距离右侧 15px */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;                        /* 初始隐藏 */
+            width: 300px;                         /* 展开后的 TOC 宽度 */
+            max-height: 80%;                      /* 最大高度 */
+            overflow-y: auto;                     /* 允许竖向滚动 */
+            z-index: 1000;                        /* 确保在上方 */
+        }
 
-    .toc-button {
-        position: fixed;                      /* 固定定位 */
-        top: 50%;                            /* 垂直居中 */
-        right: 15px;                         /* 距离右侧15px */
-        transform: translateY(-50%);         /* 垂直居中修正 */
-        z-index: 1001;                       /* 确保按钮在上面 */
-        background: white;                   /* 按钮背景 */
-        border: none;                        /* 无边框 */
-        padding: 10px;                       /* 内边距 */
-        border-radius: 5px;                  /* 圆角 */
-        cursor: pointer;                     /* 鼠标手势 */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+        .toc-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-    .toc a {
-        color: black;                       /* 字体颜色 */
-        text-decoration: none;              /* 去掉下划线 */
-        overflow: hidden;                  /* 隐藏溢出文本 */
-        white-space: nowrap;                /* 不换行 */
-        text-overflow: ellipsis;            /* 字符溢出用…表示 */
-    }
+        .toc {
+            list-style-type: none;                /* 去掉列表标记 */
+            padding-left: 0;                      /* 不需要左边距 */
+            margin: 0;                            /* 去掉外边距 */
+        }
 
-    .toc ul {
-        list-style-type: none;              /* 去掉列表标记 */
-        padding-left: 0;                    /* 不需要左边距 */
-        margin: 0;                          /* 去掉外边距 */
-    }
+        .toc a {
+            color: black;                         /* 字体颜色 */
+            text-decoration: none;                /* 去掉下划线 */
+            overflow: hidden;                     /* 隐藏溢出文本 */
+            white-space: nowrap;                  /* 不换行 */
+            text-overflow: ellipsis;              /* 字符溢出用…表示 */
+        }
 
-    .toc ul li {
-        margin-left: 15px;                  /* 只在每个项左边增加外边距以缩进 */
-    }
+        .toc-container ul {
+            margin-left: 15px;                   /* 只在每个项左边增加外边距以缩进 */
+        }
 
-    .toc ul li h3 {
-        margin-left: 30px;                  /* h3 相对 h2 额外缩进 */
-    }
+        .toc-container ul li h2,
+        .toc-container ul li h3,
+        .toc-container ul li h4 {
+            margin-left: 15px;                   /* h2/h3/h4 相对父级缩进 */
+        }
 
-    .toc ul ul li {
-        margin-left: 30px;                  /* 进一步缩进子标题 */
-    }
-</style>
+        .toc-button {
+            position: fixed;                     /* 固定定位 */
+            top: 50%;                            /* 垂直居中 */
+            right: 15px;                         /* 距离右侧 15px */
+            transform: translateY(-50%);        /* 垂直居中修正 */
+            z-index: 1001;                       /* 确保按钮在上面 */
+            width: 50px;                         /* 按钮宽度 */
+            height: 50px;                        /* 按钮高度 */
+            background: white;                   /* 按钮背景 */
+            border-radius: 50%;                  /* 圆形按钮 */
+            border: none;                        /* 无边框 */
+            cursor: pointer;                     /* 鼠标手势 */
+            display: flex;                       /* 使用flex布局 */
+            align-items: center;                 /* 垂直居中 */
+            justify-content: center;             /* 水平居中 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 
-
-
-<button class="toc-button" id="toggle-toc">
-    <div>🗺️</div>
-    <div style="font-size: 12px;">点击显示 TOC</div>
-</button>
 
 <aside>
-    <div class="toc-container" id="toc-container">
-        <div class="toc-title-container">
-            <div class="toc-title">
-                🗺️ 本页面内容：
+    <div class="sidebar">
+        <div class="sidebar-container">
+            <!-- This is a placeholder for dynamic content -->
+            <div class="toc-container" id="toc-container">
+                <div class="toc-title-container">
+                    <div class="toc-title">
+                        On this page
+                    </div>
+                </div>
+                <div class="toc">
+                    <ul>
+                        <li><h2><a href="#section1">Section 1</a></h2>
+                            <ul>
+                                <li><h3><a href="#subsection1-1">Subsection 1.1</a></h3></li>
+                                <li><h3><a href="#subsection1-2">Subsection 1.2</a></h3></li>
+                            </ul>
+                        </li>
+                        <li><h2><a href="#section2">Section 2</a></h2>
+                            <ul>
+                                <li><h3><a href="#subsection2-1">Subsection 2.1</a></h3></li>
+                                <li><h4><a href="#subsection2-1-1">Subsection 2.1.1</a></h4></li>
+                            </ul>
+                        </li>
+                        <li><h2><a href="#section3">Section 3</a></h2></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="toc">
-            <ul id="toc-list"></ul>
+            <!-- End of TOC -->
         </div>
     </div>
+    <button class="toc-button" id="toggle-toc">📖</button>
 </aside>
 
-<button class="toc-button" id="toggle-toc">
-    <div>🗺️</div>
-    <div style="font-size: 12px;">点击显示 TOC</div>
-</button>
-
-
-
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const tocList = document.getElementById('toc-list');
-        const tocContainer = document.getElementById('toc-container');
-        const toggleButton = document.getElementById('toggle-toc');
+    const tocContainer = document.getElementById('toc-container');
+    const toggleTocButton = document.getElementById('toggle-toc');
 
-        // 只选择带类的 h2, h3, h4
-        const headers = document.querySelectorAll('main h2[class], main h3[class], main h4[class]');
-
-        // 创建 TOC 条目
-        headers.forEach(function(header) {
-            const title = header.innerText;
-            const id = encodeURIComponent(title)
-                .replace(/%20/g, '-')          // 替换 %20 为 -
-                .replace(/[^\w-]+/g, '');      // 移除无效字符
-
-            header.setAttribute('id', id); // 设置锚点 ID
-
-            const level = header.tagName.toLowerCase(); // 获取标题级别
-            const listItem = document.createElement('li');
-
-            listItem.innerHTML = `<a href="#${id}">${title}</a>`; // 继续保持链接
-
-            // 按标题关系缩进
-            if (level === 'h3') {
-                const h2Item = tocList.querySelector(`li > a[href="#${id.split('-')[0]}"]`);
-                if (h2Item) {
-                    const parentLi = h2Item.parentNode;
-                    let sublist = parentLi.querySelector('ul');
-                    if (!sublist) {
-                        sublist = document.createElement('ul');
-                        parentLi.appendChild(sublist);
-                    }
-                    sublist.appendChild(listItem);
-                } else {
-                    tocList.appendChild(listItem);
-                }
-            } else if (level === 'h4') {
-                const h3Item = tocList.querySelector(`li ul li > a[href="#${id.split('-')[0]}"]`);
-                if (h3Item) {
-                    const parentLi = h3Item.parentNode;
-                    let sublist = parentLi.querySelector('ul');
-                    if (!sublist) {
-                        sublist = document.createElement('ul');
-                        parentLi.appendChild(sublist);
-                    }
-                    sublist.appendChild(listItem);
-                }
-            } else {
-                tocList.appendChild(listItem);
-            }
-        });
-
-        // 切换 TOC 显示和隐藏
-        toggleButton.addEventListener('click', function() {
-            if (tocContainer.style.display === "none" || tocContainer.style.display === "") {
-                tocContainer.style.display = "block"; // 展开 TOC
-                toggleButton.innerText = "隐藏 TOC"; // 修改按钮文本
-            } else {
-                tocContainer.style.display = "none"; // 隐藏 TOC
-                toggleButton.innerText = "显示 TOC"; // 修改按钮文本
-            }
-        });
+    toggleTocButton.addEventListener('click', () => {
+        if (tocContainer.style.display === 'none' || tocContainer.style.display === '') {
+            tocContainer.style.display = 'block';
+            toggleTocButton.textContent = '❌'; // Change to close icon
+        } else {
+            tocContainer.style.display = 'none';
+            toggleTocButton.textContent = '📖'; // Change back to open icon
+        }
     });
 </script>
