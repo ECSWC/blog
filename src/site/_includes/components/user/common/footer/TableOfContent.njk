@@ -1,105 +1,94 @@
-<aside>
-    <div class="sidebar">
-        <div class="sidebar-container">
-            {% for imp in dynamics.sidebar.top %}
-                {% include imp %}
-            {% endfor %}
-            
-            <!-- 此处为…原思维导图代码… -->
 
-            <div class="toc-wrapper">
-                <div class="toc-button" onclick="toggleToc()">+</div> <!-- 点击按钮 -->
-                <div class="toc">
-                    <div class="toc-title-container">
-                        <div class="toc-title">
-                            On this page
+    <style>
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 20%;
+            width: 100px;
+            max-height: 40%;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1000;
+            padding: 15px;
+        }
+
+        .toc-wrapper {
+            position: relative;
+        }
+
+        .toc-button {
+            width: 50px;     
+            height: 50px;    
+            background-color: #007bff; 
+            color: white;
+            border: none;
+            border-radius: 50%;          
+            font-size: 24px;             
+            text-align: center;          
+            line-height: 50px;           
+            cursor: pointer;             
+            z-index: 1;                  
+            transition: background-color 0.3s; 
+        }
+
+        .toc-button:hover {
+            background-color: #0056b3; 
+        }
+
+        .toc {
+            opacity: 0;                 
+            max-height: 0;              
+            transition: opacity 0.3s ease, max-height 0.3s ease; 
+            width: 300px;               
+            background-color: white;     
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+            position: absolute;          
+            top: 60px;                  
+            right: 0;                   
+            border-radius: 8px;         
+            overflow-y: auto;           
+            z-index: 1;                 
+            display: block;             
+        }
+
+        .toc.show {
+            opacity: 1;                 
+            max-height: 300px;          
+        }
+    </style>
+    <aside>
+        <div class="sidebar">
+            <div class="sidebar-container">
+                <!-- 此处为…原思维导图代码… -->
+
+                <div class="toc-wrapper">
+                    <div class="toc-button" onclick="toggleToc()">+</div> <!-- 点击按钮 -->
+                    <div class="toc" id="toc">
+                        <div class="toc-title-container">
+                            <div class="toc-title">On this page</div>
+                        </div>
+                        <div class="toc-container">
+                            <!-- 动态填充 TOC 的内容 -->
+                            <ul>
+                                <li><a href="#section1">Section 1</a></li>
+                                <li><a href="#section2">Section 2</a></li>
+                                <li><a href="#section3">Section 3</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="toc-container">
-                        {% if settings.dgShowToc === false %}
-                            {% set tocHtml = (content and (content|toc)) %}
-                            {% if tocHtml %}
-                                {{ tocHtml | safe }}
-                            {% endif %}
-                        {% endif %}
-                    </div>
                 </div>
+
+                <!-- 此处为…原反链代码… -->
             </div>
-
-            <!-- 此处为…原反链代码… -->
-            {% for imp in dynamics.sidebar.bottom %}
-                {% include imp %}
-            {% endfor %}
         </div>
-    </div>
-</aside>
+    </aside>
 
-<style>
-    .sidebar {
-        position: fixed;
-        right: 0;
-        top: 20%;
-        width: 100px;
-        max-height: 40%;
-        overflow-y: auto;
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-        z-index: 1000;
-        padding: 15px;
-    }
-
-    .toc-wrapper {
-        position: relative;
-        transition: width 0.3s, height 0.3s; /* 平滑过渡 */
-    }
-    
-    .toc-button {
-        width: 50px;     /* 按钮的宽度 */
-        height: 50px;    /* 按钮的高度 */
-        background-color: #007bff; /* 按钮背景色 */
-        color: white;
-        border: none;
-        border-radius: 50%;          /* 圆形按钮 */
-        font-size: 24px;             /* 字体大小 */
-        text-align: center;          /* 文本居中 */
-        line-height: 50px;           /* 使文字垂直居中 */
-        cursor: pointer;             /* 鼠标手势 */
-        z-index: 1;                  /* 确保按钮在上方 */
-        transition: background-color 0.3s; /* 悬停时改变背景色 */
-    }
-
-    .toc-button:hover {
-        background-color: #0056b3; /* 悬停时按钮颜色 */
-    }
-
-    .toc {
-        opacity: 0;                 /* 初始为透明 */
-        max-height: 0;              /* 默认隐藏 */
-        transition: opacity 0.3s ease, max-height 0.3s ease; /* 动画过渡 */
-        width: 300px;               /* 展开后的宽度 */
-        height: 300px;              /* 定义为正方形 */
-        background-color: white;     /* TOC 背景颜色 */
-        padding: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* TOC 阴影 */
-        position: absolute;          /* 绝对定位在按钮下方 */
-        top: 60px;                   /* 距离按钮的顶部高度 */
-        right: 0;                    /* 靠右对齐 */
-        border-radius: 8px;         /* 圆角 */
-        overflow-y: auto;           /* 允许纵向滚动 */
-        z-index: 1;                 /* 使 TOC 值在上 */
-        display: block;             /* TOC 元素存在，不占空间 */
-    }
-
-    .toc.show {
-        opacity: 1;                 /* 显示时不透明 */
-        max-height: 300px;          /* 设置最大高度 */
-    }
-</style>
-
-<script>
-    function toggleToc() {
-        const toc = document.querySelector('.toc');
-        toc.classList.toggle('show'); // 切换 show 类
-    }
-</script>
+    <script>
+        function toggleToc() {
+            const toc = document.getElementById('toc');
+            toc.classList.toggle('show'); // 切换显示状态
+        }
+    </script>
