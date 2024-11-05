@@ -7,7 +7,20 @@
             <!-- 此处为…原思维导图代码… -->
 
             {% if settings.dgShowToc === true %}
-                {% set tocHtml = (content|toc) %}
+                {% set tocHtml = [] %}  <!-- 初始化一个空列表来存储 TOC 的 HTML -->
+                {% for heading in content|find_headings %}  <!-- 假设 find_headings 是一个能获得所有标题的过滤器 -->
+                    {% set level = heading.level %}
+                    {% set title = heading.title %}
+                    {% set id = heading.id %}
+                    
+                    {% if level == 2 %}
+                        {% set tocHtml = tocHtml|merge([ '<li><h2><a href="#' ~ id ~ '">' ~ title ~ '</a></h2></li>']) %}
+                    {% elif level == 3 %}
+                        {% set tocHtml = tocHtml|merge([ '<li style="margin-left: 20px;"><h3><a href="#' ~ id ~ '">' ~ title ~ '</a></h3></li>']) %}
+                    {% elif level == 4 %}
+                        {% set tocHtml = tocHtml|merge([ '<li style="margin-left: 40px;"><h4><a href="#' ~ id ~ '">' ~ title ~ '</a></h4></li>']) %}
+                    {% endif %}
+                {% endfor %}
                 {% if tocHtml %}
                     <div class="toc">
                         <div class="toc-title-container">
@@ -16,7 +29,9 @@
                             </div>
                         </div>
                         <div class="toc-container">
-                            {{ tocHtml | safe }}
+                            <ul>
+                                {{ tocHtml|join('')|safe }}  <!-- 使用 join 将列表转换为 HTML 字符串 -->
+                            </ul>
                         </div>
                     </div>
                 {% endif %}
@@ -76,18 +91,5 @@
         margin: 5px 0;           /* 间距 */
     }
 
-    .toc-container h2 {
-        font-size: 1.5em;        /* h2 字体大小 */
-    }
-
-    .toc-container h3 {
-        font-size: 1.25em;       /* h3 字体大小 */
-        margin-left: 15px;       /* h3 缩进 */
-    }
-
-    .toc-container h4 {
-        font-size: 1em;          /* h4 字体大小 */
-        margin-left: 30px;       /* h4 缩进 */
-    }
 </style>
 
