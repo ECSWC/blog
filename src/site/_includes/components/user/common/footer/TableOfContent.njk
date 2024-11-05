@@ -1,3 +1,48 @@
+    <style>
+        .toc {
+            background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+            backdrop-filter: blur(10px);          /* 磨砂效果 */
+            padding: 10px;
+            position: absolute;                    /* 绝对定位 */
+            top: 10px;                             /* 悬浮在左上角 */
+            left: 10px;                            /* 悬浮在左上角 */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;                         /* 初始隐藏 */
+        }
+
+        .toc-title {
+            font-weight: bold;
+        }
+
+        .toc-button {
+            position: fixed;                       /* 固定定位 */
+            top: 10px;
+            left: 10px;
+            z-index: 1000;                        /* 确保按钮在上面 */
+        }
+
+        .toc a {
+            color: white;                          /* 字体颜色 */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+        }
+
+        .toc ul {
+            list-style-type: none;                 /* 去掉列表标记 */
+            padding-left: 15px;                    /* 缩进 */
+        }
+
+        .toc ul ul {
+            margin-left: 10px;                     /* 进一步缩进子标题 */
+        }
+        
+    </style>
+
+<button class="toc-button" id="toggle-toc">
+    <div>🗺️</div>
+    <div style="font-size: 12px;">点击显示 TOC</div>
+</button>
+
 <aside>
     <div class="toc" id="toc-container">
         <div class="toc-title-container">
@@ -11,75 +56,68 @@
     </div>
 </aside>
 
-<button class="toc-button" id="toggle-toc">
-    <div>🗺️</div>
-    <div style="font-size: 12px;">点击显示 TOC</div>
-</button>
-
 <script>
-// 创建TOC的JavaScript逻辑
-document.addEventListener('DOMContentLoaded', function() {
-    const tocList = document.getElementById('toc-list');
-    const tocContainer = document.getElementById('toc-container');
-    const toggleButton = document.getElementById('toggle-toc');
-    
-    // 只选择带类的 h2, h3, h4
-    const headers = document.querySelectorAll('main h2[class], main h3[class], main h4[class]'); 
+    document.addEventListener('DOMContentLoaded', function() {
+        const tocList = document.getElementById('toc-list');
+        const tocContainer = document.getElementById('toc-container');
+        const toggleButton = document.getElementById('toggle-toc');
 
-    // 创建 TOC 条目
-    headers.forEach(function(header) {
-        const title = header.innerText;
-        const id = encodeURIComponent(title)
-            .replace(/%20/g, '-')          // 替换 %20 为 -
-            .replace(/[^\w-]+/g, '');      // 移除无效字符
+        // 只选择带类的 h2, h3, h4
+        const headers = document.querySelectorAll('main h2[class], main h3[class], main h4[class]');
 
-        header.setAttribute('id', id); // 设置锚点 ID
+        // 创建 TOC 条目
+        headers.forEach(function(header) {
+            const title = header.innerText;
+            const id = encodeURIComponent(title)
+                .replace(/%20/g, '-')          // 替换 %20 为 -
+                .replace(/[^\w-]+/g, '');      // 移除无效字符
 
-        const level = header.tagName.toLowerCase(); // 获取标题级别
-        const listItem = document.createElement('li');
+            header.setAttribute('id', id); // 设置锚点 ID
 
-        listItem.innerHTML = `<a href="#${id}">${title}</a>`; // 继续保持链接
+            const level = header.tagName.toLowerCase(); // 获取标题级别
+            const listItem = document.createElement('li');
 
-        // 检查标题的级别并嵌套
-        if (level === 'h3') {
-            const parent = tocList.querySelector(`li:has(a[href="#${id.split('-')[0]}"])`);
-            if (parent) {
-                let sublist = parent.querySelector('ul');
-                if (!sublist) {
-                    sublist = document.createElement('ul');
-                    parent.appendChild(sublist);
+            listItem.innerHTML = `<a href="#${id}">${title}</a>`; // 继续保持链接
+
+            // 嵌套处理
+            if (level === 'h3') {
+                const h2Item = tocList.querySelector(`li > a[href="#${id.split('-')[0]}"]`);
+                if (h2Item) {
+                    const parentLi = h2Item.parentNode;
+                    let sublist = parentLi.querySelector('ul');
+                    if (!sublist) {
+                        sublist = document.createElement('ul');
+                        parentLi.appendChild(sublist);
+                    }
+                    sublist.appendChild(listItem);
+                } else {
+                    tocList.appendChild(listItem);
                 }
-                sublist.appendChild(listItem);
+            } else if (level === 'h4') {
+                const h3Item = tocList.querySelector(`li ul li > a[href="#${id.split('-')[0]}"]`);
+                if (h3Item) {
+                    const parentLi = h3Item.parentNode;
+                    let sublist = parentLi.querySelector('ul');
+                    if (!sublist) {
+                        sublist = document.createElement('ul');
+                        parentLi.appendChild(sublist);
+                    }
+                    sublist.appendChild(listItem);
+                }
             } else {
                 tocList.appendChild(listItem);
             }
-        } else if (level === 'h4') {
-            const parent = tocList.querySelector(`li:has(a[href="#${id.split('-')[0]}"])`);
-            const grandparent = tocList.querySelector(`ul li:has(ul) a[href="#${id.split('-')[0]}"]`);
-            if (parent || grandparent) {
-                const sublist = grandparent ? grandparent.parentElement : parent.querySelector('ul');
-                if (sublist) {
-                    sublist.appendChild(listItem);
-                } else {
-                    const newSublist = document.createElement('ul');
-                    parent.appendChild(newSublist);
-                    newSublist.appendChild(listItem);
-                }
-            }
-        } else {
-            tocList.appendChild(listItem);
-        }
-    });
+        });
 
-    // 切换 TOC 的显示和隐藏
-    toggleButton.addEventListener('click', function() {
-        if (tocContainer.style.display === "none" || tocContainer.style.display === "") {
-            tocContainer.style.display = "block"; // 展开 TOC
-            toggleButton.innerText = "隐藏 TOC"; // 修改按钮文本
-        } else {
-            tocContainer.style.display = "none"; // 隐藏 TOC
-            toggleButton.innerText = "显示 TOC"; // 修改按钮文本
-        }
+        // 切换 TOC 显示和隐藏
+        toggleButton.addEventListener('click', function() {
+            if (tocContainer.style.display === "none" || tocContainer.style.display === "") {
+                tocContainer.style.display = "block"; // 展开 TOC
+                toggleButton.innerText = "隐藏 TOC"; // 修改按钮文本
+            } else {
+                tocContainer.style.display = "none"; // 隐藏 TOC
+                toggleButton.innerText = "显示 TOC"; // 修改按钮文本
+            }
+        });
     });
-});
 </script>
