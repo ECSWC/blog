@@ -1,46 +1,61 @@
 
+
     <style>
         
+
         .toc {
-            background: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+            background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
             backdrop-filter: blur(10px);          /* 磨砂效果 */
             padding: 10px;
-            position: absolute;                    /* 绝对定位 */
-            top: 10px;                             /* 悬浮在左上角 */
-            right: 10px;                            /* 悬浮在左上角 */
+            position: fixed;                   /* 固定定位 */
+            top: 50%;                         /* 垂直居中 */
+            right: 10px;                      /* 距离右侧10px */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: none;                         /* 初始隐藏 */
+            display: none;                    /* 初始隐藏 */
+            max-height: 80%;                  /* 最大高度 */
+            overflow-y: auto;                 /* 允许垂直滚动 */
         }
 
         .toc-title {
             font-weight: bold;
+            margin-bottom: 10px;
         }
 
         .toc-button {
-            position: fixed;                       /* 固定定位 */
-            top: 10px;
-            right: 10px;
-            z-index: 1000;                        /* 确保按钮在上面 */
+            position: fixed;                    /* 固定定位 */
+            top: 50%;                          /* 垂直居中 */
+            right: 10px;                        /* 距离右侧10px */
+            transform: translateY(-50%);       /* 垂直居中修正 */
+            z-index: 1000;                     /* 确保按钮在上面 */
+            background: white;                 /* 按钮背景 */
+            border: none;                      /* 无边框 */
+            padding: 10px;                     /* 内边距 */
+            border-radius: 5px;                /* 圆角 */
+            cursor: pointer;                   /* 鼠标手势 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .toc a {
-            color: white;                          /* 字体颜色 */
+            color: white;                         /* 字体颜色 */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+            text-decoration: none;               /* 去掉下划线 */
         }
 
         .toc ul {
-            list-style-type: none;                 /* 去掉列表标记 */
-            padding-left: 15px;                    /* 缩进 */
+            list-style-type: none;                /* 去掉列表标记 */
+            padding-left: 15px;                   /* 缩进 */
         }
 
         .toc ul ul {
-            margin-left: 10px;                     /* 进一步缩进子标题 */
+            margin-left: 15px;                    /* 进一步缩进子标题 */
         }
-        
-        
-    </style>
 
+
+        h2, h3, h4 {
+            margin-top: 20px;                     /* 标题之间的间距 */
+        }
+    </style>
 
 <button class="toc-button" id="toggle-toc">
     <div>🗺️</div>
@@ -59,6 +74,7 @@
         </div>
     </div>
 </aside>
+
 
 
 <script>
@@ -84,7 +100,7 @@
 
             listItem.innerHTML = `<a href="#${id}">${title}</a>`; // 继续保持链接
 
-            // 嵌套处理
+            // 按标题关系缩进
             if (level === 'h3') {
                 const h2Item = tocList.querySelector(`li > a[href="#${id.split('-')[0]}"]`);
                 if (h2Item) {
