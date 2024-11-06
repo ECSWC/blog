@@ -1,1 +1,91 @@
+<aside>
+    <div class="sidebar">
+        <div class="sidebar-container">
+            {% for imp in dynamics.sidebar.top %}
+                {% include imp %}
+            {% endfor %}
+            
+            <!-- 此处为…原思维导图代码… -->
 
+            <div class="toc-wrapper">
+                <div class="toc-button" onclick="toggleToc()">+</div> <!-- 点击按钮 -->
+                <div class="toc">
+                    <div class="toc-title-container">
+                        <div class="toc-title">
+                            On this page
+                        </div>
+                    </div>
+                    <div class="toc-container">
+                        {% if settings.dgShowToc === false %}
+                            {% set tocHtml = (content and (content|toc)) %}
+                            {% if tocHtml %}
+                                {{ tocHtml | safe }}
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- 此处为…原反链代码… -->
+            {% for imp in dynamics.sidebar.bottom %}
+                {% include imp %}
+            {% endfor %}
+        </div>
+    </div>
+</aside>
+<!-- 以下是添加的css及js -->
+<style>
+.sidebar-container {
+    position: relative; /* 确保内部绝对定位的元素不会被遮挡 */
+}
+
+.toc-wrapper {
+    position: relative; /* 使 toc-wrapper 相对定位 */
+}
+
+.toc-button {
+    display: inline-block; /* 默认状态显示为按钮 */
+    width: 50px; /* 按钮宽度 */
+    height: 30px; /* 按钮高度 */
+    background-color: #007bff; /* 按钮背景颜色 */
+    color: white; /* 按钮文字颜色 */
+    text-align: center; /* 文字居中 */
+    line-height: 30px; /* 行高使文字居中 */
+    cursor: pointer; /* 鼠标移上去显示手形光标 */
+    border: none; /* 去除边框 */
+    position: relative; /* 允许后续绝对定位的元素不被遮挡 */
+    z-index: 10; /* 确保按钮在最上层 */
+}
+
+.toc {
+    display: none; /* 默认隐藏 toc */
+    width: 200px; /* 点击后宽度 */
+    height: auto; /* 高度自动调整 */
+    background-color: #f8f9fa; /* 背景颜色 */
+    border: 1px solid #ccc; /* 边框 */
+    position: absolute; /* 绝对定位以便不被遮挡 */
+    z-index: 5; /* z-index 值低于按钮 */
+    top: 0; /* 依赖于按钮位置 */
+    left: 60px; /* 使 toc 不与按钮重叠 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}
+
+</style>
+<script>
+function toggleToc() {
+    var tocButton = document.querySelector('.toc-button');
+    var toc = document.querySelector('.toc');
+
+    if (toc.style.display === "none" || toc.style.display === "") {
+        toc.style.display = "block"; // 显示 toc
+        tocButton.innerHTML = "-"; // 更新按钮为关闭图标
+    } else {
+        toc.style.display = "none"; // 隐藏 toc
+        tocButton.innerHTML = "+"; // 更新按钮为打开图标
+    }
+}
+
+// 初始状态
+document.querySelector('.toc').style.display = "none"; // 初始化时隐藏 toc
+
+</script>
