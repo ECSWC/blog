@@ -55,7 +55,7 @@
 /* 长方形的样式 */
 .toc {
     display: none; /* 默认隐藏 toc */
-    width: 400px; /* 点击后宽度 */
+    width: 300px; /* 点击后宽度 */
     height: auto; /* 高度自动调整 */
     background-color: #f8f9fa; /* 背景颜色 */
     border: 1px solid #ccc; /* 边框 */
@@ -120,7 +120,7 @@ function toggleToc() {
         tocButton.innerHTML = "-"; // 更新按钮为关闭图标
     } else {
         toc.parentElement.style.display = "none"; // 隐藏 TOC
-        tocButton.innerHTML = "+"; // 更新按钮为打开图标
+        tocButton.innerHTML = "🗺️目录"; // 更新按钮为打开图标
     }
 }
 
