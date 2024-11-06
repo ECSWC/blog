@@ -1,10 +1,10 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/Tik Tok/疑难杂症/初期/TikTok 无法使用或新作品播放量为0？/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-11-03T20:55:47.592+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/Tik Tok/疑难杂症/初期/TikTok 无法使用或新作品播放量为0？/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-11-06T11:16:39.963+08:00"}
 ---
 
 
 
- <h2 class="H1_Underline">以ios 设备为例：</h2>
+ <h2 class="H1_Underline">📱以ios 设备为例：</h2>
 
 如果 ios 上连接了 VPN，同时可以打开其他屏蔽网页比如 Google, Youtube 等，但是 <dfn data-info="拔出国内运营商提供的SIM卡通常是基本要求，或者也可以插入一张国外的SIM废卡（无流量无话费），用来提供国外身份信息，这对于运营相关可能会更好（此时国内运营商提供的SIM卡，可拔，也可不拔）">TikTok 无法使用</dfn>或新作品播放量为0。请参考<dfn data-info="需要 iOS 版本为 17 以上，其他版本可能不适用">以下设置：</dfn>
 
