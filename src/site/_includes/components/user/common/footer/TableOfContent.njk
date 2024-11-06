@@ -10,7 +10,7 @@
                 <div class="toc">
                     <div class="toc-title-container">
                         <div class="toc-title">
-                            On this page
+                            🗺️本页面包含的内容：
                         </div>
                     </div>
                     <div class="toc-container">
@@ -61,13 +61,14 @@
     height: auto; /* 高度自动调整 */
     background-color: rgba(0, 0, 0, 0.8); /* 磨砂黑色背景 */
     background-image: url('https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg'); /* 添加背景图片 */
-    background-size: 333%; /* 背景大小 */
+    background-size: 333% !important; /* 背景大小 */
     background-position: center; /* 背景中心对齐 */
     border: 1px solid #ccc; /* 边框 */
     position: fixed; /* 固定定位以便不被遮挡 */
     z-index: 99; /* z-index 值低于按钮 */
     right: 80px; /* 不与按钮重叠，距离右边的距离 */
     top: 100px; /* 与按钮的顶部位置一致 */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 添加阴影效果 */
 }
 
@@ -92,6 +93,7 @@
 
 .toc-container a {
     color: white; /* TOC 中链接的文字颜色 */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
     text-decoration: none; /* 取消下划线 */
 }
 
