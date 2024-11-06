@@ -65,6 +65,25 @@
     top: 100px; /* 与按钮的顶部位置一致 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
 }
+
+.toc-container {
+    padding-left: 10px; /* 添加一些左内边距 */
+}
+
+/* 为不同级别的标题设置不同的缩进 */
+.toc-container h2 {
+    margin: 5px 0; /* 添加上下边距 */
+}
+
+.toc-container h3 {
+    margin: 5px 0; /* 添加上下边距 */
+    padding-left: 15px; /* 垂直缩进 */
+}
+
+.toc-container h4 {
+    margin: 5px 0; /* 添加上下边距 */
+    padding-left: 30px; /* 更深的缩进 */
+}
 </style>
 
 <script>
@@ -80,11 +99,18 @@ function toggleToc() {
 
     headers.forEach(function(header) {
         var titleText = header.innerText.trim();
-        var hasIcon = header.querySelector('i') !== null; // 假设图标是 <i> 标签
-        var isChinese = /[\u4e00-\u9fa5]/.test(titleText); // 判断是否包含中文
+        var headerId = titleText.replace(/\s+/g, '-').toLowerCase(); // 创建锚点 ID
+        header.id = headerId; // 为每个标题设置相应的 ID
 
-        // 不做过滤，添加所有类型的标题
-        var tocItem = `<div>${titleText}</div>`;
+        var tocItem;
+        if (header.tagName === 'H2') {
+            tocItem = `<div><a href="#${headerId}">${titleText}</a></div>`;
+        } else if (header.tagName === 'H3') {
+            tocItem = `<div style="padding-left: 15px;"><a href="#${headerId}">${titleText}</a></div>`;
+        } else if (header.tagName === 'H4') {
+            tocItem = `<div style="padding-left: 30px;"><a href="#${headerId}">${titleText}</a></div>`;
+        }
+
         toc.innerHTML += tocItem; // 将符合条件的标题加入 TOC
     });
 
