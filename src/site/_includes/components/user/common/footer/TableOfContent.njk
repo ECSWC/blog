@@ -6,7 +6,7 @@
             {% endfor %}
 
             <div class="toc-wrapper">
-                <div class="toc-button" onclick="toggleToc()">🗺️目录</div> <!-- 点击按钮 -->
+                <div class="toc-button" onclick="toggleToc()">❌</div> <!-- 点击按钮 -->
                 <div class="toc">
                     <div class="toc-title-container">
                         <div class="toc-title">
@@ -121,7 +121,7 @@ function toggleToc() {
     var toc = document.querySelector('.toc .toc-container');
 
     // 清空 TOC 内容
-    toc.innerHTML = '';
+    //toc.innerHTML = '';
 
     // 获取所有 <h2>, <h3>, <h4> 标签
     var headers = document.querySelectorAll('h2, h3, h4');
