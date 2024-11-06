@@ -57,9 +57,12 @@
 /* 长方形的样式 */
 .toc {
     display: none; /* 默认隐藏 toc */
-    width: 100px !important; /* 点击后宽度 */
+    width: 300px !important; /* 点击后宽度 */
     height: auto; /* 高度自动调整 */
-    background-color: rgba(0, 0, 0, 0.8); /* 磨砂黑色背景 */
+
+    background-image: url('https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg'); /* 添加背景图片 */
+    background-size: 666%; /* 背景大小 */
+    background-position: center; /* 背景中心对齐 */
     
     border: 1px solid #ccc; /* 边框 */
     position: fixed; /* 固定定位以便不被遮挡 */
@@ -73,9 +76,8 @@
 .toc-container {
     color: white !important;
 
-    background-image: url('https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg'); /* 添加背景图片 */
-    background-size: 666%; /* 背景大小 */
-    background-position: center; /* 背景中心对齐 */
+    background-color: rgba(0, 0, 0, 0.3); /* 磨砂黑色背景 */
+    backdrop-filter: brightness(0.96) blur(1.23px); /* 应用亮度和模糊效果
     
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
     padding-left: 10px; /* 添加一些左内边距 */
@@ -101,6 +103,7 @@
 
 .toc-container a {
     color: white; /* TOC 中链接的文字颜色 */
+    text-size:80;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
     text-decoration: none; /* 取消下划线 */
 }
