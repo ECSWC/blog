@@ -7,7 +7,7 @@
 
             <div class="toc-wrapper">
                 <div class="toc-button" onclick="toggleToc()">🗺️目录</div> <!-- 点击按钮 -->
-                <div class="toc" style="display: block;"> <!-- 默认显示 toc -->
+                <div class="toc">
                     <div class="toc-title-container">
                         <div class="toc-title">
                             🗺️本页面包含的内容：
@@ -56,6 +56,9 @@
 
 /* 长方形的样式 */
 .toc {
+    max-height: 400px; /* 设置最大高度以适应动画 */
+    overflow: hidden; /* 隐藏超出的内容 */
+    transition: max-height 0.5s ease-in-out; /* 添加过渡效果 */
     display: block; /* 默认显示 toc */
     width: 300px !important; /* 点击后宽度 */
     height: auto; /* 高度自动调整 */
@@ -116,6 +119,8 @@
 </style>
 
 <script>
+var isTocOpen = true; // 默认 TOC 为展开状态
+
 function toggleToc() {
     var tocButton = document.querySelector('.toc-button');
     var toc = document.querySelector('.toc');
@@ -145,16 +150,16 @@ function toggleToc() {
     });
 
     // 切换显示/隐藏 TOC
-    if (toc.style.display === "none" || toc.style.display === "") {
-        toc.style.display = "block"; // 显示 TOC
-        tocButton.innerHTML = "❌"; // 更新按钮为关闭图标
-    } else {
-        toc.style.display = "none"; // 隐藏 TOC
+    if (isTocOpen) {
+        toc.style.maxHeight = "0"; // 隐藏 TOC
         tocButton.innerHTML = "🗺️目录"; // 更新按钮为打开图标
+    } else {
+        toc.style.maxHeight = "400px"; // 显示 TOC
+        tocButton.innerHTML = "❌"; // 更新按钮为关闭图标
     }
+    isTocOpen = !isTocOpen; // 切换状态
 }
 
 // 初始状态
-document.querySelector('.toc').style.display = "block"; // 初始化时显示 toc
-toggleToc(); // 调用一次，确保加载 TOC 内容
+document.querySelector('.toc').style.maxHeight = "400px"; // 初始化时显示 toc
 </script>
