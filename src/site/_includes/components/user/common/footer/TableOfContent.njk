@@ -133,11 +133,11 @@ function toggleToc() {
 
         var tocItem;
         if (header.tagName === 'H2') {
-            tocItem = `<div><a href="#${headerId}">${titleText}</a></div>`;
+            tocItem = `<div><a href="#${headerId}">┗${titleText}</a></div>`;
         } else if (header.tagName === 'H3') {
-            tocItem = `<div style="padding-left: 15px;"><a href="#${headerId}">${titleText}</a></div>`;
+            tocItem = `<div style="padding-left: 20px;"><a href="#${headerId}">┗${titleText}</a></div>`;
         } else if (header.tagName === 'H4') {
-            tocItem = `<div style="padding-left: 30px;"><a href="#${headerId}">${titleText}</a></div>`;
+            tocItem = `<div style="padding-left: 40px;"><a href="#${headerId}">┗${titleText}</a></div>`;
         }
 
         toc.innerHTML += tocItem; // 将符合条件的标题加入 TOC
