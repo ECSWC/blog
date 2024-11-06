@@ -56,7 +56,7 @@
 
 /* 长方形的样式 */
 .toc {
-    display: none; /* 默认隐藏 toc */
+    display: block; /* 默认显示 toc */
     width: 300px !important; /* 点击后宽度 */
     height: auto; /* 高度自动调整 */
 
@@ -121,7 +121,7 @@ function toggleToc() {
     var toc = document.querySelector('.toc .toc-container');
 
     // 清空 TOC 内容
-    //toc.innerHTML = '';
+    toc.innerHTML = '';
 
     // 获取所有 <h2>, <h3>, <h4> 标签
     var headers = document.querySelectorAll('h2, h3, h4');
@@ -154,5 +154,5 @@ function toggleToc() {
 }
 
 // 初始状态
-//document.querySelector('.toc').style.display = "none"; // 初始化时隐藏 toc
+//document.querySelector('.toc').style.display = "none"; // 初始化时隐藏 toc内容
 </script>
