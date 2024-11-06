@@ -4,13 +4,13 @@
             {% for imp in dynamics.sidebar.top %}
                 {% include imp %}
             {% endfor %}
-            
+
             <div class="toc-wrapper">
                 <div class="toc-button" onclick="toggleToc()">🗺️目录</div> <!-- 点击按钮 -->
                 <div class="toc">
                     <div class="toc-title-container">
                         <div class="toc-title">
-                            🗺️本页面包含的内容：
+                            On this page
                         </div>
                     </div>
                     <div class="toc-container">
@@ -35,7 +35,7 @@
     position: relative; /* 保持相对定位，便于子元素定位 */
 }
 
-/* 按钮固定在右上角 */
+/* 按钮样式 */
 .toc-button {
     position: fixed; /* 固定定位 */
     right: 20px; /* 距离右边的距离 */
@@ -43,27 +43,32 @@
     display: inline-block; /* 默认状态显示为按钮 */
     width: 75px; /* 按钮宽度 */
     height: 30px; /* 按钮高度 */
-    background-color: #007bff; /* 按钮背景颜色 */
-    color: white; /* 按钮文字颜色 */
+    background-color: rgba(255, 255, 255, 0.8); /* 磨砂白色背景 */
+    color: #007bff; /* 按钮文字颜色 */
     text-align: center; /* 文字居中 */
     line-height: 30px; /* 行高使文字居中 */
     cursor: pointer; /* 鼠标移上去显示手形光标 */
     border: none; /* 去除边框 */
     z-index: 100; /* 确保按钮在最上层 */
+    border-radius: 15px; /* 圆角效果 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
 }
 
 /* 长方形的样式 */
 .toc {
     display: none; /* 默认隐藏 toc */
-    width: 300px; /* 点击后宽度 */
+    width: 200px; /* 点击后宽度 */
     height: auto; /* 高度自动调整 */
-    background-color: #f8f9fa; /* 背景颜色 */
+    background-color: rgba(0, 0, 0, 0.8); /* 磨砂黑色背景 */
+    background-image: url('https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg'); /* 添加背景图片 */
+    background-size: 333%; /* 背景大小 */
+    background-position: center; /* 背景中心对齐 */
     border: 1px solid #ccc; /* 边框 */
     position: fixed; /* 固定定位以便不被遮挡 */
     z-index: 99; /* z-index 值低于按钮 */
     right: 80px; /* 不与按钮重叠，距离右边的距离 */
     top: 100px; /* 与按钮的顶部位置一致 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 添加阴影效果 */
 }
 
 .toc-container {
@@ -83,6 +88,15 @@
 .toc-container h4 {
     margin: 5px 0; /* 添加上下边距 */
     padding-left: 30px; /* 更深的缩进 */
+}
+
+.toc-container a {
+    color: white; /* TOC 中链接的文字颜色 */
+    text-decoration: none; /* 取消下划线 */
+}
+
+.toc-container a:hover {
+    text-decoration: underline; /* 悬停时添加下划线 */
 }
 </style>
 
@@ -117,7 +131,7 @@ function toggleToc() {
     // 切换显示/隐藏 TOC
     if (toc.parentElement.style.display === "none" || toc.parentElement.style.display === "") {
         toc.parentElement.style.display = "block"; // 显示 TOC
-        tocButton.innerHTML = "-"; // 更新按钮为关闭图标
+        tocButton.innerHTML = "❌"; // 更新按钮为关闭图标
     } else {
         toc.parentElement.style.display = "none"; // 隐藏 TOC
         tocButton.innerHTML = "🗺️目录"; // 更新按钮为打开图标
