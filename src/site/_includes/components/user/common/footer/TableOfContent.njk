@@ -121,7 +121,7 @@ function toggleToc() {
     var toc = document.querySelector('.toc .toc-container');
 
     // 清空 TOC 内容
-    //toc.innerHTML = '';
+    toc.innerHTML = '';
 
     // 获取所有 <h2>, <h3>, <h4> 标签
     var headers = document.querySelectorAll('h2, h3, h4');
@@ -155,4 +155,5 @@ function toggleToc() {
 
 // 初始状态
 //document.querySelector('.toc').style.display = "none"; // 初始化时隐藏 toc内容
+toc.parentElement.style.display = "block"; // 显示 TOC内容
 </script>
