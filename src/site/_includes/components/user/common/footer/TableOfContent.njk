@@ -5,8 +5,6 @@
                 {% include imp %}
             {% endfor %}
             
-            <!-- 此处为…原思维导图代码… -->
-
             <div class="toc-wrapper">
                 <div class="toc-button" onclick="toggleToc()">+</div> <!-- 点击按钮 -->
                 <div class="toc">
@@ -15,18 +13,10 @@
                             On this page
                         </div>
                     </div>
-                    <div class="toc-container">
-                        {% if settings.dgShowToc === false %}
-                            {% set tocHtml = (content and (content|toc)) %}
-                            {% if tocHtml %}
-                                {{ tocHtml | safe }}
-                            {% endif %}
-                        {% endif %}
-                    </div>
+                    <!-- toc 内容将通过 JS 动态生成 -->
                 </div>
             </div>
 
-            <!-- 此处为…原反链代码… -->
             {% for imp in dynamics.sidebar.bottom %}
                 {% include imp %}
             {% endfor %}
@@ -35,32 +25,6 @@
 </aside>
 
 <style>
-.sidebar-container {
-    position: relative; /* 改为 relative，确保其他内容正常流动 */
-}
-
-.toc-wrapper {
-    position: relative; /* 保持相对定位，便于子元素定位 */
-}
-
-/* 按钮固定在右上角 */
-.toc-button {
-    position: fixed; /* 固定定位 */
-    right: 20px; /* 距离右边的距离 */
-    top: 100px; /* 距离顶部的距离，向下移动了 100px 的位置 */
-    display: inline-block; /* 默认状态显示为按钮 */
-    width: 50px; /* 按钮宽度 */
-    height: 30px; /* 按钮高度 */
-    background-color: #007bff; /* 按钮背景颜色 */
-    color: white; /* 按钮文字颜色 */
-    text-align: center; /* 文字居中 */
-    line-height: 30px; /* 行高使文字居中 */
-    cursor: pointer; /* 鼠标移上去显示手形光标 */
-    border: none; /* 去除边框 */
-    z-index: 100; /* 确保按钮在最上层 */
-}
-
-/* 长方形的样式 */
 .toc {
     display: none; /* 默认隐藏 toc */
     width: 200px; /* 点击后宽度 */
@@ -80,7 +44,22 @@ function toggleToc() {
     var tocButton = document.querySelector('.toc-button');
     var toc = document.querySelector('.toc');
 
+    // 获取所有 <h2>, <h3>, <h4> 标签
+    var headers = document.querySelectorAll('h2, h3, h4');
+    var tocContent = '';
+
+    headers.forEach(function(header) {
+        var titleText = header.innerText.trim();
+        var hasIcon = header.querySelector('i') !== null; // 假设图标是 <i> 标签
+        var isChinese = /[\u4e00-\u9fa5]/.test(titleText); // 判断是否包含中文
+
+        // 不做任何过滤，直接添加到内容
+        tocContent += `<div>${titleText}</div>`;
+    });
+
+    // 更新 toc 的内容并显示
     if (toc.style.display === "none" || toc.style.display === "") {
+        toc.innerHTML = tocContent; // 填充提取的标题
         toc.style.display = "block"; // 显示 toc
         tocButton.innerHTML = "-"; // 更新按钮为关闭图标
     } else {
