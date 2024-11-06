@@ -71,6 +71,7 @@
     </div>
 </aside>
 <!-- 以下是添加的css及js -->
+		
 <style>
 .sidebar-container {
     position: absolute; /* 确保内部绝对定位的元素不会被遮挡 */
@@ -90,7 +91,9 @@
     line-height: 30px; /* 行高使文字居中 */
     cursor: pointer; /* 鼠标移上去显示手形光标 */
     border: none; /* 去除边框 */
-    position: relative; /* 允许后续绝对定位的元素不被遮挡 */
+    position: absolute; /* 绝对定位以便不被遮挡 */
+    top: 30px; /* 依赖于按钮位置 */
+    right: 60px; /* 使 toc 不与按钮重叠 */
     z-index: 10; /* 确保按钮在最上层 */
 }
 
