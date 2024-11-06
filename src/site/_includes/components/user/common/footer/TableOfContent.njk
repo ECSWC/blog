@@ -7,7 +7,7 @@
 
             <div class="toc-wrapper">
                 <div class="toc-button" onclick="toggleToc()">🗺️目录</div> <!-- 点击按钮 -->
-                <div class="toc">
+                <div class="toc" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease;">
                     <div class="toc-title-container">
                         <div class="toc-title">
                             🗺️本页面包含的内容：
@@ -56,13 +56,10 @@
 
 /* 长方形的样式 */
 .toc {
-    max-height: 400px; /* 设置最大高度以适应动画 */
+    max-height: 0; /* 默认最大高度为0 */
     overflow: hidden; /* 隐藏超出的内容 */
-    transition: max-height 0.5s ease-in-out; /* 添加过渡效果 */
-    display: block; /* 默认显示 toc */
+    transition: max-height 0.5s ease; /* 添加过渡效果 */
     width: 300px !important; /* 点击后宽度 */
-    height: auto; /* 高度自动调整 */
-
     background-image: url('https://ice.frostsky.com/2024/11/02/80d7b4bc93547e56a76a8625a26a7461.jpeg'); /* 添加背景图片 */
     background-size: 456%; /* 背景大小 */
     background-position: center; /* 背景中心对齐 */
@@ -87,29 +84,18 @@
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
     padding-left: 10px; /* 添加一些左内边距 */
 }
-.toc-title{
+
+.toc-title {
     color: white !important;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
 }
-/* 为不同级别的标题设置不同的缩进 */
-.toc-container h2 {
-    margin: 5px 0; /* 添加上下边距 */
-}
 
-.toc-container h3 {
+.toc-container h2, .toc-container h3, .toc-container h4 {
     margin: 5px 0; /* 添加上下边距 */
-    padding-left: 15px; /* 垂直缩进 */
-}
-
-.toc-container h4 {
-    margin: 5px 0; /* 添加上下边距 */
-    padding-left: 30px; /* 更深的缩进 */
 }
 
 .toc-container a {
     color: white; /* TOC 中链接的文字颜色 */
-    text-size:80;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1.23); /* 保留文本阴影 */
     text-decoration: none; /* 取消下划线 */
 }
 
@@ -119,14 +105,12 @@
 </style>
 
 <script>
-var isTocOpen = true; // 默认 TOC 为展开状态
-
 function toggleToc() {
     var tocButton = document.querySelector('.toc-button');
     var toc = document.querySelector('.toc');
+    var tocContainer = toc.querySelector('.toc-container');
 
     // 清空 TOC 内容
-    var tocContainer = toc.querySelector('.toc-container');
     tocContainer.innerHTML = '';
 
     // 获取所有 <h2>, <h3>, <h4> 标签
@@ -150,16 +134,15 @@ function toggleToc() {
     });
 
     // 切换显示/隐藏 TOC
-    if (isTocOpen) {
-        toc.style.maxHeight = "0"; // 隐藏 TOC
-        tocButton.innerHTML = "🗺️目录"; // 更新按钮为打开图标
-    } else {
-        toc.style.maxHeight = "400px"; // 显示 TOC
+    if (toc.style.maxHeight === "0px" || toc.style.maxHeight === "") {
+        toc.style.maxHeight = "400px"; // 设置最大高度以便显示
         tocButton.innerHTML = "❌"; // 更新按钮为关闭图标
+    } else {
+        toc.style.maxHeight = "0"; // 设置最大高度为0以便隐藏
+        tocButton.innerHTML = "🗺️目录"; // 更新按钮为打开图标
     }
-    isTocOpen = !isTocOpen; // 切换状态
 }
 
-// 初始状态
-document.querySelector('.toc').style.maxHeight = "400px"; // 初始化时显示 toc
+// 初始化，可以将 TOC 的内容填充
+document.querySelector('.toc').style.maxHeight = "0"; // 初始化时隐藏 toc
 </script>
