@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/兼职审核/审核结果-数字花园版/Lanio/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-11-05T20:49:38.105+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/兼职审核/审核结果-数字花园版/Lanio/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-11-06T15:39:40.910+08:00"}
 ---
 
 
@@ -20,7 +20,7 @@
 
 ## 👉🏼兼职审核结果
 
-<div><table class="dataview table-view-table"><thead class="table-view-thead"><tr class="table-view-tr-header"><th class="table-view-th"><span>🍊<font color="#ff0000">今日兼职审核结果</font> <code>Lanio</code></span><span class="dataview small-text">0</span></th><th class="table-view-th"><span>👍🏼<font color="#ff0000">今日最佳</font> </span></th></tr></thead><tbody class="table-view-tbody"></tbody></table><div class="dataview dataview-error-box"><p class="dataview dataview-error-message">Dataview: No results to show for table query.</p></div></div>
+<div><table class="dataview table-view-table"><thead class="table-view-thead"><tr class="table-view-tr-header"><th class="table-view-th"><span>🍊<font color="#ff0000">今日审核结果</font> <code>Lanio</code></span><span class="dataview small-text">0</span></th><th class="table-view-th"><span>👍🏼<font color="#ff0000">今日最佳</font> </span></th></tr></thead><tbody class="table-view-tbody"></tbody></table><div class="dataview dataview-error-box"><p class="dataview dataview-error-message">Dataview: No results to show for table query.</p></div></div>
 
 ## 👉🏼待修改
 
