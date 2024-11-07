@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/网站建设/数字花园/obsidian/如何修改文章目录TOC(Table of Contents)？/","dgPassFrontmatter":true,"noteIcon":"","updated":"2024-11-07T12:28:57.431+08:00"}
+{"dg-publish":true,"permalink":"/网站建设/数字花园/obsidian/如何修改文章目录TOC(Table of Contents)？/","dgPassFrontmatter":true,"noteIcon":"","updated":"2024-11-07T12:32:01.071+08:00"}
 ---
 
 <div class="long-cang">digitalGarden插件自带的用于生成文章目录的代码存放位置：src/site/_include/components/sidebar.njk</div>
@@ -457,7 +457,7 @@ document.querySelector('.toc').style.display = "none"; // 初始化时隐藏 toc
 
 ```
 
-<h3 class="long-cang">🏞️进行一些美化：</h3>
+<h2 class="H1_Underline">🏞️进行一些美化：</h2>
 
 1. 按钮改为圆角。
 2. 按钮背景改为白色磨砂。
@@ -626,14 +626,14 @@ document.querySelector('.toc').style.display = "none"; // 初始化时隐藏 toc
 
 ```
 
-<h3 class="long-cang">💊未解决的小问题：</h3>
+<h2 class="H1_Underline">💊未解决的小问题：</h2>
 
 暂时仅在iPad上发现
 
 - 跳转偶尔会失灵，错位
 - 整toc偶尔会卡死
 
-<h3 class="long-cang">📖小调整，toc默认显示：</h3>
+<h2 class="H1_Underline">📖小调整，toc默认显示：</h2>
 
 ```JavaScript
 <aside>
