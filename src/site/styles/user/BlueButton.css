@@ -1,7 +1,7 @@
 .BlueButton {
     background-color: #0089D1; /* 按钮背景颜色 */
     border-radius: 15px; /* 圆角 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.36); /* 阴影 */
     color: white; /* 字体颜色白色 */
     text-align: center; /* 文本居中 */
     padding: 10px; /* 内边距 */
