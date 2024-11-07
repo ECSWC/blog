@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Tik Tok/疑难杂症/初期/购买TikTok账号的注意事项/","dgPassFrontmatter":true,"noteIcon":"","updated":"2024-11-07T11:30:27.391+08:00"}
+{"dg-publish":true,"permalink":"/Tik Tok/疑难杂症/初期/购买TikTok账号的注意事项/","dgPassFrontmatter":true,"noteIcon":"","updated":"2024-11-08T02:54:57.606+08:00"}
 ---
  
 
@@ -15,8 +15,7 @@
 2. 尽量避免使用香港IP
 3. 尽量使用机场而不是VPN
 
-<a href="https://chenliguo.vercel.app/Tik%20Tok/疑难杂症/初期/TikTok%20无法使用或新作品播放量为0？/" class="long-cang">🤷🏼‍♀️TikTok无法使用或新作品播放量为0？</a>
-</h3>
+<a href="https://chenliguo.vercel.app/Tik%20Tok/疑难杂症/初期/TikTok%20无法使用或新作品播放量为0？/" class="BlueButton">🤷🏼‍♀️TikTok无法使用或新作品播放量为0？</a>
 
  <h3 class="long-cang"> 🔎机场与VPN的区别：</h3>
 
@@ -26,14 +25,16 @@ VPN并非专为翻墙而生，而机场是。 机场针对中国网络有专门�
 
  <div class="long-cang">IP质量差、切换IP登录、使用行为异常可能导致账号需要进行验证或者连接服务失败，这里推荐tiktok独享节点网络</div>
 
+<a href="https://https://whoer.net/zh" class="BlueButton">😷whoer节点伪装度检测</a>
+
 <h2 class="H1_Underline">🖇️多账号防关联的建议：</h2>
 
 <div class="long-cang">关联问题主要体现在IP地址、硬件参数和指纹环境等方面。账号较多时，比如做矩阵，比较容易出现关联问题，应该引起重视，否则可能出现限流，甚至封号等问题。比较省事的解决方法是购买多个iPhone二手手机，或者也可以使用防关联浏览器</div>
 
-1. 使用不同的邮箱地址：为每个TikTok账号使用不同的邮箱地址，避免使用相同的邮箱地址关联多个账号。这样可以减少账号关联的风险。
-2. 不要共享设备：避免在同一设备上登录和管理多个TikTok账号。如果必须使用多个账号，请尽量使用不同的设备和浏览器。
-3. 隔离个人信息：避免在不同的TikTok账号之间共享个人信息，例如支付信息、收货地址等。将这些信息与特定的账号关联，可以降低多账号关联的风险。
-4. 使用不同的IP地址：尽量使用不同的IP地址登录和管理不同的TikTok账号。可以使用代理IP来模拟不同的地理位置和IP地址。
+1. 使用不同的邮箱地址：</br>为每个TikTok账号使用不同的邮箱地址，避免使用相同的邮箱地址关联多个账号。这样可以减少账号关联的风险。
+2. 不要共享设备：</br>避免在同一设备上登录和管理多个TikTok账号。如果必须使用多个账号，请尽量使用不同的设备和浏览器。
+3. 隔离个人信息：</br>避免在不同的TikTok账号之间共享个人信息，例如支付信息、收货地址等。将这些信息与特定的账号关联，可以降低多账号关联的风险。
+4. 使用不同的IP地址：</br>尽量使用不同的IP地址登录和管理不同的TikTok账号。可以使用代理IP来模拟不同的地理位置和IP地址。
 
 
 
