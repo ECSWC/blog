@@ -1,1 +1,120 @@
+   <style>
+        
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            padding: 10px 0;
+            margin: 60px 0 0 0; /* 顶部 60px，左右 和下方 0px */
+            background: #f8f9fa;
+            border-radius: 4px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-item {
+            margin-right: 5px;
+            cursor: pointer;
+            position: relative; /* 用于定位下拉内容 */
+        }
+
+        .breadcrumb-item:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: ' ';
+            margin-right: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            background-color: #007bff; /* 按钮颜色 */
+            color: white; /* 按钮文本颜色 */
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .expanded-content {
+            display: none; /* 默认隐藏内容 */
+            background: #e9ecef; /* 背景颜色 */
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 5px;
+            width: 100%; /* 宽度为 100% */
+        }
+
+        .link {
+            display: block; /* 使链接为块级元素 */
+            text-decoration: none;
+            color: #007bff;
+            margin: 5px 0;
+        }
+
+        .link:hover {
+            text-decoration: underline; /* 鼠标悬停时下划线 */
+        }
+    </style>
+
+<div id="breadcrumb-container">
+    <ol class="breadcrumb" id="breadcrumb">
+        <!-- 面包屑项将通过 JavaScript 自动生成 -->
+    </ol>
+</div>
+
+<script>
+
+    function generateBreadcrumb() {
+        const breadcrumb = document.getElementById('breadcrumb');
+        const pathParts = window.location.pathname.split('/').filter(part => part);
+        let currentPath = '';
+
+        // 创建面包屑项，忽略当前页面
+        pathParts.forEach((part, index) => {
+            currentPath += '/' + part; // 持续构建当前路径
+            const item = document.createElement('li');
+            item.className = 'breadcrumb-item';
+            item.innerText = decodeURIComponent(part);
+
+            // 创建按钮用于展开显示下级链接
+            const button = document.createElement('button');
+            button.innerText = '>';
+            button.onclick = (e) => {
+                e.stopPropagation(); // 阻止事件冒泡
+                toggleContent(currentPath, item); // 切换内容显示
+            };
+
+            item.appendChild(button);
+            breadcrumb.appendChild(item);
+        });
+    }
+
+    function toggleContent(path, item) {
+        let content = item.querySelector('.expanded-content');
+        if (!content) {
+            // 创建展开内容
+            content = document.createElement('div');
+            content.className = 'expanded-content';
+            const currentData = data[path];
+
+            if (currentData && currentData.children) {
+                for (const [childPath, name] of Object.entries(currentData.children)) {
+                    const link = document.createElement('a');
+                    link.href = childPath;
+                    link.className = 'link';
+                    link.innerText = name;
+                    content.appendChild(link);
+                }
+            } else {
+                content.innerText = '没有下一级链接';
+            }
+            item.appendChild(content);
+        }
+
+        // 切换显示状态
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // 调用生成面包屑导航的函数
+    generateBreadcrumb();
+</script>
 
