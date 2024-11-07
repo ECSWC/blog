@@ -4,7 +4,7 @@
             display: flex;
             list-style: none;
             padding: 10px 0;
-            margin: 10px 0;
+            margin: 10px 60px;
             background: #f8f9fa;
             border-radius: 4px;
         }
@@ -63,12 +63,6 @@
             item.appendChild(link);
             breadcrumb.appendChild(item);
         });
-
-        // 当前页面项
-        const activeItem = document.createElement('li');
-        activeItem.className = 'breadcrumb-item active';
-        activeItem.innerText = decodeURIComponent(pathParts[pathParts.length - 1] || '首页');
-        breadcrumb.appendChild(activeItem);
     }
 
     // 调用生成面包屑导航的函数
