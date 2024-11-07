@@ -1,9 +1,11 @@
-   <style>
+
+    <style>
         
+
         .breadcrumb {
             display: flex;
             list-style: none;
-            padding: 10px 0;
+            padding: 3px 0;
             margin: 60px 0 0 0; /* 顶部 60px，左右 和下方 0px */
             background: #f8f9fa;
             border-radius: 4px;
@@ -11,35 +13,28 @@
         }
 
         .breadcrumb-item {
-            margin-right: 5px;
-            cursor: pointer;
+            margin-right: 3px; /* 调整间隔 */
+            cursor: default; /* 禁止鼠标指针变化 */
             position: relative; /* 用于定位下拉内容 */
         }
 
         .breadcrumb-item:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* 悬停时下划线 */
         }
 
         .breadcrumb-item:not(:last-child)::after {
-            content: ' ';
-            margin-right: 5px;
-            padding-left: 5px;
-            padding-right: 5px;
-            background-color: #007bff; /* 按钮颜色 */
-            color: white; /* 按钮文本颜色 */
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 14px;
+            content: '>'; /* 使用 '>' 连接 */
+            margin-left: 3px; /* 添加左侧间隔 */
+            margin-right: 3px; /* 添加右侧间隔 */
+            color: #6c757d; /* 分隔符颜色 */
         }
 
         .expanded-content {
             display: none; /* 默认隐藏内容 */
             background: #e9ecef; /* 背景颜色 */
-            padding: 10px;
+            padding: 3px;
             border-radius: 4px;
-            margin-top: 5px;
+            margin-top: 3px; /* 与面包屑项目的距离 */
             width: 100%; /* 宽度为 100% */
         }
 
@@ -47,7 +42,7 @@
             display: block; /* 使链接为块级元素 */
             text-decoration: none;
             color: #007bff;
-            margin: 5px 0;
+            margin: 3px 0; /* 调整链接间距 */
         }
 
         .link:hover {
@@ -74,16 +69,13 @@
             const item = document.createElement('li');
             item.className = 'breadcrumb-item';
             item.innerText = decodeURIComponent(part);
-
-            // 创建按钮用于展开显示下级链接
-            const button = document.createElement('button');
-            button.innerText = '>';
-            button.onclick = (e) => {
+            
+            // 点击面包屑不会跳转，只是展开下一级菜单
+            item.onclick = (e) => {
                 e.stopPropagation(); // 阻止事件冒泡
                 toggleContent(currentPath, item); // 切换内容显示
             };
 
-            item.appendChild(button);
             breadcrumb.appendChild(item);
         });
     }
@@ -99,7 +91,7 @@
             if (currentData && currentData.children) {
                 for (const [childPath, name] of Object.entries(currentData.children)) {
                     const link = document.createElement('a');
-                    link.href = childPath;
+                    link.href = childPath; // 此处保持链接，方便点击
                     link.className = 'link';
                     link.innerText = name;
                     content.appendChild(link);
@@ -117,4 +109,3 @@
     // 调用生成面包屑导航的函数
     generateBreadcrumb();
 </script>
-
