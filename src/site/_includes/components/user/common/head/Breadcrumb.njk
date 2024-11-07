@@ -11,20 +11,61 @@
 
         .breadcrumb-item {
             margin-right: 5px;
-            cursor: pointer; /* 鼠标指针为手形 */
+            cursor: pointer;
         }
 
         .breadcrumb-item:hover {
             text-decoration: underline;
         }
 
+        .breadcrumb-item:not(:last-child)::after {
+            content: ' > ';
+            padding-left: 5px;
+            padding-right: 5px;
+            color: #6c757d; /* 分隔符颜色 */
+        }
+
+        /* 模态窗口样式 */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4); /* 黑色背景 */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         .toc {
-            display: none; /* 默认隐藏 TOC */
             list-style: none;
-            padding: 10px 0;
-            margin-top: 10px;
-            background: #e9ecef;
-            border-radius: 4px;
+            padding: 0;
+            margin: 0;
         }
 
         .toc-item a {
@@ -37,14 +78,22 @@
         }
     </style>
 
-
 <nav aria-label="Breadcrumb">
     <ol class="breadcrumb" id="breadcrumb">
         <!-- 面包屑项将通过 JavaScript 自动生成 -->
     </ol>
 </nav>
 
-<div id="tocContainer"></div> <!-- TOC 容器 -->
+<!-- 模态窗口 -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>TOC</h2>
+        <ul id="tocList" class="toc">
+            <!-- TOC 将通过 JavaScript 填充 -->
+        </ul>
+    </div>
+</div>
 
 <script>
 
@@ -66,14 +115,11 @@
     }
 
     function showTOC(path) {
-        const tocContainer = document.getElementById('tocContainer');
-        tocContainer.innerHTML = ''; // 清空当前 TOC
+        const tocList = document.getElementById('tocList');
+        tocList.innerHTML = ''; // 清空当前 TOC
 
         const currentData = data[path];
         if (currentData && currentData.children) {
-            const toc = document.createElement('ul');
-            toc.className = 'toc';
-
             for (const [childPath, name] of Object.entries(currentData.children)) {
                 const tocItem = document.createElement('li');
                 tocItem.className = 'toc-item';
@@ -81,11 +127,26 @@
                 link.href = childPath;
                 link.innerText = name;
                 tocItem.appendChild(link);
-                toc.appendChild(tocItem);
+                tocList.appendChild(tocItem);
             }
+            showModal(); // 显示模态窗口
+        }
+    }
 
-            tocContainer.appendChild(toc);
-            toc.style.display = 'block'; // 显示 TOC
+    function showModal() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "block"; // 显示模态窗口
+    }
+
+    document.getElementById("closeModal").onclick = function() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "none"; // 关闭模态窗口
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            modal.style.display = "none"; // 点击窗口外部关闭模态窗口
         }
     }
 
