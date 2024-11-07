@@ -1,0 +1,33 @@
+<nav aria-label="Breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Category</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Current Page</li>
+    </ol>
+</nav>
+<style>
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item {
+    margin-right: 5px;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d; /* Bootstrap secondary color */
+}
+
+</style>
