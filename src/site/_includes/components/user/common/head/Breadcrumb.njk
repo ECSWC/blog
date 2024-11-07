@@ -3,7 +3,7 @@
         .breadcrumb {
             display: flex;
             list-style: none;
-            padding-top: 60px;
+            padding-top: 20px;
             margin: 0;
             background: #f8f9fa;
             border-radius: 4px;
@@ -11,30 +11,32 @@
 
         .breadcrumb-item {
             margin-right: 5px;
+            cursor: pointer; /* 鼠标指针为手形 */
         }
 
-        .breadcrumb-item a {
+        .breadcrumb-item:hover {
+            text-decoration: underline;
+        }
+
+        .toc {
+            display: none; /* 默认隐藏 TOC */
+            list-style: none;
+            padding: 10px 0;
+            margin-top: 10px;
+            background: #e9ecef;
+            border-radius: 4px;
+        }
+
+        .toc-item a {
             text-decoration: none;
             color: #007bff;
         }
 
-        .breadcrumb-item a:hover {
+        .toc-item a:hover {
             text-decoration: underline;
         }
-
-        .breadcrumb-item.active {
-            color: #6c757d;
-        }
-
-        .breadcrumb-item:not(:last-child)::after {
-            content: ' > '; /* 使用 > 作为分隔符 */
-            padding-left: 5px;
-            padding-right: 5px;
-            color: #6c757d; /* 分隔符颜色 */
-        }
     </style>
-</head>
-<body>
+
 
 <nav aria-label="Breadcrumb">
     <ol class="breadcrumb" id="breadcrumb">
@@ -42,39 +44,52 @@
     </ol>
 </nav>
 
+<div id="tocContainer"></div> <!-- TOC 容器 -->
+
 <script>
-    // 自动生成面包屑导航
+
     function generateBreadcrumb() {
         const breadcrumb = document.getElementById('breadcrumb');
         const pathParts = window.location.pathname.split('/').filter(part => part);
 
-        // 创建首页链接
-        const homeItem = document.createElement('li');
-        homeItem.className = 'breadcrumb-item';
-        const homeLink = document.createElement('span'); // 改为 span，点击时不跳转
-        homeLink.innerText = '首页'; // 可根据需要修改
-        homeItem.appendChild(homeLink);
-        breadcrumb.appendChild(homeItem);
-
-        // 添加路径中的每个部分
+        // 创建面包屑项，忽略当前页面
         pathParts.forEach((part, index) => {
             const item = document.createElement('li');
             item.className = 'breadcrumb-item';
+            const path = '/' + pathParts.slice(0, index + 1).join('/');
 
-            const link = document.createElement('span'); // 改为 span，点击时不跳转
-            link.innerText = decodeURIComponent(part); // 解码 URL 组件
-            
-            item.appendChild(link);
+            // 绑定点击事件
+            item.innerText = decodeURIComponent(part);
+            item.onclick = () => showTOC(path); // 点击时显示 TOC
             breadcrumb.appendChild(item);
         });
+    }
 
-        // 创建当前页面项
-        const activeItem = document.createElement('li');
-        activeItem.className = 'breadcrumb-item active';
-        activeItem.innerText = decodeURIComponent(pathParts[pathParts.length - 1] || '首页');
-        breadcrumb.appendChild(activeItem);
+    function showTOC(path) {
+        const tocContainer = document.getElementById('tocContainer');
+        tocContainer.innerHTML = ''; // 清空当前 TOC
+
+        const currentData = data[path];
+        if (currentData && currentData.children) {
+            const toc = document.createElement('ul');
+            toc.className = 'toc';
+
+            for (const [childPath, name] of Object.entries(currentData.children)) {
+                const tocItem = document.createElement('li');
+                tocItem.className = 'toc-item';
+                const link = document.createElement('a');
+                link.href = childPath;
+                link.innerText = name;
+                tocItem.appendChild(link);
+                toc.appendChild(tocItem);
+            }
+
+            tocContainer.appendChild(toc);
+            toc.style.display = 'block'; // 显示 TOC
+        }
     }
 
     // 调用生成面包屑导航的函数
     generateBreadcrumb();
 </script>
+
