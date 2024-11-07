@@ -1,113 +1,71 @@
+
     <style>
+        .human-date {
+            margin: 0; /* 日期的外边距 */
+            padding: 0; /* 日期的内边距 */
+        }
 
         .breadcrumb {
             display: flex;
             list-style: none;
-            padding: 0; /* 上下内边距为0 */
-            margin: 0; /* 顶部和底部外边距为0 */
+            padding: 5px 0; /* 小内边距 */
+            margin: 5px 0; /* 与其他元素的外边距 */
             background: transparent; /* 背景设置为透明 */
             border-radius: 4px;
-            position: absolute; /* 使用绝对定位 */
-            right: 0; /* 对齐到右边 */
-            top: 0; /* 距离顶部0px */
         }
 
         .breadcrumb-item {
-            margin-right: 3px; /* 调整间隔 */
-            cursor: default; /* 禁止鼠标指针变化 */
-            position: relative; /* 用于定位下拉内容 */
+            margin-right: 3px; /* 调整间隔，挨得近 */
+            cursor: default; /* 鼠标指针变化 */
         }
 
-        .breadcrumb-item:hover {
-            text-decoration: underline; /* 悬停时下划线 */
-        }
-
-        .breadcrumb-item:not(:last-child)::after {
+        .breadcrumb-item::after {
             content: '>'; /* 使用 '>' 连接 */
             margin-left: 3px; /* 添加左侧间隔 */
             margin-right: 3px; /* 添加右侧间隔 */
             color: #6c757d; /* 分隔符颜色 */
         }
 
-        .expanded-content {
-            display: none; /* 默认隐藏内容 */
-            background: #e9ecef; /* 背景颜色 */
-            padding: 3px;
-            border-radius: 4px;
-            margin-top: 3px; /* 与面包屑项目的距离 */
-            width: 100%; /* 宽度为 100% */
-        }
-
-        .link {
-            display: block; /* 使链接为块级元素 */
-            text-decoration: none;
-            color: #007bff;
-            margin: 3px 0; /* 调整链接间距 */
-        }
-
-        .link:hover {
-            text-decoration: underline; /* 鼠标悬停时下划线 */
+        .breadcrumb-item:last-child::after {
+            content: ''; /* 最后一个面包屑不显示分隔符 */
         }
     </style>
-
-<nav class="navbar">
-    <div id="breadcrumb-container">
-        <ol class="breadcrumb" id="breadcrumb">
-            <!-- 面包屑项将通过 JavaScript 自动生成 -->
-        </ol>
-    </div>
-</nav>
+<div class="human-date"></div>
+<div id="breadcrumb-container">
+    <ol class="breadcrumb" id="breadcrumb"></ol>
+</div>
 
 <script>
-
+    // 自动生成面包屑导航
     function generateBreadcrumb() {
         const breadcrumb = document.getElementById('breadcrumb');
         const pathParts = window.location.pathname.split('/').filter(part => part);
         let currentPath = '';
 
-        // 创建面包屑项，忽略当前页面
+        // 创建面包屑项
         pathParts.forEach((part, index) => {
             currentPath += '/' + part; // 持续构建当前路径
             const item = document.createElement('li');
             item.className = 'breadcrumb-item';
             item.innerText = decodeURIComponent(part);
-            
-            // 点击面包屑不会跳转，只是展开下一级菜单
+
+            // 点击面包屑项
             item.onclick = (e) => {
                 e.stopPropagation(); // 阻止事件冒泡
-                toggleContent(currentPath, item); // 切换内容显示
+                // 添加逻辑：如果需要可以在这里为每个面包屑项加载相应内容
             };
 
             breadcrumb.appendChild(item);
         });
-    }
 
-    function toggleContent(path, item) {
-        let content = item.querySelector('.expanded-content');
-        if (!content) {
-            // 创建展开内容
-            content = document.createElement('div');
-            content.className = 'expanded-content';
-            const currentData = data[path];
-
-            if (currentData && currentData.children) {
-                for (const [childPath, name] of Object.entries(currentData.children)) {
-                    const link = document.createElement('a');
-                    link.href = childPath; // 此处保持链接，方便点击
-                    link.className = 'link';
-                    link.innerText = name;
-                    content.appendChild(link);
-                }
-            } else {
-                content.innerText = '没有下一级链接';
-            }
-            item.appendChild(content);
-        }
-
-        // 切换显示状态
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        // 添加当前页作为最后一项
+        const currentItem = document.createElement('li');
+        currentItem.className = 'breadcrumb-item';
+        currentItem.innerText = decodeURIComponent(pathParts[pathParts.length - 1] || '首页');
+        breadcrumb.appendChild(currentItem);
     }
 
     // 调用生成面包屑导航的函数
     generateBreadcrumb();
 </script>
+
