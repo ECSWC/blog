@@ -25,6 +25,13 @@
         .breadcrumb-item.active {
             color: #6c757d;
         }
+
+        .breadcrumb-item:not(:last-child)::after {
+            content: ' > '; /* 使用 > 作为分隔符 */
+            padding-left: 5px;
+            padding-right: 5px;
+            color: #6c757d; /* 分隔符颜色 */
+        }
     </style>
 </head>
 <body>
@@ -44,8 +51,7 @@
         // 创建首页链接
         const homeItem = document.createElement('li');
         homeItem.className = 'breadcrumb-item';
-        const homeLink = document.createElement('a');
-        homeLink.href = '/';
+        const homeLink = document.createElement('span'); // 改为 span，点击时不跳转
         homeLink.innerText = '首页'; // 可根据需要修改
         homeItem.appendChild(homeLink);
         breadcrumb.appendChild(homeItem);
@@ -55,14 +61,18 @@
             const item = document.createElement('li');
             item.className = 'breadcrumb-item';
 
-            const link = document.createElement('a');
-            const href = '/' + pathParts.slice(0, index + 1).join('/');
-            link.href = href;
+            const link = document.createElement('span'); // 改为 span，点击时不跳转
             link.innerText = decodeURIComponent(part); // 解码 URL 组件
             
             item.appendChild(link);
             breadcrumb.appendChild(item);
         });
+
+        // 创建当前页面项
+        const activeItem = document.createElement('li');
+        activeItem.className = 'breadcrumb-item active';
+        activeItem.innerText = decodeURIComponent(pathParts[pathParts.length - 1] || '首页');
+        breadcrumb.appendChild(activeItem);
     }
 
     // 调用生成面包屑导航的函数
