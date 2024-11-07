@@ -1,33 +1,76 @@
+
+    <style>
+        .breadcrumb {
+            display: flex;
+            list-style: none;
+            padding: 10px 0;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .breadcrumb-item {
+            margin-right: 5px;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-item.active {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
 <nav aria-label="Breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Category</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Current Page</li>
+    <ol class="breadcrumb" id="breadcrumb">
+        <!-- 面包屑项将通过 JavaScript 自动生成 -->
     </ol>
 </nav>
-<style>
-.breadcrumb {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
-.breadcrumb-item {
-    margin-right: 5px;
-}
+<script>
+    // 自动生成面包屑导航
+    function generateBreadcrumb() {
+        const breadcrumb = document.getElementById('breadcrumb');
+        const pathParts = window.location.pathname.split('/').filter(part => part);
 
-.breadcrumb-item a {
-    text-decoration: none;
-    color: #007bff; /* Bootstrap primary color */
-}
+        // 创建首页链接
+        const homeItem = document.createElement('li');
+        homeItem.className = 'breadcrumb-item';
+        const homeLink = document.createElement('a');
+        homeLink.href = '/';
+        homeLink.innerText = '首页'; // 可根据需要修改
+        homeItem.appendChild(homeLink);
+        breadcrumb.appendChild(homeItem);
 
-.breadcrumb-item a:hover {
-    text-decoration: underline;
-}
+        // 添加路径中的每个部分
+        pathParts.forEach((part, index) => {
+            const item = document.createElement('li');
+            item.className = 'breadcrumb-item';
 
-.breadcrumb-item.active {
-    color: #6c757d; /* Bootstrap secondary color */
-}
+            const link = document.createElement('a');
+            const href = '/' + pathParts.slice(0, index + 1).join('/');
+            link.href = href;
+            link.innerText = decodeURIComponent(part); // 解码 URL 组件
+            
+            item.appendChild(link);
+            breadcrumb.appendChild(item);
+        });
 
-</style>
+        // 当前页面项
+        const activeItem = document.createElement('li');
+        activeItem.className = 'breadcrumb-item active';
+        activeItem.innerText = decodeURIComponent(pathParts[pathParts.length - 1] || '首页');
+        breadcrumb.appendChild(activeItem);
+    }
+
+    // 调用生成面包屑导航的函数
+    generateBreadcrumb();
+</script>
