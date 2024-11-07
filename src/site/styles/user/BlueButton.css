@@ -7,6 +7,7 @@
     padding: 10px; /* 内边距 */
     display: inline-block; /* 使按钮根据内容自适应大小 */
     position: relative; /* 为了实现内部边框距离 */
+    overflow: hidden; /* 隐藏溢出的虚线 */
     transition: background-color 0.3s ease; /* 鼠标悬停时的过渡效果 */
 }
 
@@ -20,6 +21,20 @@
     border: 2px dashed white; /* 伪元素虚线边框 */
     border-radius: 13px; /* 圆角 */
     pointer-events: none; /* 阻止事件穿透 */
+    animation: dash 1s linear infinite; /* 应用动画效果 */
+}
+
+.BlueButton:hover::before {
+    animation-play-state: running; /* 鼠标悬停时开始动画 */
+}
+
+@keyframes dash {
+    0% {
+        background-position: 0 0; /* 初始位置 */
+    }
+    100% {
+        background-position: 100% 0; /* 到达的新位置 */
+    }
 }
 
 .BlueButton:hover {
