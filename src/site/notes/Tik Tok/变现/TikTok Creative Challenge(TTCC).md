@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Tik Tok/变现/TikTok Creative Challenge(TTCC)/","dgPassFrontmatter":true,"noteIcon":"","updated":"2024-11-07T11:07:08.521+08:00"}
+{"dg-publish":true,"permalink":"/Tik Tok/变现/TikTok Creative Challenge(TTCC)/","dgPassFrontmatter":true,"noteIcon":"","updated":"2024-11-08T02:15:15.199+08:00"}
 ---
 
 
@@ -8,7 +8,7 @@ TikTok 为创作者推出一种新的变现方式，“TikTok 创意挑战”。
 品牌发起挑战，创作者根据品牌要求上传视频广告，根据视频的表现，创作者可以获得相应的佣金
 
 <h3>
-<a href="https://ads.tiktok.com/creativechallenge" class="long-cang">🧭申请地址</a>
+<a href="https://ads.tiktok.com/creativechallenge" class="BlueButton">🧭申请地址</a>
 </h3>
 
 <h2 class="H1_Underline">💼账号要求：</h2>
@@ -18,7 +18,7 @@ TikTok 为创作者推出一种新的变现方式，“TikTok 创意挑战”。
 - 美国地区账号
 
 <h3>
-<a href="https://chenliguo.vercel.app/Tik%20Tok/疑难杂症/初期/购买TikTok账号的注意事项" class="long-cang">🙅🏼‍♀️购买TikTok账号的注意事项</a>
+<a href="https://chenliguo.vercel.app/Tik%20Tok/疑难杂症/初期/购买TikTok账号的注意事项" class="BlueButton">🙅🏼‍♀️购买TikTok账号的注意事项</a>
 </h3>
 
 <h2 class="H1_Underline">🧱工作内容：</h2>
