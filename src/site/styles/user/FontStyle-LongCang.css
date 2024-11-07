@@ -16,6 +16,8 @@
   background-image:url("https://ice.frostsky.com/2024/11/04/55cde806643f2d1b86f56c5fbd4f5974.jpeg");
   background-size:123% !important;
 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.36); /* 阴影 */
+
   width:auto;
   padding:1.23px !important;
 }
