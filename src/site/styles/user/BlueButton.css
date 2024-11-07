@@ -1,0 +1,27 @@
+.BlueButton {
+    background-color: #0089D1; /* 按钮背景颜色 */
+    border-radius: 15px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影 */
+    color: white; /* 字体颜色白色 */
+    text-align: center; /* 文本居中 */
+    padding: 10px; /* 内边距 */
+    display: inline-block; /* 使按钮根据内容自适应大小 */
+    position: relative; /* 为了实现内部边框距离 */
+    transition: background-color 0.3s ease; /* 鼠标悬停时的过渡效果 */
+}
+
+.BlueButton::before {
+    content: ''; /* 创建伪元素 */
+    position: absolute; /* 绝对定位 */
+    top: 2px; /* 距离顶部2px */
+    left: 2px; /* 距离左边2px */
+    right: 2px; /* 距离右边2px */
+    bottom: 2px; /* 距离底部2px */
+    border: 2px dashed white; /* 伪元素虚线边框 */
+    border-radius: 13px; /* 圆角 */
+    pointer-events: none; /* 阻止事件穿透 */
+}
+
+.BlueButton:hover {
+    background-color: #0077A3; /* 鼠标悬停时更深的蓝色 */
+}
