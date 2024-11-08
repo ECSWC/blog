@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/Tik Tok/疑难杂症/初期/购买TikTok账号的注意事项/","dgPassFrontmatter":true,"noteIcon":"","updated":"2024-11-08T02:54:57.606+08:00"}
+{"dg-publish":true,"permalink":"/Tik Tok/疑难杂症/初期/购买TikTok账号的注意事项/","dgPassFrontmatter":true,"noteIcon":"","updated":"2024-11-08T12:11:53.837+08:00"}
 ---
  
 
@@ -25,7 +25,7 @@ VPN并非专为翻墙而生，而机场是。 机场针对中国网络有专门�
 
  <div class="long-cang">IP质量差、切换IP登录、使用行为异常可能导致账号需要进行验证或者连接服务失败，这里推荐tiktok独享节点网络</div>
 
-<a href="https://https://whoer.net/zh" class="BlueButton">😷whoer节点伪装度检测</a>
+<a href="https://whoer.net/zh" class="BlueButton">😷whoer节点伪装度检测</a>
 
 <h2 class="H1_Underline">🖇️多账号防关联的建议：</h2>
 
