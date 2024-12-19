@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/Tik Tok/疑难杂症/初期/TikTok 无法使用或新作品播放量为0？/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-11-06T11:16:39.963+08:00"}
+{"dg-publish":true,"dg-pinned":true,"dg-show-toc":true,"dg-content-classes":true,"dg-note-icon":true,"tags":["dg-publish"],"sticker":"emoji//1f469-200d-1f4bb","permalink":"/Tik Tok/疑难杂症/初期/TikTok 无法使用或新作品播放量为0？/","pinned":true,"contentClasses":"","dgShowToc":true,"dgPassFrontmatter":true,"noteIcon":true,"updated":"2024-11-16T17:41:48.963+08:00"}
 ---
-
 
 
  <h2 class="H1_Underline">📱以ios 设备为例：</h2>
@@ -19,5 +18,5 @@
 7. 去到“系统设置-一般设置-语言与地区-地区”设置为**目标地区**。
 8. 打开 TikTok，重新注册或者登录。
 
----
+
 
